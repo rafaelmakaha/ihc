@@ -3,6 +3,7 @@ import SideBar from './Components/SideBar';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import Home from './Screens/Home';
 import Auth from './Authentication/Auth';
+import Login from './Screens/Login';
 
 
 export default class Routers extends Component {
@@ -26,6 +27,7 @@ export default class Routers extends Component {
                 />
               )
             )}/>
+            <Route exact path='/login' component={Login}/>
           </SideBar>
         </Switch>
       </Router>

@@ -90,7 +90,7 @@ class ResponsiveDrawer extends React.Component {
         <div className={classes.toolbar} />
         <Divider light={true} />
         <List>
-          <Button className={classes.overrides} fullWidth size="small" color="secondary" component={Link} to='/registration'>Entrar/Cadastrar</Button>
+          <Button className={classes.overrides} fullWidth size="small" color="secondary" component={Link} to='/login'>Entrar/Cadastrar</Button>
         </List>
         <List>
           <Button className={classes.overrides} fullWidth size="small" color="secondary" component={Link} to='/cart'>Carrinho</Button>
