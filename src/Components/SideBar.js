@@ -6,16 +6,10 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import List from '@material-ui/core/List';
-import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import Hidden from '@material-ui/core/Hidden';
 import Divider from '@material-ui/core/Divider';
 import MenuIcon from '@material-ui/icons/Menu';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
 import Button from '@material-ui/core/Button';
 import { createMuiTheme, MuiThemeProvider  } from '@material-ui/core/styles';
 import {Link} from 'react-router-dom';
@@ -48,6 +42,7 @@ const styles = theme => ({
   toolbar: theme.mixins.toolbar,
   drawerPaper: {
     width: drawerWidth,
+    background: '#212020',
   },
   content: {
     flexGrow: 1,
@@ -56,6 +51,13 @@ const styles = theme => ({
   logo: {
     fontSize: 18,
   },
+  overrides: {
+    Button: {
+      raisedPrimary: {
+        color: 'white',
+      }
+    }    
+  }
 });
 
 class ResponsiveDrawer extends React.Component {
@@ -86,24 +88,20 @@ class ResponsiveDrawer extends React.Component {
     const drawer = (
       <div>
         <div className={classes.toolbar} />
-        <Divider />
+        <Divider light={true} />
         <List>
-          <Button className={classes.button_left} variant='contained' color='primary' component={Link} to='/registrations'>Cadastros</Button>
+          <Button className={classes.overrides} fullWidth size="small" color="secondary" component={Link} to='/registration'>Entrar/Cadastrar</Button>
         </List>
         <List>
-          <Button className={classes.button_left} variant='contained' color='primary' component={Link} to='/views'>Pessoas</Button>
+          <Button className={classes.overrides} fullWidth size="small" color="secondary" component={Link} to='/cart'>Carrinho</Button>
         </List>
         <List>
-          <Button className={classes.button_left} variant='contained' color='primary' component={Link} to='/discipline'>Disciplinas</Button>
-        </List>
-        <Divider />
-        <List>
-          <Button className={classes.button_left1} variant="outlined" color="primary" component={Link} to="/schedule_screen">Agendamento</Button>
+          <Button className={classes.overrides} fullWidth size="small" color="secondary" component={Link} to="/about">Sobre</Button>
         </List>
         <List>
-          <Button className={classes.button_left1} variant="outlined" color="primary" component={Link} to="/availabilities">Disponibilidades</Button> 
+          <Button className={classes.overrides} fullWidth size="small" color="secondary" component={Link} to="/help">Ajuda</Button> 
         </List>
-        <Divider />
+        <Divider light={true}/>
       </div>
     );
 
@@ -121,7 +119,7 @@ class ResponsiveDrawer extends React.Component {
               <MenuIcon />
             </IconButton>
                 <MuiThemeProvider theme={mui_theme}>
-                    <Button className={classes.logo} color="inherit" noWrap target="/">FGAqua</Button>
+                    <Button className={classes.logo} color="inherit" noWrap component={Link} to="/">FGAqua</Button>
                 </MuiThemeProvider>
           </Toolbar>
         </AppBar>
@@ -158,7 +156,7 @@ class ResponsiveDrawer extends React.Component {
         </nav>
         <main className={classes.content}>
           <div className={classes.toolbar} />
-           TEste
+           {this.props.children}
         </main>
       </div>
     );
