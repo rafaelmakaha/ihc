@@ -3,7 +3,7 @@ export default class Auth {
         localStorage.setItem('login', 1);
     }
     static logged(){
-        if (localStorage.getItem('login') == 1) {
+        if (localStorage.getItem('login') === 1) {
             return true;
         }else {
             return false;
