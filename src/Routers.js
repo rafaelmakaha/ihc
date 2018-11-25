@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import SideBar from './Components/SideBar';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
-import Principal from './Screens/Principal';
+import Home from './Screens/Home';
 import Auth from './Authentication/Auth';
 
 
@@ -13,10 +13,10 @@ export default class Routers extends Component {
       <Router>
         <Switch>
           <SideBar>
-            <Route exact path='/' component={Principal} />
+            <Route exact path='/' component={Home} />
             <Route exact path='/home' render={() => (
               Auth.logged() ? (
-                <Principal />
+                <Home />
               ) : (
                 <Redirect
                   to={{
