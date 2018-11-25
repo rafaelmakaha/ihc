@@ -7,7 +7,7 @@ import {
     TextField,
     Grid,
 } from '@material-ui/core';
-
+import Auth from '../Authentication/Auth';
 
 export default class Login extends Component {
     constructor(props){
@@ -16,6 +16,10 @@ export default class Login extends Component {
             teste: ""
         }
 
+    }
+
+    login(){
+        Auth.login();
     }
 
     render(){
@@ -38,7 +42,7 @@ export default class Login extends Component {
                                 <TextField id="login_pw" type="password" label="Senha" fullWidth/>
                             </CardContent>
                             <CardContent>
-                                <Button variant="contained" color="secondary" >Login</Button>
+                                <Button variant="contained" color="secondary" type="login" onClick={this.login}>Login</Button>
                             </CardContent>  
                         </CardContent>
                     </Grid>
@@ -55,7 +59,7 @@ export default class Login extends Component {
                                 <TextField id="regist_pw_verify" type="password" label="Senha" fullWidth/>
                             </CardContent>
                             <CardContent>
-                                <Button variant="contained" color="secondary" >Registrar</Button>
+                                <Button variant="contained" color="secondary" type="register">Registrar</Button>
                             </CardContent>  
                         </CardContent>
                     </Grid>

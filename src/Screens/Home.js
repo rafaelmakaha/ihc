@@ -8,7 +8,7 @@ export default class Home extends Component {
         return (
         <div>
             <Typography> Teste </Typography>
-            <Grid container={24}>
+            <Grid container>
                 <Grid item>
                     <Produto nome="Testado" preco="49" img="../../img/filtro_barro.jpg"/>
                 </Grid>
