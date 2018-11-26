@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-d
 import Home from './Screens/Home';
 import Auth from './Authentication/Auth';
 import Login from './Screens/Login';
+import Cart from './Screens/Cart';
 
 
 export default class Routers extends Component {
@@ -28,6 +29,7 @@ export default class Routers extends Component {
               )
             )}/>
             <Route exact path='/login' component={Login}/>
+            <Route exact path='/cart' component={Cart}/>
           </SideBar>
         </Switch>
       </Router>
