@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-d
 import Home from './Screens/Home';
 import Auth from './Authentication/Auth';
 import Login from './Screens/Login';
+import Sobre from './Screens/Sobre';
+import Ajuda from './Screens/Ajuda';
 
 
 export default class Routers extends Component {
@@ -28,6 +30,8 @@ export default class Routers extends Component {
               )
             )}/>
             <Route exact path='/login' component={Login}/>
+            <Route exact path='/about' component={Sobre}/>
+            <Route exact path='/help' component={Ajuda}/>
           </SideBar>
         </Switch>
       </Router>
