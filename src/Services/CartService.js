@@ -30,11 +30,36 @@ export default class CartService extends Component {
     }
 
     static getCarts(){
+        // this.clearCarts();
         let list = localStorage.getItem('carts');
-
-        let parsedList = JSON.parse(list);
+        let parsedList = null;
+        
+        try{
+            parsedList = JSON.parse(list);
+        }catch(e){
+            parsedList = [list];
+        }
 
         return parsedList;
+    }
+
+    static removeCart(cart){
+        let list = this.getCarts();
+        let newList = [];
+
+        try{
+            list.forEach(element => {
+                if(element.nome !== cart.nome){
+                    newList.push(element);
+                }
+            });
+            newList = JSON.stringify(newList);
+            console.log('newlist = ',newList);
+            localStorage.setItem('carts',newList);
+        }catch(e){
+            console.log("removecart exception");
+            this.clearCarts();
+        }
     }
 
     static clearCarts(){

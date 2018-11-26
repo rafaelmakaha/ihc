@@ -3,6 +3,9 @@ import Card from '@material-ui/core/Card';
 import Typography from '@material-ui/core/Typography';
 import { CardContent, CardMedia, Button } from '@material-ui/core';
 import filtro_barro from '../Assets/filtro_barro.jpg'
+import IconButton from '@material-ui/core/IconButton';
+import DeleteIcon from '@material-ui/icons/Delete';
+import CartService from '../Services/CartService';
 
 
 
@@ -15,6 +18,7 @@ export default class CartProduct extends Component {
             img: this.props.img
         }
 
+        this.removeCart = this.removeCart.bind(this);
     }
 
     getImage(image){
@@ -24,6 +28,19 @@ export default class CartProduct extends Component {
             default:
                 return null;
         }
+    }
+
+    removeCart(){
+        let json = {
+            nome: this.state.nome,
+            preco: this.state.preco,
+            img: this.state.img
+        }
+        CartService.removeCart(json);
+        // this.setState(null);
+        this.setState({
+            list: CartService.getCarts()
+        })
     }
     
     render(){
@@ -57,7 +74,9 @@ export default class CartProduct extends Component {
                     <Typography variant="h6" >
                         R$: {this.state.preco},00
                     </Typography>
-                    {/* <Button variant="contained" color="secondary" size="small" >Comprar</Button> */}
+                    <IconButton aria-label="Delete" size="small" onClick={this.props.removeCart} >
+                        <DeleteIcon fontSize="small" />
+                    </IconButton>
                 </CardContent>
             </Card >
         )

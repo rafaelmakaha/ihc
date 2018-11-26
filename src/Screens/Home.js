@@ -10,22 +10,22 @@ export default class Home extends Component {
             <Typography> Teste </Typography>
             <Grid container>
                 <Grid item>
-                    <Produto nome="Testado" preco="49" img="filtro_barro"/>
+                    <Produto nome="Testado1" preco="49" img="filtro_barro"/>
                 </Grid>
                 <Grid item>
-                    <Produto nome="Testado" preco="49" img="filtro_barro"/>
+                    <Produto nome="Testado2" preco="49" img="filtro_barro"/>
                 </Grid>
                 <Grid item>
-                    <Produto nome="Testado" preco="49" img="filtro_barro"/>
+                    <Produto nome="Testado3" preco="49" img="filtro_barro"/>
                 </Grid>
                 <Grid item>
-                    <Produto nome="Testado" preco="49" img="filtro_barro"/>
+                    <Produto nome="Testado4" preco="49" img="filtro_barro"/>
                 </Grid>
                 <Grid item>
-                    <Produto nome="Testado" preco="49" img="filtro_barro"/>
+                    <Produto nome="Testado5" preco="49" img="filtro_barro"/>
                 </Grid>
                 <Grid item>
-                    <Produto nome="Testado" preco="49" img="filtro_barro"/>
+                    <Produto nome="Testado6" preco="49" img="filtro_barro"/>
                 </Grid>
             </Grid>
         </div>

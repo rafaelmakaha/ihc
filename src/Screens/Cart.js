@@ -12,18 +12,40 @@ export default class Cart extends Component {
         this.state = {
             list: CartService.getCarts()
         }
+
+        this.removeCart = this.removeCart.bind(this);        
+    }
+
+
+    removeCart(index,nome){
+        console.log('index = ', index);
+        let json = {
+            nome: nome
+        }
+        CartService.removeCart(json);
+        
+        this.setState({
+            list: this.state.list.filter((e,i)=>{
+                return i !== index
+            })
+        })
+
+        console.log('this.state.list = ', this.state.list);
     }
 
     render(){
-        console.log('list = ',this.state.list);
+        var carts;
+        if(this.state.list !== null && this.state.list !== ''){
+            carts = this.state.list.map((carts, i) => {
+                return(
+                    <Grid item>
+                        <CartProduct nome={carts.nome} preco={carts.preco} img={carts.img} removeCart={this.removeCart.bind(this,i,carts.nome)} />                
+                    </Grid>
+                )
+            });
 
-        const carts = this.state.list.map((carts, i) => {
-            return(
-                <Grid item>
-                    <CartProduct nome={carts.nome} preco={carts.preco} img="filtro_barro"/>                
-                </Grid>
-            )
-        });
+        }
+
         return (
         <div>
             <Typography> Teste </Typography>

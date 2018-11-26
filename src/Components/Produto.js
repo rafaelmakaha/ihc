@@ -4,6 +4,9 @@ import Typography from '@material-ui/core/Typography';
 import { CardContent, CardMedia, Button } from '@material-ui/core';
 import filtro_barro from '../Assets/filtro_barro.jpg'
 import CartService from '../Services/CartService';
+import IconButton from '@material-ui/core/IconButton';
+import AddIcon from '@material-ui/icons/Add';
+
 
 export default class Produto extends Component {
     constructor(props){
@@ -58,7 +61,9 @@ export default class Produto extends Component {
                         R$: {this.state.preco},00
                     </Typography>
                     <Button variant="contained" color="secondary" size="small" >Comprar</Button>
-                    <Button variant="fab" color="primary" size="small" onClick={this.sendToCart} >+</Button>
+                    <IconButton variant="fab" color="secondary" aria-label="Add" size="small" onClick={this.sendToCart} >
+                        <AddIcon />
+                    </IconButton>
                 </CardContent>
             </Card >
         )
