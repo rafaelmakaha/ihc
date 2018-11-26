@@ -16,6 +16,7 @@ import {
   Button,
   withStyles,
   Avatar,
+  Grid,
 } from '@material-ui/core';
 
 
@@ -54,6 +55,9 @@ const styles = theme => ({
   },
   logo: {
     fontSize: 18,
+  },
+  logout: {
+    display: 'right',
   },
   overrides: {
     Button: {
@@ -157,11 +161,14 @@ class ResponsiveDrawer extends React.Component {
               onClick={this.handleDrawerToggle}
               className={classes.menuButton}
             >
-              <MenuIcon />
+            <MenuIcon />
             </IconButton>
-                <MuiThemeProvider theme={mui_theme}>
-                    <Button className={classes.logo} color="inherit" noWrap component={Link} to="/">FGAqua</Button>
-                </MuiThemeProvider>
+            <MuiThemeProvider theme={mui_theme}>
+              <Grid container justify="space-between" >
+                <Button className={classes.logo} color="inherit" noWrap component={Link} to="/">FGAqua</Button>
+                <Button className={classes.logout} color="inherit" noWrap component={Link} to="/logout">Logout</Button>
+              </Grid>  
+            </MuiThemeProvider>
           </Toolbar>
         </AppBar>
         <nav className={classes.drawer}>
