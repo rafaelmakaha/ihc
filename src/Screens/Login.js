@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import Card from '@material-ui/core/Card';
-import Typography from '@material-ui/core/Typography';
+import {Link} from 'react-router-dom';
 import { 
     CardContent,
+    Typography,
     Button,
     TextField,
     Grid,
@@ -42,7 +43,7 @@ export default class Login extends Component {
                                 <TextField id="login_pw" type="password" label="Senha" fullWidth/>
                             </CardContent>
                             <CardContent>
-                                <Button variant="contained" color="secondary" type="login" onClick={this.login}>Login</Button>
+                                <Button variant="contained" color="secondary" type="login" onClick={this.login} component={Link} to='/'>Login</Button>
                             </CardContent>  
                         </CardContent>
                     </Grid>

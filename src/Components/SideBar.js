@@ -13,6 +13,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import Button from '@material-ui/core/Button';
 import { createMuiTheme, MuiThemeProvider  } from '@material-ui/core/styles';
 import {Link} from 'react-router-dom';
+import Auth from '../Authentication/Auth';
 
 
 const drawerWidth = 240;
@@ -85,25 +86,48 @@ class ResponsiveDrawer extends React.Component {
     })
 
 
-    const drawer = (
-      <div>
-        <div className={classes.toolbar} />
-        <Divider light={true} />
-        <List>
-          <Button className={classes.overrides} fullWidth size="small" color="secondary" component={Link} to='/login'>Entrar/Cadastrar</Button>
-        </List>
-        <List>
-          <Button className={classes.overrides} fullWidth size="small" color="secondary" component={Link} to='/cart'>Carrinho</Button>
-        </List>
-        <List>
-          <Button className={classes.overrides} fullWidth size="small" color="secondary" component={Link} to="/about">Sobre</Button>
-        </List>
-        <List>
-          <Button className={classes.overrides} fullWidth size="small" color="secondary" component={Link} to="/help">Ajuda</Button> 
-        </List>
-        <Divider light={true}/>
-      </div>
-    );
+    var drawer;
+    if (Auth.logged()){
+      drawer = (
+        <div>
+          <div className={classes.toolbar} />
+          <Divider light={true} />
+          <List>
+            <Button className={classes.overrides} fullWidth size="small" color="secondary" component={Link} to='/login'>Entrar/Cadastrar</Button>
+          </List>
+          <List>
+            <Button className={classes.overrides} fullWidth size="small" color="secondary" component={Link} to='/cart'>Carrinho</Button>
+          </List>
+          <List>
+            <Button className={classes.overrides} fullWidth size="small" color="secondary" component={Link} to="/about">Sobre</Button>
+          </List>
+          <List>
+            <Button className={classes.overrides} fullWidth size="small" color="secondary" component={Link} to="/help">Ajuda</Button> 
+          </List>
+          <Divider light={true}/>
+        </div>
+      )
+    }else{
+      drawer = (
+        <div>
+          <div className={classes.toolbar} />
+          <Divider light={true} />
+          <List>
+            <Button className={classes.overrides} fullWidth size="small" color="secondary" component={Link} to='/login'>tu tá On, filhão!!</Button>
+          </List>
+          <List>
+            <Button className={classes.overrides} fullWidth size="small" color="secondary" component={Link} to='/cart'>Carrinho</Button>
+          </List>
+          <List>
+            <Button className={classes.overrides} fullWidth size="small" color="secondary" component={Link} to="/about">Sobre</Button>
+          </List>
+          <List>
+            <Button className={classes.overrides} fullWidth size="small" color="secondary" component={Link} to="/help">Ajuda</Button> 
+          </List>
+          <Divider light={true}/>
+        </div>
+      )
+    }
 
     return (
       <div className={classes.root}>
