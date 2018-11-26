@@ -1,19 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
-import Drawer from '@material-ui/core/Drawer';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import List from '@material-ui/core/List';
-import IconButton from '@material-ui/core/IconButton';
-import Hidden from '@material-ui/core/Hidden';
-import Divider from '@material-ui/core/Divider';
 import MenuIcon from '@material-ui/icons/Menu';
-import Button from '@material-ui/core/Button';
 import { createMuiTheme, MuiThemeProvider  } from '@material-ui/core/styles';
 import {Link} from 'react-router-dom';
 import Auth from '../Authentication/Auth';
+import {
+  Drawer,
+  AppBar,
+  Toolbar,
+  CssBaseline,
+  List,
+  IconButton,
+  Hidden,
+  Divider,
+  Button,
+  withStyles,
+  Avatar,
+} from '@material-ui/core';
 
 
 const drawerWidth = 240;
@@ -98,6 +101,7 @@ class ResponsiveDrawer extends React.Component {
           <List>
             <Button className={classes.overrides} fullWidth size="small" color="secondary" component={Link} to='/cart'>Carrinho</Button>
           </List>
+          <Divider light={true} />
           <List>
             <Button className={classes.overrides} fullWidth size="small" color="secondary" component={Link} to="/about">Sobre</Button>
           </List>
@@ -110,14 +114,27 @@ class ResponsiveDrawer extends React.Component {
     }else{
       drawer = (
         <div>
-          <div className={classes.toolbar} />
+          <div className={classes.toolbar} >
+            <Avatar src="../../img/filtro_barro.jpg" />
+          </div>
           <Divider light={true} />
           <List>
-            <Button className={classes.overrides} fullWidth size="small" color="secondary" component={Link} to='/login'>tu tá On, filhão!!</Button>
+            <Button className={classes.overrides} fullWidth size="small" color="secondary" component={Link} to='/login'>Perfil</Button>
           </List>
           <List>
             <Button className={classes.overrides} fullWidth size="small" color="secondary" component={Link} to='/cart'>Carrinho</Button>
           </List>
+          <List>
+            <Button className={classes.overrides} fullWidth size="small" color="secondary" component={Link} to='/my_purchases'>Minhas Compras</Button>
+          </List>
+          <Divider light={true} />
+          <List>
+            <Button className={classes.overrides} fullWidth size="small" color="secondary" component={Link} to='/announce'>Anunciar</Button>
+          </List>
+          <List>
+            <Button className={classes.overrides} fullWidth size="small" color="secondary" component={Link} to='/my_announces'>Meus Anúncios</Button>
+          </List>
+          <Divider light={true} />
           <List>
             <Button className={classes.overrides} fullWidth size="small" color="secondary" component={Link} to="/about">Sobre</Button>
           </List>
