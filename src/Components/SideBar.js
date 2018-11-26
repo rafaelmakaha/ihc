@@ -118,12 +118,10 @@ class ResponsiveDrawer extends React.Component {
     }else{
       drawer = (
         <div>
-          <div className={classes.toolbar} >
-            <Avatar src="../../img/filtro_barro.jpg" />
-          </div>
+          <div className={classes.toolbar} />
           <Divider light={true} />
           <List>
-            <Button className={classes.overrides} fullWidth size="small" color="secondary" component={Link} to='/login'>Perfil</Button>
+            <Button className={classes.overrides} fullWidth size="small" color="secondary" component={Link} to='/profile'>Perfil</Button>
           </List>
           <List>
             <Button className={classes.overrides} fullWidth size="small" color="secondary" component={Link} to='/cart'>Carrinho</Button>
