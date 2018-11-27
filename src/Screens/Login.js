@@ -8,28 +8,17 @@ import {
     TextField,
     Grid,
 } from '@material-ui/core';
-import Auth from '../Authentication/Auth';
 
 export default class Login extends Component {
     constructor(props){
         super(props);
-        this.state = {
-            teste: ""
-        }
-
+        this.handleClickLogin = this.handleClickLogin.bind(this);
     }
 
-    login(){
-        Auth.login();
+    handleClickLogin(){
+        this.props.handleClickLogin();
     }
-
     render(){
-        const styles = () => ({
-            image: {
-                width: 151,
-                height: 151
-            }
-        })
         return(
             <Card >
                 <Grid container spacing={24}>
@@ -43,7 +32,7 @@ export default class Login extends Component {
                                 <TextField id="login_pw" type="password" label="Senha" fullWidth/>
                             </CardContent>
                             <CardContent>
-                                <Button variant="contained" color="secondary" type="login" onClick={this.login} component={Link} to='/'>Login</Button>
+                                <Button variant="contained" color="secondary" type="login" onClick={this.handleClickLogin} component={Link} to='/'>Login</Button>
                             </CardContent>  
                         </CardContent>
                     </Grid>
