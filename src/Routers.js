@@ -5,7 +5,7 @@ import Home from './Screens/Home';
 import Auth from './Authentication/Auth';
 import Login from './Screens/Login';
 import Profile from './Screens/Profile';
-
+import Logout from './Screens/Logout';
 
 export default class Routers extends Component {
 
@@ -17,6 +17,7 @@ export default class Routers extends Component {
           <SideBar>
             <Route exact path='/' component={Home} />
             <Route exact path='/login' component={Login}/>
+            <Route exact path='/logout' component={Logout}/>
             <Route exact path='/home' render={() => (
               Auth.logged() ? (
                 <Home />
