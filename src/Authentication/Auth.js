@@ -1,15 +1,12 @@
 export default class Auth {
+    static handleLoginAuth;
     static login(){
-        localStorage.setItem('login', 1);
+        localStorage.setItem('login', true);
     }
     static logged(){
-        if (localStorage.getItem('login') === 1) {
-            return true;
-        }else {
-            return false;
-        }
+        return (localStorage.getItem('login'));
     }
     static logout(){
-        localStorage.setItem('login', 0);
+        localStorage.setItem('login', false);
     }
 }

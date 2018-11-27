@@ -1,18 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
-import Drawer from '@material-ui/core/Drawer';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import List from '@material-ui/core/List';
-import IconButton from '@material-ui/core/IconButton';
-import Hidden from '@material-ui/core/Hidden';
-import Divider from '@material-ui/core/Divider';
 import MenuIcon from '@material-ui/icons/Menu';
-import Button from '@material-ui/core/Button';
 import { createMuiTheme, MuiThemeProvider  } from '@material-ui/core/styles';
 import {Link} from 'react-router-dom';
+import Auth from '../Authentication/Auth';
+import {
+  Drawer,
+  AppBar,
+  Toolbar,
+  CssBaseline,
+  List,
+  IconButton,
+  Hidden,
+  Divider,
+  Button,
+  withStyles,
+  Avatar,
+  Grid,
+} from '@material-ui/core';
 
 
 const drawerWidth = 240;
@@ -51,6 +56,9 @@ const styles = theme => ({
   logo: {
     fontSize: 18,
   },
+  logout: {
+    display: 'right',
+  },
   overrides: {
     Button: {
       raisedPrimary: {
@@ -61,12 +69,44 @@ const styles = theme => ({
 });
 
 class ResponsiveDrawer extends React.Component {
-  state = {
-    mobileOpen: false,
-  };
+  constructor(props){
+    super(props);
+    this.state = {
+      mobileOpen: false,
+      logged: false,
+    };
+    Auth.logout();
+    Auth.handleLoginAuth = this.handleLogin;
+  }
 
   handleDrawerToggle = () => {
     this.setState(state => ({ mobileOpen: !state.mobileOpen }));
+  };
+
+  // verifica_login(){
+  //   if(Auth.logged() && this.state.logged == false){
+  //     this.setState({logged: true});
+  //     console.log("Entrei");
+  //   }else if (!Auth.logged() && this.state.logged == true){
+  //     this.setState({logged: false});
+  //     console.log("Entrei2");
+  //   }
+  // }
+
+  handleLogout = () => {
+    Auth.logout();
+    this.setState({logged: Auth.logged()});
+    console.log("logout chamado");
+    console.log("novo valor de logged: " + this.state.logged);
+    window.location.reload();
+  };
+
+  handleLogin = () => {
+    Auth.login();
+    this.setState({logged: true});
+    console.log("login chamado");
+    console.log("novo valor de logged: " + this.state.logged);
+
   };
 
   render() {
@@ -84,26 +124,71 @@ class ResponsiveDrawer extends React.Component {
         }
     })
 
+    var drawer;
+    if (this.state.logged === false){
+      console.log("primeiro caso: " + this.state.logged);
+      drawer = (
+        <div>
+          <div className={classes.toolbar} />
+          <Divider light={true} />
+          <List>
+            <Button className={classes.overrides} fullWidth size="small" color="secondary" component={Link} to='/login'>Entrar/Cadastrar</Button>
+          </List>
+          <List>
+            <Button className={classes.overrides} fullWidth size="small" color="secondary" component={Link} to='/cart'>Carrinho</Button>
+          </List>
+          <Divider light={true} />
+          <List>
+            <Button className={classes.overrides} fullWidth size="small" color="secondary" component={Link} to="/about">Sobre</Button>
+          </List>
+          <List>
+            <Button className={classes.overrides} fullWidth size="small" color="secondary" component={Link} to="/help">Ajuda</Button> 
+          </List>
+          <Divider light={true}/>
+        </div>
+      )
+    }else{
+      console.log(Auth.logged());
+      drawer = (
+        <div>
+          <div className={classes.toolbar} />
+          <Divider light={true} />
+          <List>
+            <Button className={classes.overrides} fullWidth size="small" color="secondary" component={Link} to='/profile'>Perfil</Button>
+          </List>
+          <List>
+            <Button className={classes.overrides} fullWidth size="small" color="secondary" component={Link} to='/cart'>Carrinho</Button>
+          </List>
+          <List>
+            <Button className={classes.overrides} fullWidth size="small" color="secondary" component={Link} to='/my_purchases'>Minhas Compras</Button>
+          </List>
+          <Divider light={true} />
+          <List>
+            <Button className={classes.overrides} fullWidth size="small" color="secondary" component={Link} to='/announce'>Anunciar</Button>
+          </List>
+          <List>
+            <Button className={classes.overrides} fullWidth size="small" color="secondary" component={Link} to='/my_announces'>Meus Anúncios</Button>
+          </List>
+          <Divider light={true} />
+          <List>
+            <Button className={classes.overrides} fullWidth size="small" color="secondary" component={Link} to="/about">Sobre</Button>
+          </List>
+          <List>
+            <Button className={classes.overrides} fullWidth size="small" color="secondary" component={Link} to="/help">Ajuda</Button> 
+          </List>
+          <Divider light={true}/>
+        </div>
+      )
+    }
 
-    const drawer = (
-      <div>
-        <div className={classes.toolbar} />
-        <Divider light={true} />
-        <List>
-          <Button className={classes.overrides} fullWidth size="small" color="secondary" component={Link} to='/login'>Entrar/Cadastrar</Button>
-        </List>
-        <List>
-          <Button className={classes.overrides} fullWidth size="small" color="secondary" component={Link} to='/cart'>Carrinho</Button>
-        </List>
-        <List>
-          <Button className={classes.overrides} fullWidth size="small" color="secondary" component={Link} to="/about">Sobre</Button>
-        </List>
-        <List>
-          <Button className={classes.overrides} fullWidth size="small" color="secondary" component={Link} to="/help">Ajuda</Button> 
-        </List>
-        <Divider light={true}/>
-      </div>
-    );
+    var logout_btn;
+    if (this.state.logged === true){
+      logout_btn = (
+        <Button className={classes.logout} color="inherit" onClick={this.handleLogout} component={Link} to="/">Logout</Button>
+      );
+    }else {
+      logout_btn = null;
+    }
 
     return (
       <div className={classes.root}>
@@ -116,11 +201,14 @@ class ResponsiveDrawer extends React.Component {
               onClick={this.handleDrawerToggle}
               className={classes.menuButton}
             >
-              <MenuIcon />
+            <MenuIcon />
             </IconButton>
-                <MuiThemeProvider theme={mui_theme}>
-                    <Button className={classes.logo} color="inherit" noWrap component={Link} to="/">FGAqua</Button>
-                </MuiThemeProvider>
+            <MuiThemeProvider theme={mui_theme}>
+              <Grid container justify="space-between" >
+                <Button className={classes.logo} color="inherit" component={Link} to="/">FGAqua</Button>
+                {logout_btn}
+              </Grid>  
+            </MuiThemeProvider>
           </Toolbar>
         </AppBar>
         <nav className={classes.drawer}>
@@ -151,6 +239,7 @@ class ResponsiveDrawer extends React.Component {
               open
             >
               {drawer}
+              {this.verifica_login}
             </Drawer>
           </Hidden>
         </nav>
