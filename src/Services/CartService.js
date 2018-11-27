@@ -65,7 +65,7 @@ export default class CartService extends Component {
     }
 
     static clearCarts(){
-        localStorage.clear();
+        localStorage.setItem('carts',null);
     }
 
     render(){
