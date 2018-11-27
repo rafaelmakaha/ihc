@@ -83,16 +83,6 @@ class ResponsiveDrawer extends React.Component {
     this.setState(state => ({ mobileOpen: !state.mobileOpen }));
   };
 
-  // verifica_login(){
-  //   if(Auth.logged() && this.state.logged == false){
-  //     this.setState({logged: true});
-  //     console.log("Entrei");
-  //   }else if (!Auth.logged() && this.state.logged == true){
-  //     this.setState({logged: false});
-  //     console.log("Entrei2");
-  //   }
-  // }
-
   handleLogout = () => {
     Auth.logout();
     this.setState({logged: Auth.logged()});
