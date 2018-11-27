@@ -4,6 +4,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import { createMuiTheme, MuiThemeProvider  } from '@material-ui/core/styles';
 import {Link} from 'react-router-dom';
 import Auth from '../Authentication/Auth';
+import avatar from '../Assets/avatar.svg';
 import {
   Drawer,
   AppBar,
@@ -149,6 +150,9 @@ class ResponsiveDrawer extends React.Component {
         <div>
           <div className={classes.toolbar} />
           <MuiThemeProvider theme={mui_theme}>
+            <Button fullWidth component={Link} to='/profile'>
+              <Avatar src={avatar} />
+            </Button>
             <Divider />
             <List>
               <Button fullWidth size="small" component={Link} to='/profile'>Perfil</Button>
