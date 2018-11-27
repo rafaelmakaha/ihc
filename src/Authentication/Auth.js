@@ -1,4 +1,5 @@
 export default class Auth {
+    static handleLoginAuth;
     static login(){
         localStorage.setItem('login', true);
     }

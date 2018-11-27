@@ -8,6 +8,7 @@ import {
     TextField,
     Grid,
 } from '@material-ui/core';
+import Auth from '../Authentication/Auth';
 
 export default class Login extends Component {
     constructor(props){
@@ -16,7 +17,7 @@ export default class Login extends Component {
     }
 
     handleClickLogin(){
-        this.props.handleClickLogin();
+        Auth.handleLoginAuth();
     }
     render(){
         return(

@@ -17,7 +17,6 @@ export default class Routers extends Component {
           <SideBar>
             <Route exact path='/' component={Home} />
             <Route exact path='/login' component={Login}/>
-            <Route exact path='/logout' component={Logout}/>
             <Route exact path='/home' render={() => (
               Auth.logged() ? (
                 <Home />

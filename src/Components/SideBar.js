@@ -73,9 +73,10 @@ class ResponsiveDrawer extends React.Component {
     super(props);
     this.state = {
       mobileOpen: false,
-      logged: Auth.logged(),
+      logged: false,
     };
-    
+    Auth.logout();
+    Auth.handleLoginAuth = this.handleLogin;
   }
 
   handleDrawerToggle = () => {
@@ -181,7 +182,7 @@ class ResponsiveDrawer extends React.Component {
     }
 
     var logout_btn;
-    if (Auth.logged()){
+    if (this.state.logged === true){
       logout_btn = (
         <Button className={classes.logout} color="inherit" onClick={this.handleLogout} component={Link} to="/">Logout</Button>
       );
