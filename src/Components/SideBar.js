@@ -69,12 +69,43 @@ const styles = theme => ({
 });
 
 class ResponsiveDrawer extends React.Component {
-  state = {
-    mobileOpen: false,
-  };
+  constructor(props){
+    super(props);
+    this.state = {
+      mobileOpen: false,
+      logged: Auth.logged(),
+    };
+    
+  }
 
   handleDrawerToggle = () => {
     this.setState(state => ({ mobileOpen: !state.mobileOpen }));
+  };
+
+  // verifica_login(){
+  //   if(Auth.logged() && this.state.logged == false){
+  //     this.setState({logged: true});
+  //     console.log("Entrei");
+  //   }else if (!Auth.logged() && this.state.logged == true){
+  //     this.setState({logged: false});
+  //     console.log("Entrei2");
+  //   }
+  // }
+
+  handleLogout = () => {
+    Auth.logout();
+    this.setState({logged: Auth.logged()});
+    console.log("logout chamado");
+    console.log("novo valor de logged: " + this.state.logged);
+    window.location.reload();
+  };
+
+  handleLogin = () => {
+    Auth.login();
+    this.setState({logged: true});
+    console.log("login chamado");
+    console.log("novo valor de logged: " + this.state.logged);
+
   };
 
   render() {
@@ -92,9 +123,9 @@ class ResponsiveDrawer extends React.Component {
         }
     })
 
-
     var drawer;
-    if (Auth.logged()){
+    if (this.state.logged === false){
+      console.log("primeiro caso: " + this.state.logged);
       drawer = (
         <div>
           <div className={classes.toolbar} />
@@ -116,6 +147,7 @@ class ResponsiveDrawer extends React.Component {
         </div>
       )
     }else{
+      console.log(Auth.logged());
       drawer = (
         <div>
           <div className={classes.toolbar} />
@@ -148,6 +180,15 @@ class ResponsiveDrawer extends React.Component {
       )
     }
 
+    var logout_btn;
+    if (Auth.logged()){
+      logout_btn = (
+        <Button className={classes.logout} color="inherit" onClick={this.handleLogout} component={Link} to="/">Logout</Button>
+      );
+    }else {
+      logout_btn = null;
+    }
+
     return (
       <div className={classes.root}>
         <CssBaseline />
@@ -163,8 +204,8 @@ class ResponsiveDrawer extends React.Component {
             </IconButton>
             <MuiThemeProvider theme={mui_theme}>
               <Grid container justify="space-between" >
-                <Button className={classes.logo} color="inherit" noWrap component={Link} to="/">FGAqua</Button>
-                <Button className={classes.logout} color="inherit" noWrap component={Link} to="/logout">Logout</Button>
+                <Button className={classes.logo} color="inherit" component={Link} to="/">FGAqua</Button>
+                {logout_btn}
               </Grid>  
             </MuiThemeProvider>
           </Toolbar>
@@ -197,6 +238,7 @@ class ResponsiveDrawer extends React.Component {
               open
             >
               {drawer}
+              {this.verifica_login}
             </Drawer>
           </Hidden>
         </nav>
