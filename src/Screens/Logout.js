@@ -9,18 +9,14 @@ import {
 import Auth from '../Authentication/Auth';
 
 export default class Logout extends Component {
-
-    login(){
-        Auth.login();
-    }
-
     render(){
+        Auth.logout();
         return(
             <Card >
                 <Grid container spacing={24}>
                     <Grid item xs={6}>
                         <CardContent >
-                            <Typography variant="h2" >Vocẽ foi deslogado com sucesso!</Typography>
+                            <Typography variant="h4" >Você foi deslogado com sucesso!</Typography>
                         </CardContent>
                     </Grid>
                 </Grid>
