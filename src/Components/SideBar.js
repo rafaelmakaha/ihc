@@ -119,7 +119,7 @@ class ResponsiveDrawer extends React.Component {
               <MenuIcon />
             </IconButton>
                 <MuiThemeProvider theme={mui_theme}>
-                    <Button className={classes.logo} color="inherit" noWrap component={Link} to="/">FGAqua</Button>
+                    <Button className={classes.logo} color="inherit" component={Link} to="/">FGAqua</Button>
                 </MuiThemeProvider>
           </Toolbar>
         </AppBar>
@@ -155,8 +155,8 @@ class ResponsiveDrawer extends React.Component {
           </Hidden>
         </nav>
         <main className={classes.content}>
-          <div className={classes.toolbar} />
-           {this.props.children}
+          <div className={classes.toolbar} /> {/*N faz nada*/}
+          {this.props.children}
         </main>
       </div>
     );

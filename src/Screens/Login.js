@@ -42,7 +42,7 @@ export default class Login extends Component {
                                 <TextField id="login_pw" type="password" label="Senha" fullWidth/>
                             </CardContent>
                             <CardContent>
-                                <Button variant="contained" color="secondary" type="login" onClick={this.login}>Login</Button>
+                                <Button variant="contained" color="secondary" type="login" onClick={this.login} >Login</Button>
                             </CardContent>  
                         </CardContent>
                     </Grid>
