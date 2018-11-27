@@ -9,7 +9,7 @@ export default class Home extends Component {
     constructor(props){
         super(props);
         this.state ={
-            open: "",
+            open: false,
         }
         this.openModal = this.openModal.bind(this);
         this.closeModal = this.closeModal.bind(this);
