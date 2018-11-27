@@ -6,8 +6,8 @@ import CartService from '../Services/CartService';
 
 export default class Cart extends Component {
 
-    constructor(props){
-        super(props);
+    constructor(){
+        super();
 
         this.state = {
             list: CartService.getCarts()
@@ -18,7 +18,7 @@ export default class Cart extends Component {
 
 
     removeCart(index,nome){
-        console.log('index = ', index);
+        // console.log('index = ', index);
         let json = {
             nome: nome
         }
@@ -26,11 +26,21 @@ export default class Cart extends Component {
         
         this.setState({
             list: this.state.list.filter((e,i)=>{
+                console.log('i = ', i);
+                console.log('index = ', index);
                 return i !== index
+            }, function(){
+                this.shouldComponentUpdate(()=>{
+                    return true;
+                });
             })
         })
-
+        // this.setState({
+        //     list: s
+        // }) 
+ 
         console.log('this.state.list = ', this.state.list);
+        window.location.reload();
     }
 
     render(){

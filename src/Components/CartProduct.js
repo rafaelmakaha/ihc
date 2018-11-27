@@ -18,7 +18,7 @@ export default class CartProduct extends Component {
             img: this.props.img
         }
 
-        this.removeCart = this.removeCart.bind(this);
+        // this.removeCart = this.removeCart.bind(this);
     }
 
     getImage(image){
@@ -30,18 +30,18 @@ export default class CartProduct extends Component {
         }
     }
 
-    removeCart(){
-        let json = {
-            nome: this.state.nome,
-            preco: this.state.preco,
-            img: this.state.img
-        }
-        CartService.removeCart(json);
-        // this.setState(null);
-        this.setState({
-            list: CartService.getCarts()
-        })
-    }
+    // removeCart(){
+    //     let json = {
+    //         nome: this.state.nome,
+    //         preco: this.state.preco,
+    //         img: this.state.img
+    //     }
+    //     CartService.removeCart(json);
+    //     // this.setState(null);
+    //     this.setState({
+    //         list: CartService.getCarts()
+    //     })
+    // }
     
     render(){
 
@@ -58,7 +58,7 @@ export default class CartProduct extends Component {
             }
         }
 
-        console.log(this.state)
+        // console.log(this.state)
 
         return(
             <Card>

@@ -53,12 +53,14 @@ export default class CartService extends Component {
                     newList.push(element);
                 }
             });
-            newList = JSON.stringify(newList);
+            var newListjson = JSON.stringify(newList);
             console.log('newlist = ',newList);
-            localStorage.setItem('carts',newList);
+            localStorage.setItem('carts',newListjson);
+            // return newList;
         }catch(e){
             console.log("removecart exception");
             this.clearCarts();
+            // return null;
         }
     }
 
