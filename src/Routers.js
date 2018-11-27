@@ -7,7 +7,7 @@ import Login from './Screens/Login';
 import Sobre from './Screens/Sobre';
 import Cart from './Screens/Cart';
 import Ajuda from './Screens/Ajuda';
-
+import Profile from './Screens/Profile';
 
 export default class Routers extends Component {
   render() {
@@ -17,6 +17,10 @@ export default class Routers extends Component {
         <Switch>
           <SideBar>
             <Route exact path='/' component={Home} />
+            <Route exact path='/login' component={Login}/>
+            <Route exact path='/cart' component={Cart}/>
+            <Route exact path='/about' component={Sobre}/>
+            <Route exact path='/help' component={Ajuda}/>
             <Route exact path='/home' render={() => (
               Auth.logged() ? (
                 <Home />
@@ -29,10 +33,18 @@ export default class Routers extends Component {
                 />
               )
             )}/>
-            <Route exact path='/login' component={Login}/>
-            <Route exact path='/cart' component={Cart}/>
-            <Route exact path='/about' component={Sobre}/>
-            <Route exact path='/help' component={Ajuda}/>
+            <Route exact path='/profile' render={() => (
+              Auth.logged() ? (
+                <Profile />
+              ) : (
+                <Redirect
+                  to={{
+                    pathname: '/',
+                    state: { msg: logged_msg }
+                  }}
+                />
+              )
+            )}/>
           </SideBar>
         </Switch>
       </Router>
