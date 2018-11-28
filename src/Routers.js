@@ -10,6 +10,7 @@ import Ajuda from './Screens/Ajuda';
 import Profile from './Screens/Profile';
 import Announce from './Screens/Announce';
 import MyAnnounces from './Screens/MyAnnounces';
+import Payment from './Screens/Payment';
 
 import FiltrosdeBarro from './Screens/VisualizacaoFiltros/FiltrosdeBarro';
 import Purificadores from './Screens/VisualizacaoFiltros/Purificadores';
@@ -52,7 +53,7 @@ export default class Routers extends Component {
               ) : (
                 <Redirect
                   to={{
-                    pathname: '/',
+                    pathname: '/login',
                     state: { msg: logged_msg }
                   }}
                 />
@@ -64,7 +65,7 @@ export default class Routers extends Component {
               ) : (
                 <Redirect
                   to={{
-                    pathname: '/',
+                    pathname: '/login',
                     state: { msg: logged_msg }
                   }}
                 />
@@ -76,7 +77,19 @@ export default class Routers extends Component {
               ) : (
                 <Redirect
                   to={{
-                    pathname: '/',
+                    pathname: '/login',
+                    state: { msg: logged_msg }
+                  }}
+                />
+              )
+            )}/>
+            <Route exact path='/payment' render={() => (
+              Auth.logged() ? (
+                <Payment />
+              ) : (
+                <Redirect
+                  to={{
+                    pathname: '/login',
                     state: { msg: logged_msg }
                   }}
                 />
