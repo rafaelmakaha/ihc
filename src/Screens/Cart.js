@@ -90,7 +90,7 @@ export default class Cart extends Component {
                 {carts}
             </Grid>
             <Grid container direction="column">
-                <Grid container direction="row" spacing={40} alignItems="center">
+                <Grid container direction="row" spacing={32} alignItems="center">
                     <Grid item sm={3}>
                     </Grid>
                     <Grid item sm={3}>
