@@ -49,7 +49,7 @@ export default class CartService extends Component {
 
         try{
             list.forEach(element => {
-                if(element.json.nome !== cart.json.nome){
+                if(element.nome !== cart.nome){
                     newList.push(element);
                 }
             });

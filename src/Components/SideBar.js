@@ -5,6 +5,35 @@ import { createMuiTheme, MuiThemeProvider  } from '@material-ui/core/styles';
 import {Link} from 'react-router-dom';
 import Auth from '../Authentication/Auth';
 import avatar from '../Assets/avatar.svg';
+
+import ExpansionPanel from '@material-ui/core/ExpansionPanel';
+import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
+import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
+import Typography from '@material-ui/core/Typography';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+
+// import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
+import ArrowIcon from '@material-ui/icons/ArrowDownward'
+// import Divider from '@material-ui/core/Divider';
+import InboxIcon from '@material-ui/icons/Inbox';
+import DraftsIcon from '@material-ui/icons/Drafts';
+
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
+
+import ClickAwayListener from '@material-ui/core/ClickAwayListener';
+import Grow from '@material-ui/core/Grow';
+import Paper from '@material-ui/core/Paper';
+import Popper from '@material-ui/core/Popper';
+import MenuList from '@material-ui/core/MenuList';
+
+import MenuBebedouros from './MenuBebedouros';
+
 import {
   Drawer,
   AppBar,
@@ -19,7 +48,11 @@ import {
   Avatar,
   Grid,
 } from '@material-ui/core';
+import MenuFiltros from './MenuFiltros';
 
+function ListItemLink(props) {
+  return <ListItem button component="a" {...props} />;
+}
 
 const drawerWidth = 240;
 
@@ -69,6 +102,8 @@ class ResponsiveDrawer extends React.Component {
     this.state = {
       mobileOpen: false,
       logged: Auth.logged(),
+      openFiltros: false,
+      openBebedouros: false
     };
     Auth.handleLoginAuth = this.handleLogin;
   }
@@ -92,6 +127,47 @@ class ResponsiveDrawer extends React.Component {
     console.log("novo valor de logged: " + this.state.logged);
 
   };
+
+  handleChange = event => {
+    this.setState({ [event.target.name]: event.target.value });
+  };
+//========================================================
+  // handleClose = () => {
+  //   this.setState({ open: false });
+  // };
+  handleToggleFiltros = () => {
+    this.setState(state => ({ openFiltros: !state.openFiltros }));
+  };
+
+  handleToggleBebedouros = () => {
+    this.setState(state => ({ openBebedouros: !state.openBebedouros }));
+  };
+
+  handleCloseFiltros = event => {
+    if (this.anchorEl.contains(event.target)) {
+      return;
+    }
+    this.setState({ 
+      openFiltros: false,
+    });
+  };
+
+  handleCloseBebedouros = event => {
+    if (this.anchorEl.contains(event.target)) {
+      return;
+    }
+    this.setState({ 
+      openBebedouros: false,
+    });
+  };
+
+
+  // handleOpen = () => {
+  //   this.setState({ 
+  //     openFiltros: true,
+  //     // openBebedouros: true
+  //   });
+  // };
 
   render() {
     const { classes, theme } = this.props;
@@ -186,7 +262,7 @@ class ResponsiveDrawer extends React.Component {
     var logout_btn;
     if (this.state.logged === 'true'){
       logout_btn = (
-        <Button className={classes.logout} color="inherit" onClick={this.handleLogout} component={Link} to="/">Logout</Button>
+        <Button className={classes.logout} color="inherit" onClick={this.handleLogout} component={Link} to="/">Sair</Button>
       );
     }else {
       logout_btn = null;
@@ -206,10 +282,16 @@ class ResponsiveDrawer extends React.Component {
             <MenuIcon />
             </IconButton>
             <MuiThemeProvider theme={mui_theme}>
-              <Grid container justify="space-between" >
+              <Grid container > {/* justify="space-between" */}
                 <Button className={classes.logo} color="inherit" component={Link} to="/">FGAqua</Button>
-                {logout_btn}
+
+                <MenuFiltros />
+                <MenuBebedouros />
+
               </Grid>  
+
+              {logout_btn}
+
             </MuiThemeProvider>
           </Toolbar>
         </AppBar>

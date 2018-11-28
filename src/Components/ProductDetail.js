@@ -15,9 +15,6 @@ export default class ProductDetail extends Component {
         this.state = {
             json: this.props.json
         }
-
-        console.log('state = ',this.state);
-        // this.removeCart = this.removeCart.bind(this);
     }
 
     getImage(image){
