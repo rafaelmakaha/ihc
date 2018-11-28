@@ -68,9 +68,8 @@ class ResponsiveDrawer extends React.Component {
     super(props);
     this.state = {
       mobileOpen: false,
-      logged: false,
+      logged: Auth.logged(),
     };
-    Auth.logout();
     Auth.handleLoginAuth = this.handleLogin;
   }
 
@@ -88,7 +87,7 @@ class ResponsiveDrawer extends React.Component {
 
   handleLogin = () => {
     Auth.login();
-    this.setState({logged: true});
+    this.setState({logged: 'true'});
     console.log("login chamado");
     console.log("novo valor de logged: " + this.state.logged);
 
@@ -120,7 +119,8 @@ class ResponsiveDrawer extends React.Component {
     })
 
     var drawer;
-    if (this.state.logged === false){
+
+    if (this.state.logged === 'false'){
       console.log("primeiro caso: " + this.state.logged);
       drawer = (
         <div>
@@ -145,7 +145,7 @@ class ResponsiveDrawer extends React.Component {
         </div>
       )
     }else{
-      console.log(Auth.logged());
+      console.log('segundo caso = ',Auth.logged());
       drawer = (
         <div>
           <div className={classes.toolbar} />
@@ -184,7 +184,7 @@ class ResponsiveDrawer extends React.Component {
     }
 
     var logout_btn;
-    if (this.state.logged === true){
+    if (this.state.logged === 'true'){
       logout_btn = (
         <Button className={classes.logout} color="inherit" onClick={this.handleLogout} component={Link} to="/">Logout</Button>
       );

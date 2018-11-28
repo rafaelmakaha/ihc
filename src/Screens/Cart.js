@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Typography, Grid } from '@material-ui/core';
+import { Typography, Grid } from '@material-ui/core';
 import CartProduct from '../Components/CartProduct';
 import CartService from '../Services/CartService';
 
@@ -46,10 +46,11 @@ export default class Cart extends Component {
     render(){
         var carts;
         if(this.state.list !== null && this.state.list !== ''){
-            carts = this.state.list.map((carts, i) => {
+            carts = this.state.list.map((json, i) => {
+                console.log('json ==== ', json);
                 return(
                     <Grid item>
-                        <CartProduct nome={carts.nome} preco={carts.preco} img={carts.img} removeCart={this.removeCart.bind(this,i,carts.nome)} />                
+                        <CartProduct json={json} removeCart={this.removeCart.bind(this,i,json.nome)} />                
                     </Grid>
                 )
             });
