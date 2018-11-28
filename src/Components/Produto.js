@@ -14,7 +14,6 @@ export default class Produto extends Component {
     constructor(props){
         super(props);
         this.state = {
-
             open: false,
             json: this.props.json
         }
@@ -33,13 +32,13 @@ export default class Produto extends Component {
 
     sendToCart(state){
         console.log("SEND TO CART");
-        let json = {
-            nome: this.state.json.nome,
-            preco: this.state.json.preco,
-            img: this.state.json.img
-        }
-        console.log('json = ', json)
-        CartService.addCart(json);
+        // let json = {
+        //     nome: this.state.json.nome,
+        //     preco: this.state.json.preco,
+        //     img: this.state.json.img
+        // }
+        // console.log('json = ', json)
+        CartService.addCart(this.state.json);
     }
 
     getImage(image){

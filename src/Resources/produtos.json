@@ -42,7 +42,8 @@
             "img": "",
             "local": "",
             "descricao": "",
-            "tipo": "Novo"
+            "tipo": "Novo",
+            "inclui": ""
         },
         {
             "nome":"Produto 6",
