@@ -4,6 +4,10 @@ import MenuIcon from '@material-ui/icons/Menu';
 import { createMuiTheme, MuiThemeProvider  } from '@material-ui/core/styles';
 import {Link} from 'react-router-dom';
 import Auth from '../Authentication/Auth';
+import avatar from '../Assets/avatar.svg';
+
+import MenuBebedouros from './MenuBebedouros';
+
 import {
   Drawer,
   AppBar,
@@ -18,7 +22,7 @@ import {
   Avatar,
   Grid,
 } from '@material-ui/core';
-
+import MenuFiltros from './MenuFiltros';
 
 const drawerWidth = 240;
 
@@ -37,6 +41,7 @@ const styles = theme => ({
     [theme.breakpoints.up('sm')]: {
       width: `calc(100% - ${drawerWidth}px)`,
     },
+    backgroundColor: '#6700EE',
   },
   menuButton: {
     marginRight: 20,
@@ -59,13 +64,6 @@ const styles = theme => ({
   logout: {
     display: 'right',
   },
-  overrides: {
-    Button: {
-      raisedPrimary: {
-        color: 'white',
-      }
-    }    
-  }
 });
 
 class ResponsiveDrawer extends React.Component {
@@ -73,25 +71,16 @@ class ResponsiveDrawer extends React.Component {
     super(props);
     this.state = {
       mobileOpen: false,
-      logged: false,
+      logged: Auth.logged(),
+      openFiltros: false,
+      openBebedouros: false
     };
-    Auth.logout();
     Auth.handleLoginAuth = this.handleLogin;
   }
 
   handleDrawerToggle = () => {
     this.setState(state => ({ mobileOpen: !state.mobileOpen }));
   };
-
-  // verifica_login(){
-  //   if(Auth.logged() && this.state.logged == false){
-  //     this.setState({logged: true});
-  //     console.log("Entrei");
-  //   }else if (!Auth.logged() && this.state.logged == true){
-  //     this.setState({logged: false});
-  //     console.log("Entrei2");
-  //   }
-  // }
 
   handleLogout = () => {
     Auth.logout();
@@ -103,88 +92,147 @@ class ResponsiveDrawer extends React.Component {
 
   handleLogin = () => {
     Auth.login();
-    this.setState({logged: true});
+    this.setState({logged: 'true'});
     console.log("login chamado");
     console.log("novo valor de logged: " + this.state.logged);
 
   };
+
+  handleChange = event => {
+    this.setState({ [event.target.name]: event.target.value });
+  };
+//========================================================
+  // handleClose = () => {
+  //   this.setState({ open: false });
+  // };
+  handleToggleFiltros = () => {
+    this.setState(state => ({ openFiltros: !state.openFiltros }));
+  };
+
+  handleToggleBebedouros = () => {
+    this.setState(state => ({ openBebedouros: !state.openBebedouros }));
+  };
+
+  handleCloseFiltros = event => {
+    if (this.anchorEl.contains(event.target)) {
+      return;
+    }
+    this.setState({ 
+      openFiltros: false,
+    });
+  };
+
+  handleCloseBebedouros = event => {
+    if (this.anchorEl.contains(event.target)) {
+      return;
+    }
+    this.setState({ 
+      openBebedouros: false,
+    });
+  };
+
+
+  // handleOpen = () => {
+  //   this.setState({ 
+  //     openFiltros: true,
+  //     // openBebedouros: true
+  //   });
+  // };
 
   render() {
     const { classes, theme } = this.props;
     const mui_theme = createMuiTheme ({
         overrides: {
             MuiFormLabel: {
-                root: {
-                    color: 'red',
-                },
-                disabled: {
-                    '&$disabled': {color: 'black'},
-                },
+              root: {
+                  color: 'red',
+              },
+              disabled: {
+                  '&$disabled': {color: 'black'},
+              },
             },
+            MuiButton: {
+              root: {
+                color: '#E1E7E4',
+              },
+            },
+            MuiDivider: {
+              root: {
+                backgroundColor: '#E1E7E4',
+              }
+            }
         }
     })
 
     var drawer;
-    if (this.state.logged === false){
+
+    if (this.state.logged === 'false'){
       console.log("primeiro caso: " + this.state.logged);
       drawer = (
         <div>
           <div className={classes.toolbar} />
-          <Divider light={true} />
-          <List>
-            <Button className={classes.overrides} fullWidth size="small" color="secondary" component={Link} to='/login'>Entrar/Cadastrar</Button>
-          </List>
-          <List>
-            <Button className={classes.overrides} fullWidth size="small" color="secondary" component={Link} to='/cart'>Carrinho</Button>
-          </List>
-          <Divider light={true} />
-          <List>
-            <Button className={classes.overrides} fullWidth size="small" color="secondary" component={Link} to="/about">Sobre</Button>
-          </List>
-          <List>
-            <Button className={classes.overrides} fullWidth size="small" color="secondary" component={Link} to="/help">Ajuda</Button> 
-          </List>
-          <Divider light={true}/>
+          <MuiThemeProvider theme={mui_theme}>
+            <Divider />
+            <List>
+              <Button fullWidth size="small" component={Link} to='/login'>Entrar/Cadastrar</Button>
+            </List>
+            <List>
+              <Button fullWidth size="small" component={Link} to='/cart'>Carrinho</Button>
+            </List>
+            <Divider />
+            <List>
+              <Button fullWidth size="small" component={Link} to="/about">Sobre</Button>
+            </List>
+            <List>
+              <Button fullWidth size="small" component={Link} to="/help">Ajuda</Button> 
+            </List>
+            <Divider/>
+          </MuiThemeProvider>
         </div>
       )
     }else{
-      console.log(Auth.logged());
+      console.log('segundo caso = ',Auth.logged());
       drawer = (
         <div>
           <div className={classes.toolbar} />
-          <Divider light={true} />
-          <List>
-            <Button className={classes.overrides} fullWidth size="small" color="secondary" component={Link} to='/profile'>Perfil</Button>
-          </List>
-          <List>
-            <Button className={classes.overrides} fullWidth size="small" color="secondary" component={Link} to='/cart'>Carrinho</Button>
-          </List>
-          <List>
-            <Button className={classes.overrides} fullWidth size="small" color="secondary" component={Link} to='/my_purchases'>Minhas Compras</Button>
-          </List>
-          <Divider light={true} />
-          <List>
-            <Button className={classes.overrides} fullWidth size="small" color="secondary" component={Link} to='/announce'>Anunciar</Button>
-          </List>
-          <List>
-            <Button className={classes.overrides} fullWidth size="small" color="secondary" component={Link} to='/my_announces'>Meus Anúncios</Button>
-          </List>
-          <Divider light={true} />
-          <List>
-            <Button className={classes.overrides} fullWidth size="small" color="secondary" component={Link} to="/about">Sobre</Button>
-          </List>
-          <List>
-            <Button className={classes.overrides} fullWidth size="small" color="secondary" component={Link} to="/help">Ajuda</Button> 
-          </List>
-          <Divider light={true}/>
+          <MuiThemeProvider theme={mui_theme}>
+            <Button fullWidth component={Link} to='/profile'>
+              <Avatar src={avatar} />
+            </Button>
+            <Divider />
+            <List>
+              <Button fullWidth size="small" component={Link} to='/profile'>Perfil</Button>
+            </List>
+            <List>
+              <Button fullWidth size="small" component={Link} to='/cart'>Carrinho</Button>
+            </List>
+            <List>
+              <Button fullWidth size="small" component={Link} to='/my_purchases'>Minhas Compras</Button>
+            </List>
+            <Divider />
+            <List>
+              <Button fullWidth size="small" component={Link} to='/announce'>Anunciar</Button>
+            </List>
+            <List>
+              <Button fullWidth size="small" component={Link} to='/my_announces'>Meus Anúncios</Button>
+            </List>
+            <Divider />
+            <List>
+              <Button fullWidth size="small" component={Link} to="/about">Sobre</Button>
+            </List>
+            <List>
+              <Button fullWidth size="small" component={Link} to="/help">Ajuda</Button> 
+            </List>
+            <Divider/>
+          </MuiThemeProvider>
         </div>
       )
     }
 
     var logout_btn;
-    if (this.state.logged === true){
+    if (this.state.logged === 'true'){
       logout_btn = (
-        <Button className={classes.logout} color="inherit" onClick={this.handleLogout} component={Link} to="/">Logout</Button>
+        <Button className={classes.logout} color="inherit" onClick={this.handleLogout} component={Link} to="/">Sair</Button>
       );
     }else {
       logout_btn = null;
@@ -204,10 +252,16 @@ class ResponsiveDrawer extends React.Component {
             <MenuIcon />
             </IconButton>
             <MuiThemeProvider theme={mui_theme}>
-              <Grid container justify="space-between" >
+              <Grid container > {/* justify="space-between" */}
                 <Button className={classes.logo} color="inherit" component={Link} to="/">FGAqua</Button>
-                {logout_btn}
+
+                <MenuFiltros />
+                <MenuBebedouros />
+
               </Grid>  
+
+              {logout_btn}
+
             </MuiThemeProvider>
           </Toolbar>
         </AppBar>
@@ -244,8 +298,8 @@ class ResponsiveDrawer extends React.Component {
           </Hidden>
         </nav>
         <main className={classes.content}>
-          <div className={classes.toolbar} />
-           {this.props.children}
+          <div className={classes.toolbar} /> {/*N faz nada*/}
+          {this.props.children}
         </main>
       </div>
     );

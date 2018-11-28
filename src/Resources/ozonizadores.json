@@ -1,0 +1,58 @@
+{
+    "ozonizadores": [
+        {
+            "nome":"Ozonizador Superzon",
+            "preco": "10,00",
+            "img": "ozonizador_0",
+            "local": "FGA",
+            "descricao": "Melhor bebedouro",
+            "tipo": "Novo",
+            "inclui": ["- 1 ozonizador"]
+        },
+        {
+            "nome":"Ozonizador 2",
+            "preco": "11,00",
+            "img": "ozonizador_0",
+            "local": "",
+            "descricao": "",
+            "tipo": "Novo",
+            "inclui": ""
+        },
+        {
+            "nome":"Ozonizador 3",
+            "preco": "12,00",
+            "img": "ozonizador_0",
+            "local": "",
+            "descricao": "",
+            "tipo": "Novo",
+            "inclui": ""
+        },
+        {
+            "nome":"Ozonizador 4",
+            "preco": "13,00",
+            "img": "ozonizador_0",
+            "local": "",
+            "descricao": "",
+            "tipo": "Novo",
+            "inclui": ""
+        },
+        {
+            "nome":"Ozonizador 5",
+            "preco": "14,00",
+            "img": "ozonizador_0",
+            "local": "",
+            "descricao": "",
+            "tipo": "Novo",
+            "inclui": ""
+        },
+        {
+            "nome":"Ozonizador 6",
+            "preco": "15,00",
+            "img": "ozonizador_0",
+            "local": "",
+            "descricao": "",
+            "tipo": "Novo",
+            "inclui": ""
+        }
+    ]
+}

@@ -1,0 +1,58 @@
+{
+    "filtros_barro": [
+        {
+            "nome":"Filtro de Barro 1",
+            "preco": "22,00",
+            "img": "filtro_barro",
+            "local": "FGA",
+            "descricao": "Melhor bebedouro",
+            "tipo": "Novo",
+            "inclui": ["- 1 filtro", "- 1 vela"]
+        },
+        {
+            "nome":"Filtro de Barro 2",
+            "preco": "21,00",
+            "img": "filtro_barro",
+            "local": "",
+            "descricao": "",
+            "tipo": "Novo",
+            "inclui": ""
+        },
+        {
+            "nome":"Filtro de Barro 3",
+            "preco": "20,00",
+            "img": "filtro_barro",
+            "local": "",
+            "descricao": "",
+            "tipo": "Novo",
+            "inclui": ""
+        },
+        {
+            "nome":"Filtro de Barro 4",
+            "preco": "19,00",
+            "img": "filtro_barro",
+            "local": "",
+            "descricao": "",
+            "tipo": "Novo",
+            "inclui": ""
+        },
+        {
+            "nome":"Filtro de Barro 5",
+            "preco": "18,00",
+            "img": "filtro_barro",
+            "local": "",
+            "descricao": "",
+            "tipo": "Novo",
+            "inclui": ""
+        },
+        {
+            "nome":"Filtro de Barro 6",
+            "preco": "17,00",
+            "img": "filtro_barro",
+            "local": "",
+            "descricao": "",
+            "tipo": "Novo",
+            "inclui": ""
+        }
+    ]
+}

@@ -1,0 +1,58 @@
+{
+    "purificadores": [
+        {
+            "nome":"Purificador Everest Soft Plus 127v",
+            "preco": "22,99",
+            "img": "purificador_0",
+            "local": "FGA",
+            "descricao": "Melhor bebedouro",
+            "tipo": "Novo",
+            "inclui": ["- 1 filtro"]
+        },
+        {
+            "nome":"Purificador 2",
+            "preco": "13,99",
+            "img": "purificador_0",
+            "local": "",
+            "descricao": "",
+            "tipo": "Novo",
+            "inclui": ""
+        },
+        {
+            "nome":"Purificador 3",
+            "preco": "14,99",
+            "img": "purificador_0",
+            "local": "",
+            "descricao": "",
+            "tipo": "Novo",
+            "inclui": ""
+        },
+        {
+            "nome":"Purificador 4",
+            "preco": "15,99",
+            "img": "purificador_0",
+            "local": "",
+            "descricao": "",
+            "tipo": "Novo",
+            "inclui": ""
+        },
+        {
+            "nome":"Purificador 5",
+            "preco": "16,99",
+            "img": "purificador_0",
+            "local": "",
+            "descricao": "",
+            "tipo": "Novo",
+            "inclui": ""
+        },
+        {
+            "nome":"Purificador 6",
+            "preco": "17,99",
+            "img": "purificador_0",
+            "local": "",
+            "descricao": "",
+            "tipo": "Novo",
+            "inclui": ""
+        }
+    ]
+}
