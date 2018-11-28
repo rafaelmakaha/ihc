@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { Grid } from '@material-ui/core';
+import { Grid, Typography, Button } from '@material-ui/core';
+import { createMuiTheme, MuiThemeProvider  } from '@material-ui/core/styles';
+import green from '@material-ui/core/colors/green';
 import CartProduct from '../Components/CartProduct';
 import CartService from '../Services/CartService';
 
@@ -53,13 +55,51 @@ export default class Cart extends Component {
 
         }
 
+        const mui_theme = createMuiTheme ({
+            palette: {
+                primary: green,
+            }
+        })
+
         return (
         <div>
-            <Grid container>
+            <Grid container direction="column">
+                <Grid container direction="row" spacing={40} alignItems="center">
+                    <Grid item sm={2}>
+                    </Grid>
+                    <Grid item sm={2}>
+                        <Typography variant="h5">Nome</Typography>
+                    </Grid>
+                    <Grid item sm={2}>
+                        <Typography variant="h5">Valor</Typography>
+                    </Grid>
+                    <Grid item sm={2}>
+                        <Typography variant="h5">Detalhes</Typography>
+                    </Grid>
+                    <Grid item sm={2}>
+                        <Typography variant="h5">Remover</Typography>
+                    </Grid>
+                </Grid>
+            </Grid>
+            <Grid container direction="column">
                 {/* <Grid item>
                     <CartProduct nome="Testado" preco="49" img="filtro_barro"/>
                 </Grid> */}
                 {carts}
+            </Grid>
+            <Grid container direction="column">
+                <Grid container direction="row" spacing={40} alignItems="center">
+                    <Grid item sm={3}>
+                    </Grid>
+                    <Grid item sm={3}>
+                        <Typography variant="h5">Total: </Typography>
+                    </Grid>
+                    <Grid item sm={3}>
+                        <MuiThemeProvider theme={mui_theme}>
+                            <Button variant="contained" color="primary">Finalizar Compra</Button>
+                        </MuiThemeProvider>
+                    </Grid>
+                </Grid>
             </Grid>
         </div>
         )

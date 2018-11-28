@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Card from '@material-ui/core/Card';
 import Typography from '@material-ui/core/Typography';
-import { CardContent, CardMedia, Button } from '@material-ui/core';
+import { CardContent, CardMedia, Button, Grid } from '@material-ui/core';
+import { createMuiTheme, MuiThemeProvider  } from '@material-ui/core/styles';
 import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
 import CustomizedModal from './CustomizedModal';
@@ -52,10 +53,10 @@ export default class CartProduct extends Component {
     
     render(){
 
-    const styles = {
+        const styles = {
             image: {
-                height: 100,
-                width: 100
+                height: 45,
+                width: 45
             },
             card: {
                 minWidth: 1000
@@ -70,27 +71,42 @@ export default class CartProduct extends Component {
         return(
             <Card>
                 <CardContent >
-                    <CardMedia style={styles.image} image={this.getImage(this.state.json.img)} title="Teste" >
-                        {/* <img alt="nao tem" src={require('../Assets/filtro_barro.jpg')} /> ESSA APARECE */} 
-                        {/* <img alt="nao tem" width="20" height="20" src={'../Assets/filtro_barro.jpg'} /> */}
-                    </CardMedia>
+                    <Grid container direction="row" spacing={40} alignItems="center">
+                        <Grid item sm={2}>
+                            <CardMedia style={styles.image} image={this.getImage(this.state.json.img)} title="Teste" >
+                                {/* <img alt="nao tem" src={require('../Assets/filtro_barro.jpg')} /> ESSA APARECE */} 
+                                {/* <img alt="nao tem" width="20" height="20" src={'../Assets/filtro_barro.jpg'} /> */}
+                            </CardMedia>
+                        </Grid>    
 
-                    <Typography variant="body1">
-                        {this.state.json.nome}
-                    </Typography>
-                    <Typography variant="h6" >
-                        R$: {this.state.json.preco}
-                    </Typography>
-                    
-                    <Button variant="contained" color="primary" size="small" onClick={this.openModal} >Detalhes</Button>
+                        <Grid item sm={2}>
+                            <Typography variant="body1">
+                                {this.state.json.nome}
+                            </Typography>
+                        </Grid>
 
-                    <IconButton aria-label="Delete" size="small" onClick={this.props.removeCart} >
-                        <DeleteIcon fontSize="small" />
-                    </IconButton>
+                        <Grid item sm={2}>
+                            <Typography variant="h6" >
+                                R$: {this.state.json.preco}
+                            </Typography>
+                        </Grid>
+                        
+                        <Grid item sm={2}>
+                            <Button variant="contained" color="primary" size="small" onClick={this.openModal} >Detalhes</Button>
+                        </Grid>
 
-                    <CustomizedModal open={this.state.open} onClose={this.closeModal}>
-                        <ProductDetail json={this.state.json} />
-                    </CustomizedModal>
+                        <Grid item sm={2}>
+
+                            <IconButton aria-label="Delete" size="small" onClick={this.props.removeCart} >
+                                <DeleteIcon fontSize="small" />
+                            </IconButton>
+
+                            <CustomizedModal open={this.state.open} onClose={this.closeModal}>
+                                <ProductDetail json={this.state.json} />
+                            </CustomizedModal>
+                        </Grid>
+
+                    </Grid>
                 </CardContent>
             </Card >
         )
