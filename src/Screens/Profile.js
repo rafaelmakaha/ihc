@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
 import Card from '@material-ui/core/Card';
-import {Link} from 'react-router-dom';
 import { 
     CardContent,
     Typography,
-    Button,
-    TextField,
     Grid,
 } from '@material-ui/core';
 import Auth from '../Authentication/Auth';

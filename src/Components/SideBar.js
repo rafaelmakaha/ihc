@@ -6,32 +6,6 @@ import {Link} from 'react-router-dom';
 import Auth from '../Authentication/Auth';
 import avatar from '../Assets/avatar.svg';
 
-import ExpansionPanel from '@material-ui/core/ExpansionPanel';
-import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
-import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
-import Typography from '@material-ui/core/Typography';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-
-// import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import ArrowIcon from '@material-ui/icons/ArrowDownward'
-// import Divider from '@material-ui/core/Divider';
-import InboxIcon from '@material-ui/icons/Inbox';
-import DraftsIcon from '@material-ui/icons/Drafts';
-
-import InputLabel from '@material-ui/core/InputLabel';
-import MenuItem from '@material-ui/core/MenuItem';
-import FormControl from '@material-ui/core/FormControl';
-import Select from '@material-ui/core/Select';
-
-import ClickAwayListener from '@material-ui/core/ClickAwayListener';
-import Grow from '@material-ui/core/Grow';
-import Paper from '@material-ui/core/Paper';
-import Popper from '@material-ui/core/Popper';
-import MenuList from '@material-ui/core/MenuList';
-
 import MenuBebedouros from './MenuBebedouros';
 
 import {
@@ -49,10 +23,6 @@ import {
   Grid,
 } from '@material-ui/core';
 import MenuFiltros from './MenuFiltros';
-
-function ListItemLink(props) {
-  return <ListItem button component="a" {...props} />;
-}
 
 const drawerWidth = 240;
 

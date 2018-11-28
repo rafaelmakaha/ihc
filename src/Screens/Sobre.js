@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-import {Typography, Grid } from '@material-ui/core/';
-import Produto from '../Components/Produto';
-
 
 export default class Sobre extends Component {
     render(){

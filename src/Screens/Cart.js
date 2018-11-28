@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Typography, Grid } from '@material-ui/core';
+import { Grid } from '@material-ui/core';
 import CartProduct from '../Components/CartProduct';
 import CartService from '../Services/CartService';
 
