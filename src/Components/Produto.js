@@ -2,13 +2,19 @@ import React, { Component } from 'react';
 import Card from '@material-ui/core/Card';
 import Typography from '@material-ui/core/Typography';
 import { CardContent, CardMedia, Button, Grid } from '@material-ui/core';
-import filtro_barro from '../Assets/filtro_barro.jpg'
 import CartService from '../Services/CartService';
 import IconButton from '@material-ui/core/IconButton';
 import AddIcon from '@material-ui/icons/Add';
 import ShoppingCart from '@material-ui/icons/ShoppingCart';
 import ProductDetail from './ProductDetail';
 import CustomizedModal from './CustomizedModal';
+
+//IMAGENS
+import filtro_barro from '../Assets/filtro_barro.jpg'
+import ozonizador_0 from '../Assets/ozonizador_0.png'
+import purificador_0 from '../Assets/purificador_0.jpg'
+import bebedouro_galao_0 from '../Assets/bebedouro_galao_0.jpg'
+import bebedouro_pressao_0 from '../Assets/bebedouro_pressao_0.jpg'
 
 export default class Produto extends Component {
     constructor(props){
@@ -17,7 +23,6 @@ export default class Produto extends Component {
             open: false,
             json: this.props.json
         }
-        console.log('json no produto = ', this.state.json);
         this.sendToCart = this.sendToCart.bind(this);
         this.openModal = this.openModal.bind(this);
         this.closeModal = this.closeModal.bind(this);
@@ -32,12 +37,7 @@ export default class Produto extends Component {
 
     sendToCart(state){
         console.log("SEND TO CART");
-        // let json = {
-        //     nome: this.state.json.nome,
-        //     preco: this.state.json.preco,
-        //     img: this.state.json.img
-        // }
-        // console.log('json = ', json)
+     
         CartService.addCart(this.state.json);
     }
 
@@ -45,6 +45,14 @@ export default class Produto extends Component {
         switch(image){
             case 'filtro_barro':
                 return filtro_barro;
+            case 'ozonizador_0':
+                return ozonizador_0;
+            case 'purificador_0':
+                return purificador_0;
+            case 'bebedouro_galao_0':
+                return bebedouro_galao_0;
+            case 'bebedouro_pressao_0':
+                return bebedouro_pressao_0;
             default:
                 return null;
         }
@@ -68,7 +76,7 @@ export default class Produto extends Component {
                         {this.state.json.nome}
                     </Typography>
                     <Typography variant="h6">
-                        R$: {this.state.json.preco},00
+                        R$: {this.state.json.preco}
                     </Typography>
                     
                     <Grid container spacing={24}>

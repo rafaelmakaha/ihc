@@ -1,54 +1,54 @@
 {
-    "produtos": [
+    "bebedouros_galao": [
         {
-            "nome":"Produto 1",
+            "nome":"Bebedouro Esmaltec EGC35B",
             "preco": "22,00",
-            "img": "filtro_barro",
+            "img": "bebedouro_galao_0",
             "local": "FGA",
             "descricao": "Melhor bebedouro",
             "tipo": "Novo",
             "inclui": ["- 1 filtro", "- 1 vela"]
         },
         {
-            "nome":"Produto 2",
+            "nome":"Bebedouro de Galão 2",
             "preco": "21,00",
-            "img": "ozonizador_0",
+            "img": "bebedouro_galao_0",
             "local": "",
             "descricao": "",
             "tipo": "Novo",
             "inclui": ""
         },
         {
-            "nome":"Produto 3",
+            "nome":"Bebedouro de Galão 3",
             "preco": "20,00",
-            "img": "purificador_0",
+            "img": "bebedouro_galao_0",
             "local": "",
             "descricao": "",
             "tipo": "Novo",
             "inclui": ""
         },
         {
-            "nome":"Produto 4",
-            "preco": "22,00",
-            "img": "filtro_barro",
+            "nome":"Bebedouro de Galão 4",
+            "preco": "19,00",
+            "img": "bebedouro_galao_0",
             "local": "",
             "descricao": "",
             "tipo": "Novo",
             "inclui": ""
         },
         {
-            "nome":"Produto 5",
-            "preco": "21,00",
-            "img": "ozonizador_0",
+            "nome":"Bebedouro de Galão 5",
+            "preco": "18,00",
+            "img": "bebedouro_galao_0",
             "local": "",
             "descricao": "",
             "tipo": "Novo",
             "inclui": ""
         },
         {
-            "nome":"Produto 6",
-            "preco": "20,00",
-            "img": "purificador_0",
+            "nome":"Bebedouro de Galão 6",
+            "preco": "17,00",
+            "img": "bebedouro_galao_0",
             "local": "",
             "descricao": "",
             "tipo": "Novo",

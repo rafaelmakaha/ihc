@@ -24,17 +24,13 @@ export default class Cart extends Component {
         }
         CartService.removeCart(json);
         
-        this.setState({
-            list: this.state.list.filter((e,i)=>{
-                console.log('i = ', i);
-                console.log('index = ', index);
-                return i !== index
-            }, function(){
-                this.shouldComponentUpdate(()=>{
-                    return true;
-                });
-            })
-        })
+        // this.setState({
+        //     list: this.state.list.filter((e,i)=>{
+        //         console.log('i = ', i);
+        //         console.log('index = ', index);
+        //         return i !== index;
+        //     }
+        // })
         // this.setState({
         //     list: s
         // }) 
@@ -59,7 +55,6 @@ export default class Cart extends Component {
 
         return (
         <div>
-            <Typography> Teste </Typography>
             <Grid container>
                 {/* <Grid item>
                     <CartProduct nome="Testado" preco="49" img="filtro_barro"/>

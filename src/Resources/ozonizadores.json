@@ -1,17 +1,17 @@
 {
-    "produtos": [
+    "ozonizadores": [
         {
-            "nome":"Produto 1",
-            "preco": "22,00",
-            "img": "filtro_barro",
+            "nome":"Ozonizador Superzon",
+            "preco": "10,00",
+            "img": "ozonizador_0",
             "local": "FGA",
             "descricao": "Melhor bebedouro",
             "tipo": "Novo",
             "inclui": ["- 1 filtro", "- 1 vela"]
         },
         {
-            "nome":"Produto 2",
-            "preco": "21,00",
+            "nome":"Ozonizador 2",
+            "preco": "11,00",
             "img": "ozonizador_0",
             "local": "",
             "descricao": "",
@@ -19,26 +19,8 @@
             "inclui": ""
         },
         {
-            "nome":"Produto 3",
-            "preco": "20,00",
-            "img": "purificador_0",
-            "local": "",
-            "descricao": "",
-            "tipo": "Novo",
-            "inclui": ""
-        },
-        {
-            "nome":"Produto 4",
-            "preco": "22,00",
-            "img": "filtro_barro",
-            "local": "",
-            "descricao": "",
-            "tipo": "Novo",
-            "inclui": ""
-        },
-        {
-            "nome":"Produto 5",
-            "preco": "21,00",
+            "nome":"Ozonizador 3",
+            "preco": "12,00",
             "img": "ozonizador_0",
             "local": "",
             "descricao": "",
@@ -46,9 +28,27 @@
             "inclui": ""
         },
         {
-            "nome":"Produto 6",
-            "preco": "20,00",
-            "img": "purificador_0",
+            "nome":"Ozonizador 4",
+            "preco": "13,00",
+            "img": "ozonizador_0",
+            "local": "",
+            "descricao": "",
+            "tipo": "Novo",
+            "inclui": ""
+        },
+        {
+            "nome":"Ozonizador 5",
+            "preco": "14,00",
+            "img": "ozonizador_0",
+            "local": "",
+            "descricao": "",
+            "tipo": "Novo",
+            "inclui": ""
+        },
+        {
+            "nome":"Ozonizador 6",
+            "preco": "15,00",
+            "img": "ozonizador_0",
             "local": "",
             "descricao": "",
             "tipo": "Novo",

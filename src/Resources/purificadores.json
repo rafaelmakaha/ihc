@@ -1,26 +1,17 @@
 {
-    "produtos": [
+    "purificadores": [
         {
-            "nome":"Produto 1",
-            "preco": "22,00",
-            "img": "filtro_barro",
+            "nome":"Purificador Everest Soft Plus 127v",
+            "preco": "22,99",
+            "img": "purificador_0",
             "local": "FGA",
             "descricao": "Melhor bebedouro",
             "tipo": "Novo",
-            "inclui": ["- 1 filtro", "- 1 vela"]
+            "inclui": ["- 1 filtro"]
         },
         {
-            "nome":"Produto 2",
-            "preco": "21,00",
-            "img": "ozonizador_0",
-            "local": "",
-            "descricao": "",
-            "tipo": "Novo",
-            "inclui": ""
-        },
-        {
-            "nome":"Produto 3",
-            "preco": "20,00",
+            "nome":"Purificador 2",
+            "preco": "13,99",
             "img": "purificador_0",
             "local": "",
             "descricao": "",
@@ -28,26 +19,35 @@
             "inclui": ""
         },
         {
-            "nome":"Produto 4",
-            "preco": "22,00",
-            "img": "filtro_barro",
+            "nome":"Purificador 3",
+            "preco": "14,99",
+            "img": "purificador_0",
             "local": "",
             "descricao": "",
             "tipo": "Novo",
             "inclui": ""
         },
         {
-            "nome":"Produto 5",
-            "preco": "21,00",
-            "img": "ozonizador_0",
+            "nome":"Purificador 4",
+            "preco": "15,99",
+            "img": "purificador_0",
             "local": "",
             "descricao": "",
             "tipo": "Novo",
             "inclui": ""
         },
         {
-            "nome":"Produto 6",
-            "preco": "20,00",
+            "nome":"Purificador 5",
+            "preco": "16,99",
+            "img": "purificador_0",
+            "local": "",
+            "descricao": "",
+            "tipo": "Novo",
+            "inclui": ""
+        },
+        {
+            "nome":"Purificador 6",
+            "preco": "17,99",
             "img": "purificador_0",
             "local": "",
             "descricao": "",
