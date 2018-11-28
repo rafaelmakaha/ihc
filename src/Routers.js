@@ -8,6 +8,8 @@ import Sobre from './Screens/Sobre';
 import Cart from './Screens/Cart';
 import Ajuda from './Screens/Ajuda';
 import Profile from './Screens/Profile';
+import Announce from './Screens/Announce';
+import MyAnnounces from './Screens/MyAnnounces';
 
 export default class Routers extends Component {
   render() {
@@ -36,6 +38,30 @@ export default class Routers extends Component {
             <Route exact path='/profile' render={() => (
               Auth.logged() ? (
                 <Profile />
+              ) : (
+                <Redirect
+                  to={{
+                    pathname: '/',
+                    state: { msg: logged_msg }
+                  }}
+                />
+              )
+            )}/>
+            <Route exact path='/announce' render={() => (
+              Auth.logged() ? (
+                <Announce />
+              ) : (
+                <Redirect
+                  to={{
+                    pathname: '/',
+                    state: { msg: logged_msg }
+                  }}
+                />
+              )
+            )}/>
+            <Route exact path='/my_announces' render={() => (
+              Auth.logged() ? (
+                <MyAnnounces />
               ) : (
                 <Redirect
                   to={{
