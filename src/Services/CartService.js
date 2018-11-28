@@ -51,6 +51,8 @@ export default class CartService extends Component {
             list.forEach(element => {
                 if(element.nome !== cart.nome){
                     newList.push(element);
+                } else {
+                    this.removeValue(cart.preco);
                 }
             });
             var newListjson = JSON.stringify(newList);
@@ -66,6 +68,65 @@ export default class CartService extends Component {
 
     static clearCarts(){
         localStorage.setItem('carts',null);
+    }
+
+    static getValue(){
+        var total = "0,00";
+        
+        try{
+            var aux = localStorage.getItem('valorTotal');
+            if(aux === null || aux === ''){
+                localStorage.setItem('valorTotal',"0,00");
+                console.log('if, aux = ', aux);
+            } else {
+                total = aux;
+            }
+            console.log('try, total = ', total);
+        }catch{
+            localStorage.setItem('valorTotal',"0,00");
+            console.log('catch, total 2 = ', total);
+        }
+
+        return total;
+    }
+
+    static addValue(value){
+        var total = this.getValue();
+        total = parseFloat(total.replace(",", "."));
+        value = parseFloat(value.replace(",", "."));
+
+        total += value;
+
+        var output;
+        if (Number.isInteger(total)) { 
+            output =  total + ",00";
+        }else{
+            output = total.toString(); 
+            output = output.replace(".",",");
+        }
+
+        console.log('addValue -> output = ', output);
+
+        localStorage.setItem('valorTotal',output);
+    }
+
+    static removeValue(value){
+        var total = this.getValue();
+
+        total = parseFloat(total.replace(",", "."));
+        value = parseFloat(value.replace(",", "."));
+
+        total -= value;
+
+        var output;
+        if (Number.isInteger(total)) { 
+            output =  total + ",00";
+        }else{
+            output = total.toString(); 
+            output = output.replace(".",",");
+        }
+
+        localStorage.setItem('valorTotal',output);
     }
 
     render(){
