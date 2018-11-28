@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Typography, Grid, Button } from '@material-ui/core';
+import { Grid } from '@material-ui/core';
 import Produto from '../Components/Produto';
 import CustomizedModal from '../Components/CustomizedModal';
 import Login from './Login';
