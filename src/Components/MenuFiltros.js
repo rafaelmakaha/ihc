@@ -64,11 +64,11 @@ class MenuFiltros extends React.Component {
                 <Paper>
                   <ClickAwayListener onClickAway={this.handleClose}>
                     <MenuList>
-                        <MenuItem onClick={this.handleCloseFiltros} component={Link} to='/filtros_barro'>Filtros de Barro</MenuItem>
-                        <MenuItem onClick={this.handleCloseFiltros} component={Link} to='/purificadores'>Purificadores</MenuItem>
-                        <MenuItem onClick={this.handleCloseFiltros} component={Link} to='/ozonizadores'>Ozonizadores</MenuItem>
-                        <MenuItem onClick={this.handleCloseFiltros}>Filtros Centrais</MenuItem>
-                        <MenuItem onClick={this.handleCloseFiltros}>Filtros de Pressão</MenuItem>
+                        <MenuItem onClick={this.handleClose} component={Link} to='/filtros_barro'>Filtros de Barro</MenuItem>
+                        <MenuItem onClick={this.handleClose} component={Link} to='/purificadores'>Purificadores</MenuItem>
+                        <MenuItem onClick={this.handleClose} component={Link} to='/ozonizadores'>Ozonizadores</MenuItem>
+                        <MenuItem onClick={this.handleClose}>Filtros Centrais</MenuItem>
+                        <MenuItem onClick={this.handleClose}>Filtros de Pressão</MenuItem>
                     </MenuList>
                   </ClickAwayListener>
                 </Paper>

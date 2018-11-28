@@ -14,6 +14,8 @@ import MyAnnounces from './Screens/MyAnnounces';
 import FiltrosdeBarro from './Screens/VisualizacaoFiltros/FiltrosdeBarro';
 import Purificadores from './Screens/VisualizacaoFiltros/Purificadores';
 import Ozonizadores from './Screens/VisualizacaoFiltros/Ozonizadores';
+import BebedourosdeGalao from './Screens/VisualizacaoBebedouros/BebedourosdeGalao';
+import BebedourosdePressao from './Screens/VisualizacaoBebedouros/BebedourosdePressao';
 
 export default class Routers extends Component {
   render() {
@@ -30,6 +32,8 @@ export default class Routers extends Component {
             <Route exact path='/filtros_barro' component={FiltrosdeBarro}/>
             <Route exact path='/purificadores' component={Purificadores}/>
             <Route exact path='/ozonizadores' component={Ozonizadores}/>
+            <Route exact path='/bebedouros_galao' component={BebedourosdeGalao}/>
+            <Route exact path='/bebedouros_pressao' component={BebedourosdePressao}/>
             <Route exact path='/home' render={() => (
               Auth.logged() ? (
                 <Home />

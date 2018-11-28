@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import {Typography, Grid, Button } from '@material-ui/core';
+import { Grid } from '@material-ui/core';
 import Produto from '../../Components/Produto';
-import CustomizedModal from '../../Components/CustomizedModal';
-import Login from '../Login';
 import { ozonizadores } from '../../Resources/ozonizadores.json';
 
 
@@ -38,9 +36,6 @@ export default class Ozonizadores extends Component {
                     <Produto json={this.state.ozonizadores[5]} />
                 </Grid>
             </Grid>
-            <CustomizedModal open={this.state.open} onClose={this.closeModal}>
-                <Login />
-            </CustomizedModal>
         </div>
         )
     }

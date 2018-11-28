@@ -11,6 +11,8 @@ import ProductDetail from './ProductDetail';
 import filtro_barro from '../Assets/filtro_barro.jpg'
 import ozonizador_0 from '../Assets/ozonizador_0.png'
 import purificador_0 from '../Assets/purificador_0.jpg'
+import bebedouro_galao_0 from '../Assets/bebedouro_galao_0.jpg'
+import bebedouro_pressao_0 from '../Assets/bebedouro_pressao_0.jpg'
 
 export default class CartProduct extends Component {
     constructor(props){
@@ -32,6 +34,10 @@ export default class CartProduct extends Component {
                 return ozonizador_0;
             case 'purificador_0':
                 return purificador_0;
+            case 'bebedouro_galao_0':
+                return bebedouro_galao_0;
+            case 'bebedouro_pressao_0':
+                return bebedouro_pressao_0;
             default:
                 return null;
         }

@@ -10,6 +10,7 @@ import MenuList from '@material-ui/core/MenuList';
 import { withStyles } from '@material-ui/core/styles';
 import { ListItemIcon } from '@material-ui/core/ListItemIcon';
 import { ArrowIcon } from '@material-ui/icons/ArrowDownward';
+import { Link } from 'react-router-dom';
 
 const styles = theme => ({
   root: {
@@ -65,8 +66,8 @@ class MenuBebedouros extends React.Component {
                 <Paper>
                   <ClickAwayListener onClickAway={this.handleClose}>
                     <MenuList>
-                      <MenuItem onClick={this.handleClose}>Bebedouros de Galão</MenuItem>
-                      <MenuItem onClick={this.handleClose}>Bebedouros de Pressão</MenuItem>
+                      <MenuItem onClick={this.handleClose} component={Link} to='/bebedouros_galao'>Bebedouros de Galão</MenuItem>
+                      <MenuItem onClick={this.handleClose} component={Link} to='/bebedouros_pressao'>Bebedouros de Pressão</MenuItem>
                     </MenuList>
                   </ClickAwayListener>
                 </Paper>

@@ -62,7 +62,7 @@ export default class ProductDetail extends Component {
                         <Grid item xs={3}>
                             <CardMedia style={styles.image} image={this.getImage(this.state.json.img)} title="Teste" />
                             <Typography variant="h6" >
-                                R$: {this.state.json.preco},00
+                                R$: {this.state.json.preco}
                             </Typography>
                         </Grid>
                     </Grid>

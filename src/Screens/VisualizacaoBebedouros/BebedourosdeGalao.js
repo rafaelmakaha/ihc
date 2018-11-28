@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Grid } from '@material-ui/core';
 import Produto from '../../Components/Produto';
-import { filtros_barro } from '../../Resources/filtros_barro.json';
+import { bebedouros_galao } from '../../Resources/bebedouros_galao.json';
 
 
 export default class FiltrosdeBarro extends Component {
@@ -9,7 +9,7 @@ export default class FiltrosdeBarro extends Component {
         super(props);
         this.state ={
             open: false,
-            filtros_barro
+            bebedouros_galao
         }
     }
 
@@ -18,22 +18,22 @@ export default class FiltrosdeBarro extends Component {
         <div>
             <Grid container>
                 <Grid item>
-                    <Produto json={this.state.filtros_barro[0]} />
+                    <Produto json={this.state.bebedouros_galao[0]} />
                 </Grid>
                 <Grid item>
-                    <Produto json={this.state.filtros_barro[1]} />
+                    <Produto json={this.state.bebedouros_galao[1]} />
                 </Grid>
                 <Grid item>
-                    <Produto json={this.state.filtros_barro[2]} />
+                    <Produto json={this.state.bebedouros_galao[2]} />
                 </Grid>
                 <Grid item>
-                    <Produto json={this.state.filtros_barro[3]} />
+                    <Produto json={this.state.bebedouros_galao[3]} />
                 </Grid>
                 <Grid item>
-                    <Produto json={this.state.filtros_barro[4]} />
+                    <Produto json={this.state.bebedouros_galao[4]} />
                 </Grid>
                 <Grid item>
-                    <Produto json={this.state.filtros_barro[5]} />
+                    <Produto json={this.state.bebedouros_galao[5]} />
                 </Grid>
             </Grid>
         </div>
