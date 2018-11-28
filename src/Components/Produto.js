@@ -35,9 +35,9 @@ export default class Produto extends Component {
         this.setState({ open: false });
     };
 
-    sendToCart(state){
+    sendToCart(){
         console.log("SEND TO CART");
-     
+        CartService.addValue(this.state.json.preco);
         CartService.addCart(this.state.json);
     }
 
