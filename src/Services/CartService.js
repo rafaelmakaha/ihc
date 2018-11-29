@@ -68,6 +68,7 @@ export default class CartService extends Component {
 
     static clearCarts(){
         localStorage.setItem('carts',null);
+        localStorage.setItem('valorTotal','0,00');
     }
 
     static getValue(){

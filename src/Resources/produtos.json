@@ -53,6 +53,42 @@
             "descricao": "",
             "tipo": "Novo",
             "inclui": ""
+        },
+        {
+            "nome":"Produto 7",
+            "preco": "22,00",
+            "img": "bebedouro_pressao_0",
+            "local": "FGA",
+            "descricao": "Melhor bebedouro",
+            "tipo": "Novo",
+            "inclui": ["- 1 bebedouro de pressão"]
+        },
+        {
+            "nome":"Produto 8",
+            "preco": "22,00",
+            "img": "bebedouro_galao_0",
+            "local": "FGA",
+            "descricao": "Melhor bebedouro",
+            "tipo": "Novo",
+            "inclui": ["- 1 bebedouro de galão", "- 1 galão d'agua"]
+        },
+        {
+            "nome":"Produto 9",
+            "preco": "22,00",
+            "img": "filtro_barro",
+            "local": "FGA",
+            "descricao": "Melhor bebedouro",
+            "tipo": "Novo",
+            "inclui": ["- 1 filtro", "- 1 vela"]
+        },
+        {
+            "nome":"Produto 10",
+            "preco": "21,00",
+            "img": "ozonizador_0",
+            "local": "",
+            "descricao": "",
+            "tipo": "Novo",
+            "inclui": ""
         }
     ]
 }

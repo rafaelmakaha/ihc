@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
 import { Grid, Typography, Button } from '@material-ui/core';
 import { createMuiTheme, MuiThemeProvider  } from '@material-ui/core/styles';
 import green from '@material-ui/core/colors/green';
@@ -65,7 +66,7 @@ export default class Cart extends Component {
 
         var carrinho;
         console.log(CartService.getValue());
-        if (CartService.getValue() != "0,00" ){
+        if (CartService.getValue() !== "0,00" ){
             carrinho = (
                 <div>
                     <Grid container direction="column">
@@ -101,7 +102,7 @@ export default class Cart extends Component {
                             </Grid>
                             <Grid item sm={3}>
                                 <MuiThemeProvider theme={mui_theme}>
-                                    <Button variant="contained" color="primary">Finalizar Compra</Button>
+                                    <Button variant="contained" color="primary" component={Link} to='/payment'>Finalizar Compra</Button>
                                 </MuiThemeProvider>
                             </Grid>
                         </Grid>
