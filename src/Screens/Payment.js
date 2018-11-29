@@ -27,6 +27,7 @@ export default class Payment extends Component {
         this.handleChange = this.handleChange.bind(this);
         this.openModal = this.openModal.bind(this);
         this.closeModal = this.closeModal.bind(this);
+        this.clearCarts = this.clearCarts.bind(this);
     }
 
     openModal() {
@@ -35,6 +36,10 @@ export default class Payment extends Component {
     closeModal() {
         this.setState({ open: false });
     };
+
+    clearCarts(){
+        CartService.clearCarts();
+    }
 
     handleChange = event => {
         this.setState({ valor: event.target.value });
@@ -72,7 +77,7 @@ export default class Payment extends Component {
                         <Button variant="contained" color="primary" onClick={this.openModal}>Finalizar Compra</Button>
                         <CustomizedModal open={this.state.open} onClose={this.closeModal}>
                             <Typography variant="h4">Compra realizada com sucesso!</Typography>
-                            <Button variant="contained" color="primary" component={Link} to='/'>Ok</Button>
+                            <Button variant="contained" color="primary" onClick={this.clearCarts} component={Link} to='/'>Ok</Button>
                         </CustomizedModal>
                     </MuiThemeProvider>
                 </CardContent>
