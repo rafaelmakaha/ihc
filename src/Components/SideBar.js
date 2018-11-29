@@ -207,6 +207,10 @@ class ResponsiveDrawer extends React.Component {
               <Button fullWidth size="small" component={Link} to='/profile'>Perfil</Button>
             </List>
             <List>
+              <Button fullWidth size="small" onClick={this.handleLogout} component={Link} to="/">Sair</Button>
+            </List>
+            <Divider />
+            <List>
               <Button fullWidth size="small" component={Link} to='/cart'>Carrinho</Button>
             </List>
             <List>
@@ -230,15 +234,6 @@ class ResponsiveDrawer extends React.Component {
           </MuiThemeProvider>
         </div>
       )
-    }
-
-    var logout_btn;
-    if (this.state.logged === 'true'){
-      logout_btn = (
-        <Button className={classes.logout} color="inherit" onClick={this.handleLogout} component={Link} to="/">Sair</Button>
-      );
-    }else {
-      logout_btn = null;
     }
 
     return (
@@ -267,9 +262,6 @@ class ResponsiveDrawer extends React.Component {
               <IconButton color="inherit" component={Link} to="/busca">
                 <Search />
               </IconButton>
-
-              {logout_btn}
-
             </MuiThemeProvider>
           </Toolbar>
         </AppBar>
