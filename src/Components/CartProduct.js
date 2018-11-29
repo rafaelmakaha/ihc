@@ -49,7 +49,7 @@ export default class CartProduct extends Component {
     closeModal() {
         this.setState({ open: false });
     };
-    
+
     render(){
 
         const styles = {
@@ -73,10 +73,10 @@ export default class CartProduct extends Component {
                     <Grid container direction="row" spacing={40} alignItems="center">
                         <Grid item sm={2}>
                             <CardMedia style={styles.image} image={this.getImage(this.state.json.img)} title="Teste" >
-                                {/* <img alt="nao tem" src={require('../Assets/filtro_barro.jpg')} /> ESSA APARECE */} 
+                                {/* <img alt="nao tem" src={require('../Assets/filtro_barro.jpg')} /> ESSA APARECE */}
                                 {/* <img alt="nao tem" width="20" height="20" src={'../Assets/filtro_barro.jpg'} /> */}
                             </CardMedia>
-                        </Grid>    
+                        </Grid>
 
                         <Grid item sm={2}>
                             <Typography variant="body1">
@@ -89,7 +89,7 @@ export default class CartProduct extends Component {
                                 R$: {this.state.json.preco}
                             </Typography>
                         </Grid>
-                        
+
                         <Grid item sm={2}>
                             <Button variant="contained" color="primary" size="small" onClick={this.openModal} >Detalhes</Button>
                         </Grid>
@@ -97,7 +97,7 @@ export default class CartProduct extends Component {
                         <Grid item sm={2}>
 
                             <IconButton aria-label="Delete" size="small" onClick={this.props.removeCart} >
-                                <DeleteIcon fontSize="small" />
+                                <DeleteIcon fontSize="medium" />
                             </IconButton>
 
                             <CustomizedModal open={this.state.open} onClose={this.closeModal}>

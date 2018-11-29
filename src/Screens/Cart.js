@@ -20,11 +20,13 @@ export default class Cart extends Component {
     }
 
 
-    removeCart(index,nome){
+    removeCart(index,nome,preco){
         // console.log('index = ', index);
         let json = {
-            nome: nome
+            nome: nome,
+            preco: preco
         }
+        // CartService.removeValue(preco);
         CartService.removeCart(json);
         
         // this.setState({
@@ -37,7 +39,7 @@ export default class Cart extends Component {
         // this.setState({
         //     list: s
         // }) 
- 
+        // localStorage.setItem('valorTotal', '');
         console.log('this.state.list = ', this.state.list);
         window.location.reload();
     }
@@ -49,7 +51,7 @@ export default class Cart extends Component {
                 console.log('json ==== ', json);
                 return(
                     <Grid item>
-                        <CartProduct json={json} removeCart={this.removeCart.bind(this,i,json.nome)} />                
+                        <CartProduct json={json} removeCart={this.removeCart.bind(this,i,json.nome,json.preco)} />                
                     </Grid>
                 )
             });
@@ -62,47 +64,65 @@ export default class Cart extends Component {
             }
         })
 
+        var carrinho;
+        console.log(CartService.getValue());
+        if (CartService.getValue() != "0,00" ){
+            carrinho = (
+                <div>
+                    <Grid container direction="column">
+                        <Grid container direction="row" spacing={40} alignItems="center">
+                            <Grid item sm={2}>
+                            </Grid>
+                            <Grid item sm={2}>
+                                <Typography variant="h5">Nome</Typography>
+                            </Grid>
+                            <Grid item sm={2}>
+                                <Typography variant="h5">Valor</Typography>
+                            </Grid>
+                            <Grid item sm={2}>
+                                <Typography variant="h5">Detalhes</Typography>
+                            </Grid>
+                            <Grid item sm={2}>
+                                <Typography variant="h5">Remover</Typography>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                    <Grid container direction="column">
+                        {/* <Grid item>
+                            <CartProduct nome="Testado" preco="49" img="filtro_barro"/>
+                        </Grid> */}
+                        {carts}
+                    </Grid>
+                    <Grid container direction="column">
+                        <Grid container direction="row" spacing={32} alignItems="center">
+                            <Grid item sm={3}>
+                            </Grid>
+                            <Grid item sm={3}>
+                                <Typography variant="h5">Total: R$ {CartService.getValue()}</Typography>
+                            </Grid>
+                            <Grid item sm={3}>
+                                <MuiThemeProvider theme={mui_theme}>
+                                    <Button variant="contained" color="primary" component={Link} to='/payment'>Finalizar Compra</Button>
+                                </MuiThemeProvider>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </div>
+            )
+        } else {
+            carrinho = (
+            <div>
+                <Grid container direction="column">
+                <Typography variant="h5">Você não possui itens no carrinho! :(</Typography>                    
+                </Grid>                
+            </div>
+            )
+        }
+
         return (
-        <div>
-            <Grid container direction="column">
-                <Grid container direction="row" spacing={40} alignItems="center">
-                    <Grid item sm={2}>
-                    </Grid>
-                    <Grid item sm={2}>
-                        <Typography variant="h5">Nome</Typography>
-                    </Grid>
-                    <Grid item sm={2}>
-                        <Typography variant="h5">Valor</Typography>
-                    </Grid>
-                    <Grid item sm={2}>
-                        <Typography variant="h5">Detalhes</Typography>
-                    </Grid>
-                    <Grid item sm={2}>
-                        <Typography variant="h5">Remover</Typography>
-                    </Grid>
-                </Grid>
-            </Grid>
-            <Grid container direction="column">
-                {/* <Grid item>
-                    <CartProduct nome="Testado" preco="49" img="filtro_barro"/>
-                </Grid> */}
-                {carts}
-            </Grid>
-            <Grid container direction="column">
-                <Grid container direction="row" spacing={40} alignItems="center">
-                    <Grid item sm={3}>
-                    </Grid>
-                    <Grid item sm={3}>
-                        <Typography variant="h5">Total: </Typography>
-                    </Grid>
-                    <Grid item sm={3}>
-                        <MuiThemeProvider theme={mui_theme}>
-                            <Button variant="contained" color="primary" component={Link} to="/payment">Finalizar Compra</Button>
-                        </MuiThemeProvider>
-                    </Grid>
-                </Grid>
-            </Grid>
-        </div>
+            <div>
+                {carrinho}
+            </div>
         )
     }
 }

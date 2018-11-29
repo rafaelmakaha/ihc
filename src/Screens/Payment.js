@@ -12,7 +12,7 @@ import {
 import green from '@material-ui/core/colors/green';
 import { createMuiTheme, MuiThemeProvider  } from '@material-ui/core/styles';
 import Auth from '../Authentication/Auth';
-
+import CartService from '../Services/CartService';
 
 export default class Payment extends Component {
     constructor(props){
@@ -59,7 +59,7 @@ export default class Payment extends Component {
                     </FormControl>
                     <br></br>
                     <br></br>
-                    <Typography variant="h6" align="left">Valor Total:</Typography>
+                    <Typography variant="h6" align="left">Valor Total: {CartService.getValue()}</Typography>
                     <br></br>
                     <MuiThemeProvider theme={mui_theme}>
                         <Button variant="contained" color="primary">Finalizar Compra</Button>

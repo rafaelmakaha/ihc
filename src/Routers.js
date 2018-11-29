@@ -6,6 +6,7 @@ import Auth from './Authentication/Auth';
 import Login from './Screens/Login';
 import Sobre from './Screens/Sobre';
 import Cart from './Screens/Cart';
+import Busca from './Screens/Busca';
 import Ajuda from './Screens/Ajuda';
 import Profile from './Screens/Profile';
 import Announce from './Screens/Announce';
@@ -27,6 +28,7 @@ export default class Routers extends Component {
           <SideBar>
             <Route exact path='/' component={Home} />
             <Route exact path='/login' component={Login}/>
+            <Route exact path='/busca' component={Busca}/>
             <Route exact path='/cart' component={Cart}/>
             <Route exact path='/about' component={Sobre}/>
             <Route exact path='/help' component={Ajuda}/>
