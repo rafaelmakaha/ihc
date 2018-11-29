@@ -11,23 +11,30 @@ import {
 } from '@material-ui/core';
 import green from '@material-ui/core/colors/green';
 import { createMuiTheme, MuiThemeProvider  } from '@material-ui/core/styles';
-import Auth from '../Authentication/Auth';
 import CartService from '../Services/CartService';
+import CustomizedModal from '../Components/CustomizedModal';
+import {Link} from 'react-router-dom';
+
 
 export default class Payment extends Component {
     constructor(props){
         super(props);
         this.state = {
+            open: false,
             valor: "",
         }
 
-        this.handleClickLogin = this.handleClickLogin.bind(this);
         this.handleChange = this.handleChange.bind(this);
+        this.openModal = this.openModal.bind(this);
+        this.closeModal = this.closeModal.bind(this);
     }
 
-    handleClickLogin(){
-        Auth.handleLoginAuth();
-    }
+    openModal() {
+        this.setState({ open: true });
+    };
+    closeModal() {
+        this.setState({ open: false });
+    };
 
     handleChange = event => {
         this.setState({ valor: event.target.value });
@@ -62,7 +69,11 @@ export default class Payment extends Component {
                     <Typography variant="h6" align="left">Valor Total: {CartService.getValue()}</Typography>
                     <br></br>
                     <MuiThemeProvider theme={mui_theme}>
-                        <Button variant="contained" color="primary">Finalizar Compra</Button>
+                        <Button variant="contained" color="primary" onClick={this.openModal}>Finalizar Compra</Button>
+                        <CustomizedModal open={this.state.open} onClose={this.closeModal}>
+                            <Typography variant="h4">Compra realizada com sucesso!</Typography>
+                            <Button variant="contained" color="primary" component={Link} to='/'>Ok</Button>
+                        </CustomizedModal>
                     </MuiThemeProvider>
                 </CardContent>
             </Card>
