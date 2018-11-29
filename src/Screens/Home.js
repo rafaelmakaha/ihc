@@ -18,7 +18,7 @@ export default class Home extends Component {
     render(){
         return (
         <div>
-            <Grid container>
+            <Grid container spacing={16}>
                 <Grid item>
                     <Produto json={this.state.produtos[0]} />
                 </Grid>
@@ -36,6 +36,18 @@ export default class Home extends Component {
                 </Grid>
                 <Grid item>
                     <Produto json={this.state.produtos[5]} />
+                </Grid>
+                <Grid item>
+                    <Produto json={this.state.produtos[6]} />
+                </Grid>
+                <Grid item>
+                    <Produto json={this.state.produtos[7]} />
+                </Grid>
+                <Grid item>
+                    <Produto json={this.state.produtos[8]} />
+                </Grid>
+                <Grid item>
+                    <Produto json={this.state.produtos[9]} />
                 </Grid>
             </Grid>
             <CustomizedModal open={this.state.open} onClose={this.closeModal}>
