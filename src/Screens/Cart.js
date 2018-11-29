@@ -66,7 +66,7 @@ export default class Cart extends Component {
 
         var carrinho;
         console.log(CartService.getValue());
-        if (CartService.getValue() != "0,00" ){
+        if (CartService.getValue() !== "0,00" ){
             carrinho = (
                 <div>
                     <Grid container direction="column">

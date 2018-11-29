@@ -15,6 +15,7 @@ import ozonizador_0 from '../Assets/ozonizador_0.png'
 import purificador_0 from '../Assets/purificador_0.jpg'
 import bebedouro_galao_0 from '../Assets/bebedouro_galao_0.jpg'
 import bebedouro_pressao_0 from '../Assets/bebedouro_pressao_0.jpg'
+import { Link } from 'react-router-dom';
 
 export default class Produto extends Component {
     constructor(props){
@@ -39,6 +40,7 @@ export default class Produto extends Component {
         console.log("SEND TO CART");
         CartService.addValue(this.state.json.preco);
         CartService.addCart(this.state.json);
+        console.log("SEND TO CART - >",this.state.json);
     }
 
     getImage(image){
@@ -81,7 +83,7 @@ export default class Produto extends Component {
                     
                     <Grid container spacing={24}>
                         <Grid item xs={6}>    
-                            <Button variant="contained" color="secondary" size="small" >Comprar</Button>
+                            <Button variant="contained" color="secondary" size="small" onClick={this.sendToCart} component={Link} to="cart">Comprar</Button>
                         </Grid>
 
                         <Grid item xs={3}>
