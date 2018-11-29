@@ -9,15 +9,31 @@ import {
     Grid,
 } from '@material-ui/core';
 import Auth from '../Authentication/Auth';
+import CustomizedModal from '../Components/CustomizedModal';
 
 export default class Login extends Component {
     constructor(props){
         super(props);
+        this.state = {
+            open: false,
+        }
+
+        this.openModal = this.openModal.bind(this);
+        this.closeModal = this.closeModal.bind(this);
         this.handleClickLogin = this.handleClickLogin.bind(this);
     }
 
+    openModal() {
+        this.setState({ open: true });
+    };
+    closeModal() {
+        this.setState({ open: false });
+    };
+
     handleClickLogin(){
         Auth.handleLoginAuth();
+        this.openModal();
+        
     }
     render(){
         return(
@@ -33,7 +49,11 @@ export default class Login extends Component {
                                 <TextField id="login_pw" type="password" label="Senha" fullWidth/>
                             </CardContent>
                             <CardContent>
-                                <Button variant="contained" color="secondary" type="login" onClick={this.handleClickLogin} component={Link} to='/'>Login</Button>
+                                <Button variant="contained" color="secondary" type="login" onClick={this.handleClickLogin}>Login</Button>
+                                <CustomizedModal open={this.state.open} onClose={this.closeModal}>
+                                    <Typography variant="h4" >Login realizado com sucesso!</Typography>
+                                    <Button variant="contained" color="Secondary" component={Link} to='/'>Ok</Button>
+                                </CustomizedModal>
                             </CardContent>  
                         </CardContent>
                     </Grid>
