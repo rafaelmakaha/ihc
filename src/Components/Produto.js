@@ -21,26 +21,35 @@ export default class Produto extends Component {
     constructor(props){
         super(props);
         this.state = {
-            open: false,
+            open1: false,
+            open2: false,
             json: this.props.json
         }
         this.sendToCart = this.sendToCart.bind(this);
-        this.openModal = this.openModal.bind(this);
-        this.closeModal = this.closeModal.bind(this);
+        this.openModal1 = this.openModal1.bind(this);
+        this.closeModal1 = this.closeModal1.bind(this);
+        this.openModal2 = this.openModal2.bind(this);
+        this.closeModal2 = this.closeModal2.bind(this);
     }
 
-    openModal() {
-        this.setState({ open: true });
+    openModal1() {
+        this.setState({ open1: true });
     };
-    closeModal() {
-        this.setState({ open: false });
+    closeModal1() {
+        this.setState({ open1: false });
     };
-
+    openModal2() {
+        this.setState({ open2: true });
+    };
+    closeModal2() {
+        this.setState({ open2: false });
+    };
     sendToCart(){
         console.log("SEND TO CART");
         CartService.addValue(this.state.json.preco);
         CartService.addCart(this.state.json);
         console.log("SEND TO CART - >",this.state.json);
+        this.openModal2();
     }
 
     getImage(image){
@@ -90,12 +99,16 @@ export default class Produto extends Component {
                             <IconButton variant="extended" color="primary" aria-label="Add" size="small" onClick={this.sendToCart} >
                                 <ShoppingCart /><AddIcon />
                             </IconButton>
+                            <CustomizedModal open={this.state.open2} onClose={this.closeModal2}>
+                                <Typography variant="h4" >Produto adicionado ao carrinho com sucesso!</Typography>
+                                <Button variant="contained" color="primary" onClick={this.closeModal2}>Ok</Button>
+                            </CustomizedModal>
                         </Grid>
                     </Grid>
                     
-                    <Button variant="contained" color="primary" size="small" onClick={this.openModal} >Detalhes</Button>
+                    <Button variant="contained" color="primary" size="small" onClick={this.openModal1} >Detalhes</Button>
 
-                    <CustomizedModal open={this.state.open} onClose={this.closeModal}>
+                    <CustomizedModal open={this.state.open1} onClose={this.closeModal1}>
                         <ProductDetail json={this.state.json} />
                     </CustomizedModal>
                 </CardContent>
