@@ -5,7 +5,8 @@ import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
 import {Link} from 'react-router-dom';
 import Auth from '../Authentication/Auth';
 import avatar from '../Assets/avatar.svg';
-import search from '../Assets/search.svg';
+// import search from '../Assets/search.svg';
+import Search from '@material-ui/icons/Search';
 
 import MenuBebedouros from './MenuBebedouros';
 
@@ -225,9 +226,6 @@ class ResponsiveDrawer extends React.Component {
             <List>
               <Button fullWidth size="small" component={Link} to="/help">Ajuda</Button>
             </List>
-            <List>
-              <Button fullWidth size="small" component={Link} to="/busca">Busca</Button>
-            </List>
             <Divider/>
           </MuiThemeProvider>
         </div>
@@ -265,12 +263,10 @@ class ResponsiveDrawer extends React.Component {
 
               </Grid>
 
-              <Grid container>
-                <Input></Input>
-                <IconButton>
-                  <Avatar src={search}/>
-                </IconButton>
-              </Grid>
+              <Input placeholder="Busca" />
+              <IconButton color="inherit" component={Link} to="/busca">
+                <Search />
+              </IconButton>
 
               {logout_btn}
 
