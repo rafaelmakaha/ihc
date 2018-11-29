@@ -98,7 +98,7 @@ export default class CartProduct extends Component {
                         <Grid item sm={2}>
 
                             <IconButton aria-label="Delete" size="small" onClick={this.props.removeCart} >
-                                <DeleteIcon fontSize="small" />
+                                <DeleteIcon fontSize="medium" />
                             </IconButton>
 
                             <CustomizedModal open={this.state.open} onClose={this.closeModal}>

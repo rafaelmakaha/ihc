@@ -19,11 +19,13 @@ export default class Cart extends Component {
     }
 
 
-    removeCart(index,nome){
+    removeCart(index,nome,preco){
         // console.log('index = ', index);
         let json = {
-            nome: nome
+            nome: nome,
+            preco: preco
         }
+        // CartService.removeValue(preco);
         CartService.removeCart(json);
         
         // this.setState({
@@ -36,7 +38,7 @@ export default class Cart extends Component {
         // this.setState({
         //     list: s
         // }) 
- 
+        // localStorage.setItem('valorTotal', '');
         console.log('this.state.list = ', this.state.list);
         window.location.reload();
     }
@@ -48,7 +50,7 @@ export default class Cart extends Component {
                 console.log('json ==== ', json);
                 return(
                     <Grid item>
-                        <CartProduct json={json} removeCart={this.removeCart.bind(this,i,json.nome)} />                
+                        <CartProduct json={json} removeCart={this.removeCart.bind(this,i,json.nome,json.preco)} />                
                     </Grid>
                 )
             });
@@ -88,11 +90,11 @@ export default class Cart extends Component {
                 {carts}
             </Grid>
             <Grid container direction="column">
-                <Grid container direction="row" spacing={40} alignItems="center">
+                <Grid container direction="row" spacing={32} alignItems="center">
                     <Grid item sm={3}>
                     </Grid>
                     <Grid item sm={3}>
-                        <Typography variant="h5">Total: </Typography>
+                        <Typography variant="h5">Total: R$ {CartService.getValue()}</Typography>
                     </Grid>
                     <Grid item sm={3}>
                         <MuiThemeProvider theme={mui_theme}>
