@@ -64,6 +64,12 @@ export default class Cart extends Component {
             }
         })
 
+        const mui_theme2 = createMuiTheme ({
+            palette: {
+                primary: green,
+            }
+        })
+
         var carrinho;
         console.log(CartService.getValue());
         if (CartService.getValue() !== "0,00" ){
@@ -96,13 +102,14 @@ export default class Cart extends Component {
                     <Grid container direction="column">
                         <Grid container direction="row" spacing={32} alignItems="center">
                             <Grid item sm={3}>
-                            </Grid>
-                            <Grid item sm={3}>
                                 <Typography variant="h5">Total: R$ {CartService.getValue()}</Typography>
                             </Grid>
                             <Grid item sm={3}>
+                                <Button variant="contained" size="small" color="primary" component={Link} to='/'>Continuar comprando</Button>                                
+                            </Grid>
+                            <Grid item sm={3}>
                                 <MuiThemeProvider theme={mui_theme}>
-                                    <Button variant="contained" color="primary" component={Link} to='/payment'>Finalizar Compra</Button>
+                                    <Button variant="contained" size="small" color="primary" component={Link} to='/payment'>Finalizar Compra</Button>
                                 </MuiThemeProvider>
                             </Grid>
                         </Grid>
