@@ -1,0 +1,13 @@
+{
+    "FGA": [
+        {
+            "nome":"Filtro de Barro 1",
+            "preco": "22,00",
+            "img": "filtro_barro",
+            "local": "FGA",
+            "descricao": "Melhor bebedouro",
+            "tipo": "Novo",
+            "inclui": ["- 1 filtro", "- 1 vela"]
+        }
+    ]
+}

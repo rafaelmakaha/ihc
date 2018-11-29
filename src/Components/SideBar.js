@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import MenuIcon from '@material-ui/icons/Menu';
-import { createMuiTheme, MuiThemeProvider  } from '@material-ui/core/styles';
+import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
 import {Link} from 'react-router-dom';
 import Auth from '../Authentication/Auth';
 import avatar from '../Assets/avatar.svg';
+import search from '../Assets/search.svg';
 
 import MenuBebedouros from './MenuBebedouros';
 
@@ -21,6 +22,7 @@ import {
   withStyles,
   Avatar,
   Grid,
+  Input
 } from '@material-ui/core';
 import MenuFiltros from './MenuFiltros';
 
@@ -117,7 +119,7 @@ class ResponsiveDrawer extends React.Component {
     if (this.anchorEl.contains(event.target)) {
       return;
     }
-    this.setState({ 
+    this.setState({
       openFiltros: false,
     });
   };
@@ -126,14 +128,14 @@ class ResponsiveDrawer extends React.Component {
     if (this.anchorEl.contains(event.target)) {
       return;
     }
-    this.setState({ 
+    this.setState({
       openBebedouros: false,
     });
   };
 
 
   // handleOpen = () => {
-  //   this.setState({ 
+  //   this.setState({
   //     openFiltros: true,
   //     // openBebedouros: true
   //   });
@@ -184,7 +186,7 @@ class ResponsiveDrawer extends React.Component {
               <Button fullWidth size="small" component={Link} to="/about">Sobre</Button>
             </List>
             <List>
-              <Button fullWidth size="small" component={Link} to="/help">Ajuda</Button> 
+              <Button fullWidth size="small" component={Link} to="/help">Ajuda</Button>
             </List>
             <Divider/>
           </MuiThemeProvider>
@@ -221,7 +223,10 @@ class ResponsiveDrawer extends React.Component {
               <Button fullWidth size="small" component={Link} to="/about">Sobre</Button>
             </List>
             <List>
-              <Button fullWidth size="small" component={Link} to="/help">Ajuda</Button> 
+              <Button fullWidth size="small" component={Link} to="/help">Ajuda</Button>
+            </List>
+            <List>
+              <Button fullWidth size="small" component={Link} to="/busca">Busca</Button>
             </List>
             <Divider/>
           </MuiThemeProvider>
@@ -258,7 +263,14 @@ class ResponsiveDrawer extends React.Component {
                 <MenuFiltros />
                 <MenuBebedouros />
 
-              </Grid>  
+              </Grid>
+
+              <Grid container>
+                <Input></Input>
+                <IconButton>
+                  <Avatar src={search}/>
+                </IconButton>
+              </Grid>
 
               {logout_btn}
 
