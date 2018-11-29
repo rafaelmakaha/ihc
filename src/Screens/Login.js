@@ -16,10 +16,14 @@ export default class Login extends Component {
         super(props);
         this.state = {
             open: false,
+            open2: false,
         }
 
         this.openModal = this.openModal.bind(this);
         this.closeModal = this.closeModal.bind(this);
+
+        this.openModal2 = this.openModal2.bind(this);
+        this.closeModal2 = this.closeModal2.bind(this);
         this.handleClickLogin = this.handleClickLogin.bind(this);
     }
 
@@ -28,6 +32,13 @@ export default class Login extends Component {
     };
     closeModal() {
         this.setState({ open: false });
+    };
+
+    openModal2() {
+        this.setState({ open2: true });
+    };
+    closeModal2() {
+        this.setState({ open2: false });
     };
 
     handleClickLogin(){
@@ -70,8 +81,12 @@ export default class Login extends Component {
                                 <TextField id="regist_pw_verify" type="password" label="Senha" fullWidth/>
                             </CardContent>
                             <CardContent>
-                                <Button variant="contained" color="secondary" type="register">Registrar</Button>
-                            </CardContent>  
+                                <Button variant="contained" color="secondary" type="register" onClick={this.openModal2}>Registrar</Button>
+                                <CustomizedModal open={this.state.open2} onClose={this.closeModal2}>
+                                    <Typography variant="h4" >Registro realizado com sucesso!</Typography>
+                                    <Button variant="contained" color="Secondary" onClick={this.closeModal2}>Ok</Button>
+                                </CustomizedModal>
+                            </CardContent>
                         </CardContent>
                     </Grid>
                 </Grid>
