@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Typography from '@material-ui/core/Typography';
-import { CardContent, CardMedia, Button, Grid } from '@material-ui/core';
+import { Button, } from '@material-ui/core';
 import CustomizedModal from '../Components/CustomizedModal';
 
 export default class Ajuda extends Component {

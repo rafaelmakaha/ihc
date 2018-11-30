@@ -64,12 +64,6 @@ export default class Cart extends Component {
             }
         })
 
-        const mui_theme2 = createMuiTheme ({
-            palette: {
-                primary: green,
-            }
-        })
-
         var carrinho;
         console.log(CartService.getValue());
         if (CartService.getValue() !== "0,00" ){

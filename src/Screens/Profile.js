@@ -6,7 +6,6 @@ import {
     Grid,
 } from '@material-ui/core';
 import Auth from '../Authentication/Auth';
-import CartProduct from '../Components/CartProduct'
 
 export default class Login extends Component {
     constructor(props){
