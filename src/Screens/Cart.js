@@ -80,6 +80,9 @@ export default class Cart extends Component {
                                 <Typography variant="h5">Valor</Typography>
                             </Grid>
                             <Grid item sm={2}>
+                                <Typography variant="h5">Quantidade</Typography>
+                            </Grid>
+                            <Grid item sm={2}>
                                 <Typography variant="h5">Detalhes</Typography>
                             </Grid>
                             <Grid item sm={2}>

@@ -3,9 +3,12 @@ import Card from '@material-ui/core/Card';
 import Typography from '@material-ui/core/Typography';
 import { CardContent, CardMedia, Button, Grid } from '@material-ui/core';
 import CartService from '../Services/CartService';
+
 import IconButton from '@material-ui/core/IconButton';
 import AddIcon from '@material-ui/icons/Add';
+import MinusIcon from '@material-ui/icons/Remove'
 import ShoppingCart from '@material-ui/icons/ShoppingCart';
+
 import ProductDetail from './ProductDetail';
 import CustomizedModal from './CustomizedModal';
 
@@ -30,6 +33,8 @@ export default class Produto extends Component {
         this.closeModal1 = this.closeModal1.bind(this);
         this.openModal2 = this.openModal2.bind(this);
         this.closeModal2 = this.closeModal2.bind(this);
+        this.removeQuantity = this.removeQuantity.bind(this);
+        this.addQuantity = this.addQuantity.bind(this);
     }
 
     openModal1() {
@@ -44,12 +49,31 @@ export default class Produto extends Component {
     closeModal2() {
         this.setState({ open2: false });
     };
+
+    removeQuantity(){
+        var json = this.state.json;
+
+        if(this.state.json.quantidade > 0){
+            json.quantidade -= 1;
+            this.setState({json : json})
+        }
+    }
+
+    addQuantity(){
+        var json = this.state.json;
+
+        json.quantidade += 1;
+        this.setState({json : json});
+    }
+
     sendToCart(){
         console.log("SEND TO CART");
-        CartService.addValue(this.state.json.preco);
-        CartService.addCart(this.state.json);
-        console.log("SEND TO CART - >",this.state.json);
-        this.openModal2();
+        if(this.state.json.quantidade > 0){
+            CartService.addValue(this.state.json.preco);
+            CartService.addCart(this.state.json);
+            console.log("SEND TO CART - >",this.state.json);
+            this.openModal2();
+        }
     }
 
     getImage(image){
@@ -79,10 +103,7 @@ export default class Produto extends Component {
         return(
             <Card >
                 <CardContent>
-                    <CardMedia style={styles.image} image={this.getImage(this.state.json.img)} title="Teste" >
-                        {/* <img alt="nao tem" src={require('../Assets/filtro_barro.jpg')} /> ESSA APARECE */} 
-                        {/* <img alt="nao tem" width="20" height="20" src={'../Assets/filtro_barro.jpg'} /> */}
-                    </CardMedia>
+                    <CardMedia style={styles.image} image={this.getImage(this.state.json.img)} title="Teste"/>
                     <Typography variant="body1">
                         {this.state.json.nome}
                     </Typography>
@@ -90,14 +111,32 @@ export default class Produto extends Component {
                         R$: {this.state.json.preco}
                     </Typography>
                     
-                    <Grid container spacing={24}>
+                    <Grid container spacing={8}>
                         <Grid item xs={6}>    
                             <Button variant="contained" color="secondary" size="small" onClick={this.sendToCart} component={Link} to="cart">Comprar</Button>
                         </Grid>
 
+                        <Grid item xs={6}>
+                            <Button variant="contained" color="primary" size="small" onClick={this.openModal1} >Detalhes</Button>
+                        </Grid>
+                    </Grid>
+                    
+                    <Grid container spacing={8}>
+
+                        <Grid item>
+                            <IconButton onClick={this.removeQuantity} size="small" color="secondary"  >
+                                <MinusIcon />
+                            </IconButton>
+                            {this.state.json.quantidade}
+                            <IconButton onClick={this.addQuantity} color="secondary" size="small" >
+                                <AddIcon />
+                            </IconButton>
+                        </Grid>
+
                         <Grid item xs={3}>
                             <IconButton variant="extended" color="primary" aria-label="Add" size="small" onClick={this.sendToCart} >
-                                <ShoppingCart /><AddIcon />
+                                <ShoppingCart />
+                                {/* <AddIcon /> */}
                             </IconButton>
                             <CustomizedModal open={this.state.open2} onClose={this.closeModal2}>
                                 <Typography variant="h4" >Produto adicionado ao carrinho com sucesso!</Typography>
@@ -105,8 +144,6 @@ export default class Produto extends Component {
                             </CustomizedModal>
                         </Grid>
                     </Grid>
-                    
-                    <Button variant="contained" color="primary" size="small" onClick={this.openModal1} >Detalhes</Button>
 
                     <CustomizedModal open={this.state.open1} onClose={this.closeModal1}>
                         <ProductDetail json={this.state.json} />
