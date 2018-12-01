@@ -7,7 +7,8 @@
             "local": "FGA",
             "descricao": "Melhor bebedouro",
             "tipo": "Novo",
-            "inclui": ["- 1 bebedouro de pressão"]
+            "inclui": ["- 1 bebedouro de pressão"],
+            "quantidade": 0
         },
         {
             "nome":"Bebedouro de Pressão 2",
@@ -16,7 +17,8 @@
             "local": "",
             "descricao": "",
             "tipo": "Novo",
-            "inclui": ""
+            "inclui": "",
+            "quantidade": 0
         },
         {
             "nome":"Bebedouro de Pressão 3",
@@ -25,7 +27,8 @@
             "local": "",
             "descricao": "",
             "tipo": "Novo",
-            "inclui": ""
+            "inclui": "",
+            "quantidade": 0
         },
         {
             "nome":"Bebedouro de Pressão 4",
@@ -34,7 +37,8 @@
             "local": "",
             "descricao": "",
             "tipo": "Novo",
-            "inclui": ""
+            "inclui": "",
+            "quantidade": 0
         },
         {
             "nome":"Bebedouro de Pressão 5",
@@ -43,7 +47,8 @@
             "local": "",
             "descricao": "",
             "tipo": "Novo",
-            "inclui": ""
+            "inclui": "",
+            "quantidade": 0
         },
         {
             "nome":"Bebedouro de Pressão 6",
@@ -52,7 +57,8 @@
             "local": "",
             "descricao": "",
             "tipo": "Novo",
-            "inclui": ""
+            "inclui": "",
+            "quantidade": 0
         }
     ]
 }
