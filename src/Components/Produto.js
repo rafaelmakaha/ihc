@@ -68,10 +68,11 @@ export default class Produto extends Component {
 
     sendToCart(){
         console.log("SEND TO CART");
-        if(this.state.json.quantidade > 0){
-            CartService.addValue(this.state.json.preco);
-            CartService.addCart(this.state.json);
-            console.log("SEND TO CART - >",this.state.json);
+        var json = this.state.json;
+        if(json.quantidade > 0){
+            CartService.addValue(json.preco, json.quantidade);
+            CartService.addCart(json);
+            console.log("SEND TO CART - >",json);
             this.openModal2();
         }
     }

@@ -79,7 +79,7 @@ export default class CartProduct extends Component {
                         </Grid>
 
                         <Grid item sm={2}>
-                            <Typography variant="body1">
+                            <Typography variant="h6">
                                 {this.state.json.nome}
                             </Typography>
                         </Grid>

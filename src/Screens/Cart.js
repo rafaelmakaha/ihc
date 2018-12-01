@@ -20,25 +20,9 @@ export default class Cart extends Component {
     }
 
 
-    removeCart(index,nome,preco){
-        // console.log('index = ', index);
-        let json = {
-            nome: nome,
-            preco: preco
-        }
+    removeCart(index,json){
         // CartService.removeValue(preco);
         CartService.removeCart(json);
-        
-        // this.setState({
-        //     list: this.state.list.filter((e,i)=>{
-        //         console.log('i = ', i);
-        //         console.log('index = ', index);
-        //         return i !== index;
-        //     }
-        // })
-        // this.setState({
-        //     list: s
-        // }) 
         // localStorage.setItem('valorTotal', '');
         console.log('this.state.list = ', this.state.list);
         window.location.reload();
@@ -51,7 +35,7 @@ export default class Cart extends Component {
                 console.log('json ==== ', json);
                 return(
                     <Grid item>
-                        <CartProduct json={json} removeCart={this.removeCart.bind(this,i,json.nome,json.preco)} />                
+                        <CartProduct json={json} removeCart={this.removeCart.bind(this,i,json)} />                
                     </Grid>
                 )
             });
@@ -102,6 +86,7 @@ export default class Cart extends Component {
                                 <Typography variant="h5">Total: R$ {CartService.getValue()}</Typography>
                             </Grid>
                             <Grid item sm={3}>
+                                {/* <Button variant="contained" size="small" color="primary" onClick={CartService.clearCarts}>Continuar comprando</Button>                                 */}
                                 <Button variant="contained" size="small" color="primary" component={Link} to='/'>Continuar comprando</Button>                                
                             </Grid>
                             <Grid item sm={3}>
