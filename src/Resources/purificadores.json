@@ -1,64 +1,70 @@
 {
     "purificadores": [
         {
+            "id": 36,
             "nome":"Purificador Everest Soft Plus 127v",
-            "preco": "22,99",
+            "preco": "22,00",
             "img": "purificador_0",
             "local": "FGA",
             "descricao": "Melhor bebedouro",
             "tipo": "Novo",
             "inclui": ["- 1 filtro"],
-            "quantidade": 0
+            "quantidade": 1
         },
         {
+            "id": 37,
             "nome":"Purificador 2",
-            "preco": "13,99",
+            "preco": "13,00",
             "img": "purificador_0",
             "local": "",
             "descricao": "",
             "tipo": "Novo",
             "inclui": "",
-            "quantidade": 0
+            "quantidade": 1
         },
         {
+            "id": 38,
             "nome":"Purificador 3",
-            "preco": "14,99",
+            "preco": "14,00",
             "img": "purificador_0",
             "local": "",
             "descricao": "",
             "tipo": "Novo",
             "inclui": "",
-            "quantidade": 0
+            "quantidade": 1
         },
         {
+            "id": 39,
             "nome":"Purificador 4",
-            "preco": "15,99",
+            "preco": "15,00",
             "img": "purificador_0",
             "local": "",
             "descricao": "",
             "tipo": "Novo",
             "inclui": "",
-            "quantidade": 0
+            "quantidade": 1
         },
         {
+            "id": 40,
             "nome":"Purificador 5",
-            "preco": "16,99",
+            "preco": "16,00",
             "img": "purificador_0",
             "local": "",
             "descricao": "",
             "tipo": "Novo",
             "inclui": "",
-            "quantidade": 0
+            "quantidade": 1
         },
         {
+            "id": 41,
             "nome":"Purificador 6",
-            "preco": "17,99",
+            "preco": "17,00",
             "img": "purificador_0",
             "local": "",
             "descricao": "",
             "tipo": "Novo",
             "inclui": "",
-            "quantidade": 0
+            "quantidade": 1
         }
     ]
 }

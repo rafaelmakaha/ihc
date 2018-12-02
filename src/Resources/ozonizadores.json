@@ -1,6 +1,7 @@
 {
     "ozonizadores": [
         {
+            "id": 30,
             "nome":"Ozonizador Superzon",
             "preco": "10,00",
             "img": "ozonizador_0",
@@ -8,9 +9,10 @@
             "descricao": "Melhor bebedouro",
             "tipo": "Novo",
             "inclui": ["- 1 ozonizador"],
-            "quantidade": 0
+            "quantidade": 1
         },
         {
+            "id": 31,
             "nome":"Ozonizador 2",
             "preco": "11,00",
             "img": "ozonizador_0",
@@ -18,9 +20,10 @@
             "descricao": "",
             "tipo": "Novo",
             "inclui": "",
-            "quantidade": 0
+            "quantidade": 1
         },
         {
+            "id": 32,
             "nome":"Ozonizador 3",
             "preco": "12,00",
             "img": "ozonizador_0",
@@ -28,9 +31,10 @@
             "descricao": "",
             "tipo": "Novo",
             "inclui": "",
-            "quantidade": 0
+            "quantidade": 1
         },
         {
+            "id": 33,
             "nome":"Ozonizador 4",
             "preco": "13,00",
             "img": "ozonizador_0",
@@ -38,9 +42,10 @@
             "descricao": "",
             "tipo": "Novo",
             "inclui": "",
-            "quantidade": 0
+            "quantidade": 1
         },
         {
+            "id": 34,
             "nome":"Ozonizador 5",
             "preco": "14,00",
             "img": "ozonizador_0",
@@ -48,9 +53,10 @@
             "descricao": "",
             "tipo": "Novo",
             "inclui": "",
-            "quantidade": 0
+            "quantidade": 1
         },
         {
+            "id": 35,
             "nome":"Ozonizador 6",
             "preco": "15,00",
             "img": "ozonizador_0",
@@ -58,7 +64,7 @@
             "descricao": "",
             "tipo": "Novo",
             "inclui": "",
-            "quantidade": 0
+            "quantidade": 1
         }
     ]
 }

@@ -14,6 +14,7 @@ import  ShoppingCart  from '@material-ui/icons/ShoppingCart';
 import  AddIcon  from '@material-ui/icons/Add';
 import  { Link } from 'react-router-dom';
 import CartService from '../Services/CartService';
+import  MinusIcon  from '@material-ui/icons/Remove';
 
 export default class ProductDetail extends Component {
     constructor(props){
@@ -22,13 +23,35 @@ export default class ProductDetail extends Component {
             json: this.props.json
         }
         this.sendToCart = this.sendToCart.bind(this);
+        this.addQuantity = this.addQuantity.bind(this);
+        this.removeQuantity = this.removeQuantity.bind(this);
     }
 
     sendToCart(){
         console.log("SEND TO CART");
-        CartService.addValue(this.state.json.preco);
-        CartService.addCart(this.state.json);
-        console.log("SEND TO CART - >",this.state.json);
+        var json = this.state.json;
+        if(json.quantidade > 0){
+            CartService.addValue(json.preco, json.quantidade);
+            CartService.addCart(json);
+            console.log("SEND TO CART - >",json);
+        }
+        window.location.reload();
+    }
+
+    removeQuantity(){
+        var json = this.state.json;
+
+        if(this.state.json.quantidade > 0){
+            json.quantidade -= 1;
+            this.setState({json : json})
+        }
+    }
+
+    addQuantity(){
+        var json = this.state.json;
+
+        json.quantidade += 1;
+        this.setState({json : json});
     }
 
     getImage(image){
@@ -90,7 +113,7 @@ export default class ProductDetail extends Component {
                     </Grid>
 
                     <Grid container spacing={0}>
-                        <Grid item xs={9}>
+                        <Grid item xs={7}>
                             <Typography variant="h6" >
                                 Descrição: {this.state.json.descricao}
                             </Typography>
@@ -106,11 +129,27 @@ export default class ProductDetail extends Component {
                             </Typography>
                         </Grid>
 
-                        <Grid item xs={3}>
-                            <Button variant="contained" color="secondary" size="small" onClick={this.sendToCart} component={Link} to="cart">Comprar</Button>
-                            <IconButton variant="extended" color="primary" aria-label="Add" size="small" onClick={this.sendToCart} >
-                                <ShoppingCart /><AddIcon />
+                        <Grid item>
+                            <IconButton onClick={this.removeQuantity} size="small" color="secondary"  >
+                                <MinusIcon />
                             </IconButton>
+                            {this.state.json.quantidade}
+                            <IconButton onClick={this.addQuantity} color="secondary" size="small" >
+                                <AddIcon />
+                            </IconButton>
+                        </Grid>
+
+                        <Grid item >
+                            {/* <Button variant="contained" color="secondary" size="small" onClick={this.sendToCart} component={Link} to="cart">Comprar</Button> */}
+                            <IconButton variant="extended" color="primary" aria-label="Add" size="small" onClick={this.sendToCart} >
+                                <ShoppingCart />
+                            </IconButton>
+                        </Grid>
+                    </Grid>
+                    <Grid container>
+                        <Grid item xs={9} />
+                        <Grid item xs>
+                            <Button variant="contained" color="secondary" size="small" onClick={this.sendToCart} component={Link} to="cart">Comprar</Button>
                         </Grid>
                     </Grid>
                 </CardContent>

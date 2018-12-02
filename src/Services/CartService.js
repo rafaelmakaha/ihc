@@ -49,7 +49,7 @@ export default class CartService extends Component {
 
         try{
             list.forEach(element => {
-                if(element.nome !== cart.nome){
+                if(element.id !== cart.id){
                     newList.push(element);
                 } else {
                     this.removeValue(cart.preco, cart.quantidade);

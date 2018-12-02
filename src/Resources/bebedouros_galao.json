@@ -1,6 +1,7 @@
 {
     "bebedouros_galao": [
         {
+            "id": 11,
             "nome":"Bebedouro Esmaltec EGC35B",
             "preco": "22,00",
             "img": "bebedouro_galao_0",
@@ -8,9 +9,10 @@
             "descricao": "Melhor bebedouro",
             "tipo": "Novo",
             "inclui": ["- 1 bebedouro de galão", "- 1 galão d'agua"],
-            "quantidade": 0
+            "quantidade": 1
         },
         {
+            "id": 12,
             "nome":"Bebedouro de Galão 2",
             "preco": "21,00",
             "img": "bebedouro_galao_0",
@@ -18,9 +20,10 @@
             "descricao": "",
             "tipo": "Novo",
             "inclui": "",
-            "quantidade": 0
+            "quantidade": 1
         },
         {
+            "id": 13,
             "nome":"Bebedouro de Galão 3",
             "preco": "20,00",
             "img": "bebedouro_galao_0",
@@ -28,9 +31,10 @@
             "descricao": "",
             "tipo": "Novo",
             "inclui": "",
-            "quantidade": 0
+            "quantidade": 1
         },
         {
+            "id": 14,
             "nome":"Bebedouro de Galão 4",
             "preco": "19,00",
             "img": "bebedouro_galao_0",
@@ -38,9 +42,10 @@
             "descricao": "",
             "tipo": "Novo",
             "inclui": "",
-            "quantidade": 0
+            "quantidade": 1
         },
         {
+            "id": 15,
             "nome":"Bebedouro de Galão 5",
             "preco": "18,00",
             "img": "bebedouro_galao_0",
@@ -48,9 +53,10 @@
             "descricao": "",
             "tipo": "Novo",
             "inclui": "",
-            "quantidade": 0
+            "quantidade": 1
         },
         {
+            "id": 16,
             "nome":"Bebedouro de Galão 6",
             "preco": "17,00",
             "img": "bebedouro_galao_0",
@@ -58,7 +64,7 @@
             "descricao": "",
             "tipo": "Novo",
             "inclui": "",
-            "quantidade": 0
+            "quantidade": 1
         }
     ]
 }

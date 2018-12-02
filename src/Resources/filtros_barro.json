@@ -1,6 +1,7 @@
 {
     "filtros_barro": [
         {
+            "id": 24,
             "nome":"Filtro de Barro 1",
             "preco": "22,00",
             "img": "filtro_barro",
@@ -8,9 +9,10 @@
             "descricao": "Melhor bebedouro",
             "tipo": "Novo",
             "inclui": ["- 1 filtro", "- 1 vela"],
-            "quantidade": 0
+            "quantidade": 1
         },
         {
+            "id": 25,
             "nome":"Filtro de Barro 2",
             "preco": "21,00",
             "img": "filtro_barro",
@@ -18,9 +20,10 @@
             "descricao": "",
             "tipo": "Novo",
             "inclui": "",
-            "quantidade": 0
+            "quantidade": 1
         },
         {
+            "id": 26,
             "nome":"Filtro de Barro 3",
             "preco": "20,00",
             "img": "filtro_barro",
@@ -28,9 +31,10 @@
             "descricao": "",
             "tipo": "Novo",
             "inclui": "",
-            "quantidade": 0
+            "quantidade": 1
         },
         {
+            "id": 27,
             "nome":"Filtro de Barro 4",
             "preco": "19,00",
             "img": "filtro_barro",
@@ -38,9 +42,10 @@
             "descricao": "",
             "tipo": "Novo",
             "inclui": "",
-            "quantidade": 0
+            "quantidade": 1
         },
         {
+            "id": 28,
             "nome":"Filtro de Barro 5",
             "preco": "18,00",
             "img": "filtro_barro",
@@ -48,9 +53,10 @@
             "descricao": "",
             "tipo": "Novo",
             "inclui": "",
-            "quantidade": 0
+            "quantidade": 1
         },
         {
+            "id": 29,
             "nome":"Filtro de Barro 6",
             "preco": "17,00",
             "img": "filtro_barro",
@@ -58,7 +64,7 @@
             "descricao": "",
             "tipo": "Novo",
             "inclui": "",
-            "quantidade": 0
+            "quantidade": 1
         }
     ]
 }

@@ -16,7 +16,7 @@ export default class Ozonizadores extends Component {
     render(){
         return (
         <div>
-            <Grid container>
+            <Grid container spacing={16}>
                 <Grid item>
                     <Produto json={this.state.ozonizadores[0]} />
                 </Grid>
