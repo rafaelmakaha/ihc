@@ -52,7 +52,7 @@ export default class CartService extends Component {
                 if(element.nome !== cart.nome){
                     newList.push(element);
                 } else {
-                    this.removeValue(cart.preco);
+                    this.removeValue(cart.preco, cart.quantidade);
                 }
             });
             var newListjson = JSON.stringify(newList);
@@ -91,12 +91,13 @@ export default class CartService extends Component {
         return total;
     }
 
-    static addValue(value){
+    static addValue(value, quantity){
         var total = this.getValue();
         total = parseFloat(total.replace(",", "."));
         value = parseFloat(value.replace(",", "."));
+        quantity = parseInt(quantity);
 
-        total += value;
+        total += value * quantity;
 
         var output;
         if (Number.isInteger(total)) { 
@@ -111,14 +112,19 @@ export default class CartService extends Component {
         localStorage.setItem('valorTotal',output);
     }
 
-    static removeValue(value){
+    static removeValue(value, quantity){
         var total = this.getValue();
 
+        console.log("quantidade string = ", quantity);
+        quantity = parseInt(quantity);
+        console.log("quantidade int = ", quantity);
         total = parseFloat(total.replace(",", "."));
         value = parseFloat(value.replace(",", "."));
 
-        total -= value;
-
+        console.log("total antes = ", total);
+        total -= value*quantity;
+        console.log("total dps = ", total);
+        
         var output;
         if (Number.isInteger(total)) { 
             output =  total + ",00";

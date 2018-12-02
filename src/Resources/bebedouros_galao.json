@@ -7,7 +7,8 @@
             "local": "FGA",
             "descricao": "Melhor bebedouro",
             "tipo": "Novo",
-            "inclui": ["- 1 bebedouro de galão", "- 1 galão d'agua"]
+            "inclui": ["- 1 bebedouro de galão", "- 1 galão d'agua"],
+            "quantidade": 0
         },
         {
             "nome":"Bebedouro de Galão 2",
@@ -16,7 +17,8 @@
             "local": "",
             "descricao": "",
             "tipo": "Novo",
-            "inclui": ""
+            "inclui": "",
+            "quantidade": 0
         },
         {
             "nome":"Bebedouro de Galão 3",
@@ -25,7 +27,8 @@
             "local": "",
             "descricao": "",
             "tipo": "Novo",
-            "inclui": ""
+            "inclui": "",
+            "quantidade": 0
         },
         {
             "nome":"Bebedouro de Galão 4",
@@ -34,7 +37,8 @@
             "local": "",
             "descricao": "",
             "tipo": "Novo",
-            "inclui": ""
+            "inclui": "",
+            "quantidade": 0
         },
         {
             "nome":"Bebedouro de Galão 5",
@@ -43,7 +47,8 @@
             "local": "",
             "descricao": "",
             "tipo": "Novo",
-            "inclui": ""
+            "inclui": "",
+            "quantidade": 0
         },
         {
             "nome":"Bebedouro de Galão 6",
@@ -52,7 +57,8 @@
             "local": "",
             "descricao": "",
             "tipo": "Novo",
-            "inclui": ""
+            "inclui": "",
+            "quantidade": 0
         }
     ]
 }
