@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Auth from '../Authentication/Auth';
 
 
 export default class CartService extends Component {
@@ -49,10 +50,10 @@ export default class CartService extends Component {
 
         try{
             list.forEach(element => {
-                if(element.nome !== cart.nome){
+                if(element.id !== cart.id){
                     newList.push(element);
                 } else {
-                    this.removeValue(cart.preco);
+                    this.removeValue(cart.preco, cart.quantidade);
                 }
             });
             var newListjson = JSON.stringify(newList);
@@ -67,8 +68,57 @@ export default class CartService extends Component {
     }
 
     static clearCarts(){
+        // localStorage.setItem('historico', null);
+        if(Auth.logged() === 'true')
+            this.setHistorico();
         localStorage.setItem('carts',null);
         localStorage.setItem('valorTotal','0,00');
+    }
+
+    static setHistorico(){
+        var carts = this.getCarts();
+        var list = this.getHistorico();
+        
+        console.log('set historico-> carts= ', carts, ' list = ', list)
+        // try{
+        //     list.push(cart);
+        // } catch(e){
+        //     list = [cart];
+        // }
+        try{
+            carts.forEach(element => {
+                try{
+                    list.push(element);
+                }catch{
+                    list = [element]
+                }
+            });
+        }catch{
+            try{
+                list.push(carts);
+            }catch{
+                list = [carts];
+            }
+        }
+        
+        list = JSON.stringify(list);
+
+        console.log('list json = ',list );
+
+        localStorage.setItem('historico', list)
+    }
+
+    static getHistorico(){
+        let list = localStorage.getItem('historico');
+        let parsedList = null;
+        
+        try{
+            parsedList = JSON.parse(list);
+        }catch(e){
+            parsedList = [list];
+        }
+
+        return parsedList;
     }
 
     static getValue(){
@@ -91,12 +141,13 @@ export default class CartService extends Component {
         return total;
     }
 
-    static addValue(value){
+    static addValue(value, quantity){
         var total = this.getValue();
         total = parseFloat(total.replace(",", "."));
         value = parseFloat(value.replace(",", "."));
+        quantity = parseInt(quantity);
 
-        total += value;
+        total += value * quantity;
 
         var output;
         if (Number.isInteger(total)) { 
@@ -111,14 +162,19 @@ export default class CartService extends Component {
         localStorage.setItem('valorTotal',output);
     }
 
-    static removeValue(value){
+    static removeValue(value, quantity){
         var total = this.getValue();
 
+        console.log("quantidade string = ", quantity);
+        quantity = parseInt(quantity);
+        console.log("quantidade int = ", quantity);
         total = parseFloat(total.replace(",", "."));
         value = parseFloat(value.replace(",", "."));
 
-        total -= value;
-
+        console.log("total antes = ", total);
+        total -= value*quantity;
+        console.log("total dps = ", total);
+        
         var output;
         if (Number.isInteger(total)) { 
             output =  total + ",00";

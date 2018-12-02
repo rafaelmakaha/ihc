@@ -16,7 +16,7 @@ export default class Purificadores extends Component {
     render(){
         return (
         <div>
-            <Grid container>
+            <Grid container spacing={16}>
                 <Grid item>
                     <Produto json={this.state.purificadores[0]} />
                 </Grid>

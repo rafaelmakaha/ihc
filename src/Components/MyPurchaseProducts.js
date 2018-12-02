@@ -6,6 +6,7 @@ import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
 import CustomizedModal from './CustomizedModal';
 import ProductDetail from './ProductDetail';
+import MyPurchaseDetail from './MyPurchaseDetail';
 
 //IMAGENS
 import filtro_barro from '../Assets/filtro_barro.jpg'
@@ -94,21 +95,18 @@ export default class CartProduct extends Component {
                             <Typography variant="h6">{this.state.json.quantidade}</Typography>
                         </Grid>
 
-                        <Grid item sm={2}>
-                            <Button variant="contained" color="primary" size="small" onClick={this.openModal} >Detalhes</Button>
-                        </Grid>
 
                         <Grid item sm={2}>
-
-                            <IconButton aria-label="Delete" size="small" onClick={this.props.removeCart} >
-                                <DeleteIcon fontSize="medium" />
-                            </IconButton>
+                            <Typography variant="h6">04/12/18</Typography>
 
                             <CustomizedModal open={this.state.open} onClose={this.closeModal}>
-                                <ProductDetail json={this.state.json} />
+                                <MyPurchaseDetail json={this.state.json} />
                             </CustomizedModal>
                         </Grid>
 
+                        <Grid item sm={2}>
+                            <Button variant="contained" color="primary" size="small" onClick={this.openModal} >Detalhes</Button>
+                        </Grid>
                     </Grid>
                 </CardContent>
             </Card >

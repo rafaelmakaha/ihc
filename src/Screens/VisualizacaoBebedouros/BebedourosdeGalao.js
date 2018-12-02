@@ -16,7 +16,7 @@ export default class FiltrosdeBarro extends Component {
     render(){
         return (
         <div>
-            <Grid container>
+            <Grid container spacing={16}>
                 <Grid item>
                     <Produto json={this.state.bebedouros_galao[0]} />
                 </Grid>

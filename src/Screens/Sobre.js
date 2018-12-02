@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
 import {
-    CardContent,
     Typography,
-    Button,
-    TextField,
-    Grid,
 } from '@material-ui/core';
 
 export default class Sobre extends Component {

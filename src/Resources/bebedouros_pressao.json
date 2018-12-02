@@ -1,58 +1,70 @@
 {
     "bebedouros_pressao": [
         {
+            "id": 17,
             "nome":"Bebedouro IBBL",
             "preco": "22,00",
             "img": "bebedouro_pressao_0",
             "local": "FGA",
             "descricao": "Melhor bebedouro",
             "tipo": "Novo",
-            "inclui": ["- 1 bebedouro de pressão"]
+            "inclui": ["- 1 bebedouro de pressão"],
+            "quantidade": 1
         },
         {
+            "id": 18,
             "nome":"Bebedouro de Pressão 2",
             "preco": "21,00",
             "img": "bebedouro_pressao_0",
             "local": "",
             "descricao": "",
             "tipo": "Novo",
-            "inclui": ""
+            "inclui": "",
+            "quantidade": 1
         },
         {
+            "id": 19,
             "nome":"Bebedouro de Pressão 3",
             "preco": "20,00",
             "img": "bebedouro_pressao_0",
             "local": "",
             "descricao": "",
             "tipo": "Novo",
-            "inclui": ""
+            "inclui": "",
+            "quantidade": 1
         },
         {
+            "id": 20,
             "nome":"Bebedouro de Pressão 4",
             "preco": "19,00",
             "img": "bebedouro_pressao_0",
             "local": "",
             "descricao": "",
             "tipo": "Novo",
-            "inclui": ""
+            "inclui": "",
+            "quantidade": 1
         },
         {
+            "id": 21,
             "nome":"Bebedouro de Pressão 5",
             "preco": "18,00",
             "img": "bebedouro_pressao_0",
             "local": "",
             "descricao": "",
             "tipo": "Novo",
-            "inclui": ""
+            "inclui": "",
+            "quantidade": 1
         },
         {
+            "id": 22,
             "nome":"Bebedouro de Pressão 6",
             "preco": "17,00",
             "img": "bebedouro_pressao_0",
             "local": "",
             "descricao": "",
             "tipo": "Novo",
-            "inclui": ""
+            "inclui": "",
+            "quantidade": 1
         }
     ]
 }

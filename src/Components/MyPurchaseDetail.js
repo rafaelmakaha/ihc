@@ -127,31 +127,9 @@ export default class ProductDetail extends Component {
                                     {this.state.json.inclui[1]}
                                 </div>
                             </Typography>
-                        </Grid>
-
-                        <Grid item>
-                            <IconButton onClick={this.removeQuantity} size="small" color="secondary"  >
-                                <MinusIcon />
-                            </IconButton>
-                            {this.state.json.quantidade}
-                            <IconButton onClick={this.addQuantity} color="secondary" size="small" >
-                                <AddIcon />
-                            </IconButton>
-                        </Grid>
-
-                        <Grid item >
-                            {/* <Button variant="contained" color="secondary" size="small" onClick={this.sendToCart} component={Link} to="cart">Comprar</Button> */}
-                            <IconButton variant="extended" color="primary" aria-label="Add" size="small" onClick={this.sendToCart} >
-                                <ShoppingCart />
-                            </IconButton>
-                        </Grid>
+                        </Grid>                        
                     </Grid>
-                    <Grid container>
-                        <Grid item xs={9} />
-                        <Grid item xs>
-                            <Button variant="contained" color="secondary" size="small" onClick={this.sendToCart} component={Link} to="cart">Comprar</Button>
-                        </Grid>
-                    </Grid>
+                    
                 </CardContent>
             </Card >
         )

@@ -1,94 +1,114 @@
 {
     "produtos": [
         {
+            "id": 1,
             "nome":"Produto 1",
             "preco": "22,00",
             "img": "filtro_barro",
             "local": "FGA",
             "descricao": "Melhor bebedouro",
             "tipo": "Novo",
-            "inclui": ["- 1 filtro", "- 1 vela"]
+            "inclui": ["- 1 filtro", "- 1 vela"],
+            "quantidade": 1
         },
         {
+            "id": 2,
             "nome":"Produto 2",
             "preco": "21,00",
             "img": "ozonizador_0",
             "local": "",
             "descricao": "",
             "tipo": "Novo",
-            "inclui": ""
+            "inclui": "",
+            "quantidade": 1
         },
         {
+            "id": 3,
             "nome":"Produto 3",
             "preco": "20,00",
             "img": "purificador_0",
             "local": "",
             "descricao": "",
             "tipo": "Novo",
-            "inclui": ""
+            "inclui": "",
+            "quantidade": 1
         },
         {
+            "id": 4,
             "nome":"Produto 4",
             "preco": "22,00",
             "img": "bebedouro_pressao_0",
             "local": "FGA",
             "descricao": "Melhor bebedouro",
             "tipo": "Novo",
-            "inclui": ["- 1 bebedouro de pressão"]
+            "inclui": ["- 1 bebedouro de pressão"],
+            "quantidade": 1
         },
         {
+            "id": 5,
             "nome":"Produto 5",
             "preco": "22,00",
             "img": "bebedouro_galao_0",
             "local": "FGA",
             "descricao": "Melhor bebedouro",
             "tipo": "Novo",
-            "inclui": ["- 1 bebedouro de galão", "- 1 galão d'agua"]
+            "inclui": ["- 1 bebedouro de galão", "- 1 galão d'agua"],
+            "quantidade": 1
         },
         {
+            "id": 6,
             "nome":"Produto 6",
             "preco": "20,00",
             "img": "purificador_0",
             "local": "",
             "descricao": "",
             "tipo": "Novo",
-            "inclui": ""
+            "inclui": "",
+            "quantidade": 1
         },
         {
+            "id": 7,
             "nome":"Produto 7",
             "preco": "22,00",
             "img": "bebedouro_pressao_0",
             "local": "FGA",
             "descricao": "Melhor bebedouro",
             "tipo": "Novo",
-            "inclui": ["- 1 bebedouro de pressão"]
+            "inclui": ["- 1 bebedouro de pressão"],
+            "quantidade": 1
         },
         {
+            "id": 8,
             "nome":"Produto 8",
             "preco": "22,00",
             "img": "bebedouro_galao_0",
             "local": "FGA",
             "descricao": "Melhor bebedouro",
             "tipo": "Novo",
-            "inclui": ["- 1 bebedouro de galão", "- 1 galão d'agua"]
+            "inclui": ["- 1 bebedouro de galão", "- 1 galão d'agua"],
+            "quantidade": 1
         },
         {
+            "id": 9,
             "nome":"Produto 9",
             "preco": "22,00",
             "img": "filtro_barro",
             "local": "FGA",
             "descricao": "Melhor bebedouro",
             "tipo": "Novo",
-            "inclui": ["- 1 filtro", "- 1 vela"]
+            "inclui": ["- 1 filtro", "- 1 vela"],
+            "quantidade": 1
         },
         {
+            "id": 10,
             "nome":"Produto 10",
             "preco": "21,00",
             "img": "ozonizador_0",
             "local": "",
             "descricao": "",
             "tipo": "Novo",
-            "inclui": ""
+            "inclui": "",
+            "quantidade": 1
         }
     ]
 }

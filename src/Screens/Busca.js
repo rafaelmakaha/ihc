@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
-import { Grid } from '@material-ui/core';
+import { 
+    Grid,
+    Card,
+    Typography,
+} from '@material-ui/core';
 import Produto from '../Components/Produto';
 import { FGA } from '../Resources/busca_FGA.json';
 
@@ -15,13 +19,16 @@ export default class Busca extends Component {
 
     render(){
         return (
-        <div>
-            <Grid container>
-                <Grid item>
-                    <Produto json={this.state.FGA[0]} />
+            <Card>
+                <Typography variant="h4">Resultado(s) da busca:</Typography>
+                <br></br>
+                <Grid container>
+                    <Grid item>
+                        <Produto json={this.state.FGA[0]} />
+                    </Grid>
                 </Grid>
-            </Grid>
-        </div>
+                <br></br>
+            </Card>
         )
     }
 }
