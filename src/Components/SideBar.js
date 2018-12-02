@@ -199,9 +199,11 @@ class ResponsiveDrawer extends React.Component {
         <div>
           <div className={classes.toolbar} />
           <MuiThemeProvider theme={mui_theme}>
-            <Button fullWidth component={Link} to='/profile'>
-              <Avatar src={avatar} />
-            </Button>
+            <List>
+              <Button fullWidth component={Link} to='/profile'>
+                <Avatar src={avatar} />
+              </Button>
+            </List>
             <Divider />
             <List>
               <Button fullWidth size="small" component={Link} to='/profile'>Perfil</Button>
