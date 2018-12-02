@@ -46,15 +46,24 @@ export default class CartService extends Component {
 
     static removeCart(cart){
         let list = this.getCarts();
+        var contador = 0;
         let newList = [];
 
         try{
             list.forEach(element => {
-                if(element.id !== cart.id){
-                    newList.push(element);
-                } else {
+                if(element.id === cart.id && element.quantidade === cart.quantidade && contador === 0){
                     this.removeValue(cart.preco, cart.quantidade);
+                    contador++; 
+                } else {
+                    newList.push(element);
                 }
+
+                // if(element.id !== cart.id){
+                //     newList.push(element);
+                // } else if(contador === 0) {
+                //     this.removeValue(cart.preco, cart.quantidade);
+                //     contador++;  
+                // }
             });
             var newListjson = JSON.stringify(newList);
             console.log('newlist = ',newList);

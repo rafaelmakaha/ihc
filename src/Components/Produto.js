@@ -11,7 +11,7 @@ import ShoppingCart from '@material-ui/icons/ShoppingCart';
 
 import ProductDetail from './ProductDetail';
 import CustomizedModal from './CustomizedModal';
-import CardActions from '@material-ui/core/CardActions';
+// import CardActions from '@material-ui/core/CardActions';
 
 //IMAGENS
 import filtro_barro from '../Assets/filtro_barro.jpg'
