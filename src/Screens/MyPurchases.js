@@ -1,9 +1,5 @@
 import React, { Component } from 'react';
-import {Link} from 'react-router-dom';
-import { Grid, Typography, Button } from '@material-ui/core';
-import { createMuiTheme, MuiThemeProvider  } from '@material-ui/core/styles';
-import green from '@material-ui/core/colors/green';
-import CartProduct from '../Components/CartProduct';
+import { Grid, Typography } from '@material-ui/core';
 import MyPurchaseProducts from '../Components/MyPurchaseProducts'
 import CartService from '../Services/CartService';
 
