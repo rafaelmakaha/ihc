@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Card from '@material-ui/core/Card';
 import Typography from '@material-ui/core/Typography';
-import { CardContent, CardMedia, Button, Grid } from '@material-ui/core';
+import { CardContent, CardMedia, Button, Grid, CardActionArea } from '@material-ui/core';
 import CartService from '../Services/CartService';
 
 import IconButton from '@material-ui/core/IconButton';
@@ -11,6 +11,7 @@ import ShoppingCart from '@material-ui/icons/ShoppingCart';
 
 import ProductDetail from './ProductDetail';
 import CustomizedModal from './CustomizedModal';
+import CardActions from '@material-ui/core/CardActions';
 
 //IMAGENS
 import filtro_barro from '../Assets/filtro_barro.jpg'
@@ -103,28 +104,35 @@ export default class Produto extends Component {
         }
         return(
             <Card >
-                <CardContent>
-                    <CardMedia style={styles.image} image={this.getImage(this.state.json.img)} title="Teste"/>
-                    <Typography variant="body1">
-                        {this.state.json.nome}
-                    </Typography>
-                    <Typography variant="h6">
-                        R$: {this.state.json.preco}
-                    </Typography>
-                    
-                    <Grid container spacing={8}>
-                        <Grid item xs={6}>    
-                            <Button variant="contained" color="secondary" size="small" onClick={this.sendToCart} component={Link} to="cart">Comprar</Button>
+                {/* <CardContent> */}
+                <CardActionArea onClick={this.openModal1}>
+                    <CardContent>
+                        <Grid container>
+                            {/* <Grid item xs={3}></Grid> */}
+                            <Grid item xs={12}>
+                                <CardMedia style={styles.image} image={this.getImage(this.state.json.img)} title="Teste"/>
+                                <Typography variant="body1">
+                                    {this.state.json.nome}
+                                </Typography>
+                                <Typography variant="h6">
+                                    R$: {this.state.json.preco}
+                                </Typography>
+                            </Grid>
                         </Grid>
+                    </CardContent>
+                </CardActionArea>
 
-                        <Grid item xs={6}>
+                {/* <CardActions>     */}
+                    <Grid container>
+                        
+                        {/* <Grid item xs={6}>
                             <Button variant="contained" color="primary" size="small" onClick={this.openModal1} >Detalhes</Button>
-                        </Grid>
-                    </Grid>
+                        </Grid> */}
+                    {/* </Grid>
                     
-                    <Grid container spacing={8}>
+                    <Grid container spacing={8}> */}
 
-                        <Grid item>
+                        <Grid item xs={12}>
                             <IconButton onClick={this.removeQuantity} size="small" color="secondary"  >
                                 <MinusIcon />
                             </IconButton>
@@ -132,24 +140,38 @@ export default class Produto extends Component {
                             <IconButton onClick={this.addQuantity} color="secondary" size="small" >
                                 <AddIcon />
                             </IconButton>
-                        </Grid>
-
-                        <Grid item xs={3}>
                             <IconButton variant="extended" color="primary" aria-label="Add" size="small" onClick={this.sendToCart} >
                                 <ShoppingCart />
                                 {/* <AddIcon /> */}
                             </IconButton>
+                        </Grid>
+
+                        <Grid item>
                             <CustomizedModal open={this.state.open2} onClose={this.closeModal2}>
                                 <Typography variant="h4" >Produto adicionado ao carrinho com sucesso!</Typography>
                                 <Button variant="contained" color="primary" onClick={this.closeModal2}>Ok</Button>
                             </CustomizedModal>
                         </Grid>
                     </Grid>
+                    
+
+                    {/* <Grid container>
+                        <Grid item xs={12}>    
+                            <Button variant="contained" color="secondary" size="small" onClick={this.sendToCart} component={Link} to="cart">Comprar</Button>
+                        </Grid>
+                    </Grid> */}
 
                     <CustomizedModal open={this.state.open1} onClose={this.closeModal1}>
                         <ProductDetail json={this.state.json} />
                     </CustomizedModal>
-                </CardContent>
+                    <Grid container spacing={16}>
+                        <Grid item xs={6}></Grid>
+                        <Grid item>
+                            <Button variant="contained" color="secondary" size="small" onClick={this.sendToCart} component={Link} to="cart">Comprar</Button>
+                        </Grid>
+                    </Grid>
+                {/* </CardActions> */}
+                
             </Card >
         )
     }
