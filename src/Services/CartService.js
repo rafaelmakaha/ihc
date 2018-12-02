@@ -67,8 +67,56 @@ export default class CartService extends Component {
     }
 
     static clearCarts(){
+        // localStorage.setItem('historico', null);
+        this.setHistorico();
         localStorage.setItem('carts',null);
         localStorage.setItem('valorTotal','0,00');
+    }
+
+    static setHistorico(){
+        var carts = this.getCarts();
+        var list = this.getHistorico();
+        
+        console.log('set historico-> carts= ', carts, ' list = ', list)
+        // try{
+        //     list.push(cart);
+        // } catch(e){
+        //     list = [cart];
+        // }
+        try{
+            carts.forEach(element => {
+                try{
+                    list.push(element);
+                }catch{
+                    list = [element]
+                }
+            });
+        }catch{
+            try{
+                list.push(carts);
+            }catch{
+                list = [carts];
+            }
+        }
+        
+        list = JSON.stringify(list);
+
+        console.log('list json = ',list );
+
+        localStorage.setItem('historico', list)
+    }
+
+    static getHistorico(){
+        let list = localStorage.getItem('historico');
+        let parsedList = null;
+        
+        try{
+            parsedList = JSON.parse(list);
+        }catch(e){
+            parsedList = [list];
+        }
+
+        return parsedList;
     }
 
     static getValue(){

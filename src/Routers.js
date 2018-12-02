@@ -18,6 +18,7 @@ import Purificadores from './Screens/VisualizacaoFiltros/Purificadores';
 import Ozonizadores from './Screens/VisualizacaoFiltros/Ozonizadores';
 import BebedourosdeGalao from './Screens/VisualizacaoBebedouros/BebedourosdeGalao';
 import BebedourosdePressao from './Screens/VisualizacaoBebedouros/BebedourosdePressao';
+import MyPurchases from './Screens/MyPurchases';
 
 export default class Routers extends Component {
   render() {
@@ -88,6 +89,18 @@ export default class Routers extends Component {
             <Route exact path='/payment' render={() => (
               Auth.logged() ? (
                 <Payment />
+              ) : (
+                <Redirect
+                  to={{
+                    pathname: '/login',
+                    state: { msg: logged_msg }
+                  }}
+                />
+              )
+            )}/>
+            <Route exact path='/my_purchases' render={() => (
+              Auth.logged() ? (
+                <MyPurchases />
               ) : (
                 <Redirect
                   to={{
