@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Auth from '../Authentication/Auth';
 
 
 export default class CartService extends Component {
@@ -68,7 +69,8 @@ export default class CartService extends Component {
 
     static clearCarts(){
         // localStorage.setItem('historico', null);
-        this.setHistorico();
+        if(Auth.logged() === 'true')
+            this.setHistorico();
         localStorage.setItem('carts',null);
         localStorage.setItem('valorTotal','0,00');
     }
