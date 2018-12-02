@@ -19,12 +19,14 @@ export default class Ajuda extends Component {
   }
   closeModal(){
     this.setState({open: false});
+    window.location.reload();
   }
 
   render(){
       return (
       <div>
         <fieldset><legend>Fale conosco</legend>
+          <p>E-mail: &nbsp; <input type="text" size="40"/></p>
           <p>Assunto: <input type="text" size="40"/></p>
           <p>Mensagem: </p>
           <textarea cols="60" rows="10"></textarea>
@@ -34,7 +36,7 @@ export default class Ajuda extends Component {
           <CustomizedModal open={this.state.open} onClose={this.closeModal}>
               <Typography variant="h4" >Mensagem enviada para nossa caixa de correios.
               Por favor, aguarde o retorno</Typography>
-              <Button variant="contained" color="primary" onClick={this.closeModal} component={Link} to="/">Ok</Button>
+              <Button variant="contained" color="primary" onClick={this.closeModal}>Ok</Button>
           </CustomizedModal>
         </fieldset>
       </div>

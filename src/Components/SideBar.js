@@ -210,6 +210,7 @@ class ResponsiveDrawer extends React.Component {
               <Button fullWidth size="small" onClick={this.handleLogout} component={Link} to="/">Sair</Button>
             </List>
             <Divider />
+            <Divider />
             <List>
               <Button fullWidth size="small" component={Link} to='/cart'>Carrinho</Button>
             </List>
