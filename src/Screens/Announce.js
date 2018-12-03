@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Typography from '@material-ui/core/Typography';
 import { Button, Input, FormLabel, FormControlLabel, TextField, RadioGroup, Radio } from '@material-ui/core';
 import CustomizedModal from '../Components/CustomizedModal';
-import { Link } from 'react-router-dom';
 
 export default class MyAnnounces extends Component {
   constructor(props){
@@ -59,6 +58,7 @@ export default class MyAnnounces extends Component {
           <textarea cols="60" rows="10"></textarea>
           <br/>
           <br/>
+          <p><FormLabel>Imagem: <button>Procurar arquivo</button></FormLabel></p>
           <Button variant="contained" color="primary" onClick={this.openModal}>Enviar</Button>
           <CustomizedModal open={this.state.open} onClose={this.closeModal}>
             <Typography variant="h4" >Anúncio publicado com sucesso.</Typography><br/>

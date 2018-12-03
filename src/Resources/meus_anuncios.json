@@ -8,8 +8,7 @@
         "local": "FGA",
         "descricao": "Melhor bebedouro",
         "anunciante": "Joao Generico",
-        "tipo": "Novo",
-        "inclui": ["- 1 bebedouro de galão", "- 1 galão d'agua"],
+        "classificação": "Novo",
         "quantidade": 1
     },
     {
@@ -20,8 +19,7 @@
         "local": "",
         "descricao": "",
         "anunciante": "Joao Generico",
-        "tipo": "Novo",
-        "inclui": "",
+        "classificação": "Novo",
         "quantidade": 1
     },
     {
@@ -32,8 +30,7 @@
         "local": "",
         "descricao": "",
         "anunciante": "Joao Generico",
-        "tipo": "Novo",
-        "inclui": "",
+        "classificação": "Novo",
         "quantidade": 1
     }
   ]

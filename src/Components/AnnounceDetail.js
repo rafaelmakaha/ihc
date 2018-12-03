@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Card from '@material-ui/core/Card';
 import Typography from '@material-ui/core/Typography';
-import { CardContent, CardMedia, Grid, Button } from '@material-ui/core';
+import { CardContent, CardMedia, Grid } from '@material-ui/core';
 
 //IMAGENS
 import filtro_barro from '../Assets/filtro_barro.jpg'
@@ -9,14 +9,8 @@ import ozonizador_0 from '../Assets/ozonizador_0.png'
 import purificador_0 from '../Assets/purificador_0.jpg'
 import bebedouro_galao_0 from '../Assets/bebedouro_galao_0.jpg'
 import bebedouro_pressao_0 from '../Assets/bebedouro_pressao_0.jpg'
-import  IconButton  from '@material-ui/core/IconButton';
-import  ShoppingCart  from '@material-ui/icons/ShoppingCart';
-import  AddIcon  from '@material-ui/icons/Add';
-import  { Link } from 'react-router-dom';
-import CartService from '../Services/CartService';
-import  MinusIcon  from '@material-ui/icons/Remove';
 
-export default class Announce_detail extends Component {
+export default class AnnounceDetail extends Component {
     constructor(props){
         super(props);
         this.state = {
@@ -79,7 +73,7 @@ export default class Announce_detail extends Component {
                             </Typography>
 
                             <Typography variant="h6" >
-                                Tipo: {this.state.json.tipo}
+                                Tipo: {this.state.json.classificação}
                             </Typography>
 
                         </Grid>
@@ -102,15 +96,6 @@ export default class Announce_detail extends Component {
                                 Anunciante: {this.state.json.anunciante}
                             </Typography>
                             <br/>
-                            <Typography variant="h6" >
-                                Inclui:
-                                <div>
-                                    {this.state.json.inclui[0]}
-                                </div>
-                                <div>
-                                    {this.state.json.inclui[1]}
-                                </div>
-                            </Typography>
                         </Grid>
                     </Grid>
                 </CardContent>
