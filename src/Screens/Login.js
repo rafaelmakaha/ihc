@@ -60,10 +60,10 @@ export default class Login extends Component {
                                 <TextField id="login_pw" type="password" label="Senha" fullWidth/>
                             </CardContent>
                             <CardContent>
-                                <Button variant="contained" color="secondary" type="login" onClick={this.handleClickLogin}>Login</Button>
+                                <Button variant="contained" type="login" onClick={this.handleClickLogin}>Login</Button>
                                 <CustomizedModal open={this.state.open} onClose={this.closeModal}>
                                     <Typography variant="h4" >Login realizado com sucesso!</Typography>
-                                    <Button variant="contained" color="Secondary" component={Link} to='/'>Ok</Button>
+                                    <Button variant="contained" component={Link} to='/'>Ok</Button>
                                 </CustomizedModal>
                             </CardContent>  
                         </CardContent>
@@ -81,10 +81,10 @@ export default class Login extends Component {
                                 <TextField id="regist_pw_verify" type="password" label="Senha" fullWidth/>
                             </CardContent>
                             <CardContent>
-                                <Button variant="contained" color="secondary" type="register" onClick={this.openModal2}>Registrar</Button>
+                                <Button variant="contained" type="register" onClick={this.openModal2}>Registrar</Button>
                                 <CustomizedModal open={this.state.open2} onClose={this.closeModal2}>
                                     <Typography variant="h4" >Registro realizado com sucesso!</Typography>
-                                    <Button variant="contained" color="Secondary" onClick={this.closeModal2}>Ok</Button>
+                                    <Button variant="contained" onClick={this.closeModal2}>Ok</Button>
                                 </CustomizedModal>
                             </CardContent>
                         </CardContent>
