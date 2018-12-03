@@ -6,10 +6,9 @@
             "preco": "22,00",
             "img": "filtro_barro",
             "local": "FGA",
-            "descricao": "Melhor bebedouro",
-            "anunciante": "Filtro Generico",
-            "tipo": "Novo",
-            "inclui": ["- 1 filtro", "- 1 vela"],
+            "descricao": "Melhor bebedouro da minha casa",
+            "anunciante": "Joao Generico",
+            "classificação": "Novo",
             "quantidade": 1
         },
         {
@@ -17,11 +16,10 @@
             "nome":"Produto 2",
             "preco": "21,00",
             "img": "ozonizador_0",
-            "local": "",
-            "descricao": "",
-            "anunciante": "Bebedouro Generico",
-            "tipo": "Novo",
-            "inclui": "",
+            "local": "sei la onde",
+            "descricao": "segundo melhor bebedouro",
+            "anunciante": "Pai do bebedouro",
+            "classificação": "Novo",
             "quantidade": 1
         },
         {
@@ -29,11 +27,10 @@
             "nome":"Produto 3",
             "preco": "20,00",
             "img": "purificador_0",
-            "local": "",
-            "descricao": "",
-            "anunciante": "Amantes de filtro",
-            "tipo": "Novo",
-            "inclui": "",
+            "local": "filtrolandia",
+            "descricao": "qualidade garantida",
+            "anunciante": "Amante de filtros",
+            "classificação": "Novo",
             "quantidade": 1
         },
         {
@@ -42,10 +39,9 @@
             "preco": "22,00",
             "img": "bebedouro_pressao_0",
             "local": "FGA",
-            "descricao": "Melhor bebedouro",
+            "descricao": "vigésimo melhor bebedouro",
             "anunciante": "Filtrolino",
-            "tipo": "Novo",
-            "inclui": ["- 1 bebedouro de pressão"],
+            "classificação": "Novo",
             "quantidade": 1
         },
         {
@@ -56,8 +52,7 @@
             "local": "FGA",
             "descricao": "Melhor bebedouro",
             "anunciante": "Genericolino",
-            "tipo": "Novo",
-            "inclui": ["- 1 bebedouro de galão", "- 1 galão d'agua"],
+            "classificação": "Novo",
             "quantidade": 1
         },
         {
@@ -67,9 +62,8 @@
             "img": "purificador_0",
             "local": "",
             "descricao": "",
-            "anunciante": "ister egue",
-            "tipo": "Novo",
-            "inclui": "",
+            "anunciante": "Filtrando filtros",
+            "classificação": "Novo",
             "quantidade": 1
         },
         {
@@ -79,9 +73,8 @@
             "img": "bebedouro_pressao_0",
             "local": "FGA",
             "descricao": "Melhor bebedouro",
-            "anunciante": "kemleregay",
-            "tipo": "Novo",
-            "inclui": ["- 1 bebedouro de pressão"],
+            "anunciante": "kemlerelegal",
+            "classificação": "Novo",
             "quantidade": 1
         },
         {
@@ -90,10 +83,9 @@
             "preco": "22,00",
             "img": "bebedouro_galao_0",
             "local": "FGA",
-            "descricao": "Melhor bebedouro",
-            "anunciante": "Esse site e mt bom",
-            "tipo": "Novo",
-            "inclui": ["- 1 bebedouro de galão", "- 1 galão d'agua"],
+            "descricao": "pior bebedouro",
+            "anunciante": "filtradoro",
+            "classificação": "Novo",
             "quantidade": 1
         },
         {
@@ -104,8 +96,7 @@
             "local": "FGA",
             "descricao": "Melhor bebedouro",
             "anunciante": "noname",
-            "tipo": "Novo",
-            "inclui": ["- 1 filtro", "- 1 vela"],
+            "classificação": "Novo",
             "quantidade": 1
         },
         {
@@ -114,10 +105,9 @@
             "preco": "21,00",
             "img": "ozonizador_0",
             "local": "",
-            "descricao": "",
-            "anunciante": "bruna",
-            "tipo": "Novo",
-            "inclui": "",
+            "descricao": "bebedouro da Bruna",
+            "anunciante": "Bruna",
+            "classificação": "Novo",
             "quantidade": 1
         }
     ]

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Typography from '@material-ui/core/Typography';
 import { Button, Input, FormLabel } from '@material-ui/core';
 import CustomizedModal from '../Components/CustomizedModal';
-import { Link } from 'react-router-dom';
 
 export default class Ajuda extends Component {
   constructor(props){

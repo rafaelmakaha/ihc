@@ -99,7 +99,7 @@ export default class ProductDetail extends Component {
                             </Typography>
 
                             <Typography variant="h6" >
-                                Tipo: {this.state.json.tipo}
+                                Tipo: {this.state.json.classificação}
                             </Typography>
 
                         </Grid>
@@ -122,15 +122,6 @@ export default class ProductDetail extends Component {
                                 Anunciante: {this.state.json.anunciante}
                             </Typography>
                             <br/>
-                            <Typography variant="h6" >
-                                Inclui:
-                                <div>
-                                    {this.state.json.inclui[0]}
-                                </div>
-                                <div>
-                                    {this.state.json.inclui[1]}
-                                </div>
-                            </Typography>
                         </Grid>
 
                         <Grid item>

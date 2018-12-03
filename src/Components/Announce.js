@@ -2,14 +2,8 @@ import React, { Component } from 'react';
 import Card from '@material-ui/core/Card';
 import Typography from '@material-ui/core/Typography';
 import { CardContent, CardMedia, Button, Grid, CardActionArea } from '@material-ui/core';
-import CartService from '../Services/CartService';
 
-import IconButton from '@material-ui/core/IconButton';
-import AddIcon from '@material-ui/icons/Add';
-import MinusIcon from '@material-ui/icons/Remove'
-import ShoppingCart from '@material-ui/icons/ShoppingCart';
-
-import Announce_detail from './Announce_detail';
+import AnnounceDetail from './AnnounceDetail';
 import CustomizedModal from './CustomizedModal';
 // import CardActions from '@material-ui/core/CardActions';
 
@@ -19,7 +13,6 @@ import ozonizador_0 from '../Assets/ozonizador_0.png'
 import purificador_0 from '../Assets/purificador_0.jpg'
 import bebedouro_galao_0 from '../Assets/bebedouro_galao_0.jpg'
 import bebedouro_pressao_0 from '../Assets/bebedouro_pressao_0.jpg'
-import { Link } from 'react-router-dom';
 
 export default class Produto extends Component {
     constructor(props){
@@ -93,7 +86,7 @@ export default class Produto extends Component {
                     </CardContent>
                 </CardActionArea>
                     <CustomizedModal open={this.state.open1} onClose={this.closeModal1}>
-                        <Announce_detail json={this.state.json} />
+                        <AnnounceDetail json={this.state.json} />
                     </CustomizedModal>
                     <Grid container spacing={16}>
                         <Grid item xs={6}></Grid>
