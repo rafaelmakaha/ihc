@@ -12,6 +12,7 @@ import Profile from './Screens/Profile';
 import Announce from './Screens/Announce';
 import MyAnnounces from './Screens/MyAnnounces';
 import Payment from './Screens/Payment';
+import Oferta from './Screens/Oferta';
 
 import FiltrosdeBarro from './Screens/VisualizacaoFiltros/FiltrosdeBarro';
 import Purificadores from './Screens/VisualizacaoFiltros/Purificadores';
@@ -38,6 +39,7 @@ export default class Routers extends Component {
             <Route exact path='/ozonizadores' component={Ozonizadores}/>
             <Route exact path='/bebedouros_galao' component={BebedourosdeGalao}/>
             <Route exact path='/bebedouros_pressao' component={BebedourosdePressao}/>
+            <Route exact path='/oferta' component={Oferta}/>            
             <Route exact path='/home' render={() => (
               Auth.logged() ? (
                 <Home />
