@@ -4,6 +4,7 @@ import Produto from '../Components/Produto';
 import CustomizedModal from '../Components/CustomizedModal';
 import Login from './Login';
 import { produtos } from '../Resources/produtos.json';
+import Banner from '../Components/Banner';
 
 
 export default class Home extends Component {
@@ -18,6 +19,8 @@ export default class Home extends Component {
     render(){
         return (
         <div>
+            <Banner/>
+            <br/>
             <Grid container spacing={16}>
                 <Grid item>
                     <Produto json={this.state.produtos[0]} />
