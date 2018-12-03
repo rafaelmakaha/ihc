@@ -1,0 +1,40 @@
+{
+  "meus_anuncios": [
+    {
+        "id": 11,
+        "nome":"Bebedouro Esmaltec EGC35B",
+        "preco": "22,00",
+        "img": "bebedouro_galao_0",
+        "local": "FGA",
+        "descricao": "Melhor bebedouro",
+        "anunciante": "Joao Generico",
+        "tipo": "Novo",
+        "inclui": ["- 1 bebedouro de galão", "- 1 galão d'agua"],
+        "quantidade": 1
+    },
+    {
+        "id": 33,
+        "nome":"Ozonizador 4",
+        "preco": "13,00",
+        "img": "ozonizador_0",
+        "local": "",
+        "descricao": "",
+        "anunciante": "Joao Generico",
+        "tipo": "Novo",
+        "inclui": "",
+        "quantidade": 1
+    },
+    {
+        "id": 20,
+        "nome":"Bebedouro de Pressão 4",
+        "preco": "19,00",
+        "img": "bebedouro_pressao_0",
+        "local": "",
+        "descricao": "",
+        "anunciante": "Joao Generico",
+        "tipo": "Novo",
+        "inclui": "",
+        "quantidade": 1
+    }
+  ]
+}

@@ -7,6 +7,7 @@
             "img": "filtro_barro",
             "local": "FGA",
             "descricao": "Melhor bebedouro",
+            "anunciante": "Filtro Generico",
             "tipo": "Novo",
             "inclui": ["- 1 filtro", "- 1 vela"],
             "quantidade": 1
@@ -18,6 +19,7 @@
             "img": "ozonizador_0",
             "local": "",
             "descricao": "",
+            "anunciante": "Bebedouro Generico",
             "tipo": "Novo",
             "inclui": "",
             "quantidade": 1
@@ -29,6 +31,7 @@
             "img": "purificador_0",
             "local": "",
             "descricao": "",
+            "anunciante": "Amantes de filtro",
             "tipo": "Novo",
             "inclui": "",
             "quantidade": 1
@@ -40,6 +43,7 @@
             "img": "bebedouro_pressao_0",
             "local": "FGA",
             "descricao": "Melhor bebedouro",
+            "anunciante": "Filtrolino",
             "tipo": "Novo",
             "inclui": ["- 1 bebedouro de pressão"],
             "quantidade": 1
@@ -51,6 +55,7 @@
             "img": "bebedouro_galao_0",
             "local": "FGA",
             "descricao": "Melhor bebedouro",
+            "anunciante": "Genericolino",
             "tipo": "Novo",
             "inclui": ["- 1 bebedouro de galão", "- 1 galão d'agua"],
             "quantidade": 1
@@ -62,6 +67,7 @@
             "img": "purificador_0",
             "local": "",
             "descricao": "",
+            "anunciante": "ister egue",
             "tipo": "Novo",
             "inclui": "",
             "quantidade": 1
@@ -73,6 +79,7 @@
             "img": "bebedouro_pressao_0",
             "local": "FGA",
             "descricao": "Melhor bebedouro",
+            "anunciante": "kemleregay",
             "tipo": "Novo",
             "inclui": ["- 1 bebedouro de pressão"],
             "quantidade": 1
@@ -84,6 +91,7 @@
             "img": "bebedouro_galao_0",
             "local": "FGA",
             "descricao": "Melhor bebedouro",
+            "anunciante": "Esse site e mt bom",
             "tipo": "Novo",
             "inclui": ["- 1 bebedouro de galão", "- 1 galão d'agua"],
             "quantidade": 1
@@ -95,6 +103,7 @@
             "img": "filtro_barro",
             "local": "FGA",
             "descricao": "Melhor bebedouro",
+            "anunciante": "noname",
             "tipo": "Novo",
             "inclui": ["- 1 filtro", "- 1 vela"],
             "quantidade": 1
@@ -106,6 +115,7 @@
             "img": "ozonizador_0",
             "local": "",
             "descricao": "",
+            "anunciante": "bruna",
             "tipo": "Novo",
             "inclui": "",
             "quantidade": 1

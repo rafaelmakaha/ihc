@@ -9,7 +9,7 @@ import AddIcon from '@material-ui/icons/Add';
 import MinusIcon from '@material-ui/icons/Remove'
 import ShoppingCart from '@material-ui/icons/ShoppingCart';
 
-import ProductDetail from './ProductDetail';
+import Announce_detail from './Announce_detail';
 import CustomizedModal from './CustomizedModal';
 // import CardActions from '@material-ui/core/CardActions';
 
@@ -29,13 +29,10 @@ export default class Produto extends Component {
             open2: false,
             json: this.props.json
         }
-        this.sendToCart = this.sendToCart.bind(this);
         this.openModal1 = this.openModal1.bind(this);
         this.closeModal1 = this.closeModal1.bind(this);
         this.openModal2 = this.openModal2.bind(this);
         this.closeModal2 = this.closeModal2.bind(this);
-        this.removeQuantity = this.removeQuantity.bind(this);
-        this.addQuantity = this.addQuantity.bind(this);
     }
 
     openModal1() {
@@ -51,32 +48,6 @@ export default class Produto extends Component {
         this.setState({ open2: false });
     };
 
-    removeQuantity(){
-        var json = this.state.json;
-
-        if(this.state.json.quantidade > 0){
-            json.quantidade -= 1;
-            this.setState({json : json})
-        }
-    }
-
-    addQuantity(){
-        var json = this.state.json;
-
-        json.quantidade += 1;
-        this.setState({json : json});
-    }
-
-    sendToCart(){
-        console.log("SEND TO CART");
-        var json = this.state.json;
-        if(json.quantidade > 0){
-            CartService.addValue(json.preco, json.quantidade);
-            CartService.addCart(json);
-            console.log("SEND TO CART - >",json);
-            this.openModal2();
-        }
-    }
 
     getImage(image){
         switch(image){
@@ -121,51 +92,19 @@ export default class Produto extends Component {
                         </Grid>
                     </CardContent>
                 </CardActionArea>
-
-                {/* <CardActions>     */}
-                    <Grid container>
-
-                        {/* <Grid item xs={6}>
-                            <Button variant="contained" color="primary" size="small" onClick={this.openModal1} >Detalhes</Button>
-                        </Grid> */}
-                    {/* </Grid>
-
-                    <Grid container spacing={8}> */}
-
-                        <Grid item xs={12}>
-                            <IconButton onClick={this.removeQuantity} size="small" color="secondary"  >
-                                <MinusIcon />
-                            </IconButton>
-                            {this.state.json.quantidade}
-                            <IconButton onClick={this.addQuantity} color="secondary" size="small" >
-                                <AddIcon />
-                            </IconButton>
-                            <IconButton variant="extended" color="primary" aria-label="Add" size="small" onClick={this.sendToCart} >
-                                <ShoppingCart />
-                                {/* <AddIcon /> */}
-                            </IconButton>
-                        </Grid>
-
-                        <Grid item>
-                            <CustomizedModal open={this.state.open2} onClose={this.closeModal2}>
-                                <Typography variant="h4" >Produto adicionado ao carrinho com sucesso!</Typography>
-                                <Button variant="contained" color="primary" onClick={this.closeModal2}>Ok</Button>
-                            </CustomizedModal>
-                        </Grid>
-                    </Grid>
-                  
-
                     <CustomizedModal open={this.state.open1} onClose={this.closeModal1}>
-                        <ProductDetail json={this.state.json} />
+                        <Announce_detail json={this.state.json} />
                     </CustomizedModal>
                     <Grid container spacing={16}>
                         <Grid item xs={6}></Grid>
-                        <Grid item>
-                            <Button variant="contained" color="secondary" size="small" onClick={this.sendToCart} component={Link} to="cart">Comprar</Button>
-                        </Grid>
+                          <Grid item>
+                            <Button variant="contained" color="secondary" size="small" onClick={this.openModal2}>Remover</Button>
+                            </Grid>
+                        <CustomizedModal open={this.state.open2} onClose={this.closeModal2}>
+                            <Typography variant="h4" >Anúncio removido com sucesso.</Typography><br/>
+                            <Button variant="contained" color="primary" onClick={this.closeModal2}>Ok</Button>
+                        </CustomizedModal>
                     </Grid>
-                {/* </CardActions> */}
-
             </Card >
         )
     }

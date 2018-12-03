@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Typography from '@material-ui/core/Typography';
-import { Button, } from '@material-ui/core';
+import { Button, Input, FormLabel } from '@material-ui/core';
 import CustomizedModal from '../Components/CustomizedModal';
 import { Link } from 'react-router-dom';
 
@@ -26,16 +26,16 @@ export default class Ajuda extends Component {
       return (
       <div>
         <fieldset><legend>Fale conosco</legend>
-          <p>E-mail: &nbsp; <input type="text" size="40"/></p>
-          <p>Assunto: <input type="text" size="40"/></p>
-          <p>Mensagem: </p>
+          <p><FormLabel>E-mail: &nbsp; <Input type="text" size="40"/></FormLabel></p>
+          <p><FormLabel>Assunto: <Input type="text" size="40"/></FormLabel></p>
+          <p><FormLabel>Mensagem: </FormLabel></p>
           <textarea cols="60" rows="10"></textarea>
           <br/>
           <br/>
           <Button variant="contained" color="primary" onClick={this.openModal}>Enviar</Button>
           <CustomizedModal open={this.state.open} onClose={this.closeModal}>
-              <Typography variant="h4" >Mensagem enviada para nossa caixa de correios.
-              Por favor, aguarde o retorno</Typography>
+              <Typography variant="h4" >Mensagem enviada para nossa caixa de correios.<br/>
+              Por favor, aguarde o retorno.</Typography><br/>
               <Button variant="contained" color="primary" onClick={this.closeModal}>Ok</Button>
           </CustomizedModal>
         </fieldset>

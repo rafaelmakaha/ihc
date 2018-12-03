@@ -7,6 +7,7 @@
             "img": "bebedouro_pressao_0",
             "local": "FGA",
             "descricao": "Melhor bebedouro",
+            "anunciante": "Outro Joao Generico",
             "tipo": "Novo",
             "inclui": ["- 1 bebedouro de pressão"],
             "quantidade": 1
@@ -18,6 +19,7 @@
             "img": "bebedouro_pressao_0",
             "local": "",
             "descricao": "",
+            "anunciante": "Joao Nao-Generico",
             "tipo": "Novo",
             "inclui": "",
             "quantidade": 1
@@ -29,6 +31,7 @@
             "img": "bebedouro_pressao_0",
             "local": "",
             "descricao": "",
+            "anunciante": "Ninguem Generico",
             "tipo": "Novo",
             "inclui": "",
             "quantidade": 1
@@ -40,6 +43,7 @@
             "img": "bebedouro_pressao_0",
             "local": "",
             "descricao": "",
+            "anunciante": "Joao Generico",
             "tipo": "Novo",
             "inclui": "",
             "quantidade": 1
@@ -51,6 +55,7 @@
             "img": "bebedouro_pressao_0",
             "local": "",
             "descricao": "",
+            "anunciante": "Joao Generico",
             "tipo": "Novo",
             "inclui": "",
             "quantidade": 1

@@ -6,6 +6,7 @@
             "preco": "22,00",
             "img": "bebedouro_galao_0",
             "local": "FGA",
+            "anunciante": "Joao Generico",
             "descricao": "Melhor bebedouro",
             "tipo": "Novo",
             "inclui": ["- 1 bebedouro de galão", "- 1 galão d'agua"],
@@ -18,6 +19,7 @@
             "img": "bebedouro_galao_0",
             "local": "",
             "descricao": "",
+            "anunciante": "Junio Generico",
             "tipo": "Novo",
             "inclui": "",
             "quantidade": 1
@@ -29,6 +31,7 @@
             "img": "bebedouro_galao_0",
             "local": "",
             "descricao": "",
+            "anunciante": "Maria Generica",
             "tipo": "Novo",
             "inclui": "",
             "quantidade": 1
@@ -40,6 +43,7 @@
             "img": "bebedouro_galao_0",
             "local": "",
             "descricao": "",
+            "anunciante": "Romulo Generico",
             "tipo": "Novo",
             "inclui": "",
             "quantidade": 1
@@ -51,6 +55,7 @@
             "img": "bebedouro_galao_0",
             "local": "",
             "descricao": "",
+            "anunciante": "Macahao Generico",
             "tipo": "Novo",
             "inclui": "",
             "quantidade": 1
@@ -62,6 +67,7 @@
             "img": "bebedouro_galao_0",
             "local": "",
             "descricao": "",
+            "anunciante": "Joao Generico",
             "tipo": "Novo",
             "inclui": "",
             "quantidade": 1
