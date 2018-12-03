@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import oferta from '../Assets/oferta.png';
 import {
     Card,
     CardMedia,
+    CardActionArea,
+    Button,
 } from '@material-ui/core';
 
 export default class Banner extends Component {
@@ -19,13 +22,16 @@ export default class Banner extends Component {
         }
         return(
             <Card>
-                <CardMedia
-                    style={styles.image}
-                    image={oferta}
-                    title="Oferta"
-                />
+                <CardActionArea>
+                    <CardMedia
+                        style={styles.image}
+                        image={oferta}
+                        title="Oferta"
+                        component={Link} to='/oferta'
+                    />
+                </CardActionArea>
             </Card>
-        )
+        );
     }
 
 }
