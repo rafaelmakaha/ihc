@@ -26,7 +26,7 @@ export default class Login extends Component {
                 <CardContent>
                     <Grid container direction="row">
                         <Grid item xs={9}>
-                            <Typography variant="h4">João Genérico da Silva</Typography>
+                            <Typography variant="h3">João Genérico da Silva</Typography>
                         </Grid>
                         <Grid item xs={3}>
                             <Typography align="right">
@@ -36,11 +36,11 @@ export default class Login extends Component {
                     </Grid>
                     <br/>
                     <br/>
-                    <Typography variant="h7"><b>E-mail:</b> makahaogod@gmail.com</Typography>
+                    <Typography variant="h6"><b>E-mail:</b> makahaogod@gmail.com</Typography>
                     <br/>
-                    <Typography variant="h5">Descrição</Typography>
+                    <Typography variant="h3">Descrição</Typography>
                     <br/>
-                    <Typography variant="p">Um dia eu tive a brilhante
+                    <Typography variant="h6">   Um dia eu tive a brilhante
                     ideia de fazer uma excursão no deserto. Numa noite,
                     minha caravana estava toda lá quando fui dormir, porém, quando
                     abri meus olhos, todos tinham desaparecido, como se tivessem
@@ -48,24 +48,24 @@ export default class Login extends Component {
                     alimentos, roupas, camelos, e principalmente, a água. Eu já estava
                     sentido a sede me invadir.</Typography>
                     <br/>
-                    <Typography variant="p">Comecei a me desesperar, correr em
+                    <Typography variant="h6">Comecei a me desesperar, correr em
                     uma direção só, na esperança de um milagre. Quando comecei a sentir os
                     sintomas da desidratação e perceber que esse deserto seria meu leito
                     de morte, eu me deparo com um celular quase que completamente coberto pela
                     areia. Ele estava aberto em uma página, a página deste incrível site.
                     </Typography>
                     <br/>
-                    <Typography variant="p">Logo
+                    <Typography variant="h6">Logo
                     vi que tinha uma promoção imperdível de um filtro de barro que eu sempre
-                    quis, nao podia esperar, encomendei na hora mesmo. E em pouco tempo saciei minha
+                    quis, não podia esperar, encomendei na hora mesmo. E em pouco tempo saciei minha
                     sede com o belíssimo produto que comprei. Portanto, posso dizer que esse site
                     salvou minha vida.
                     </Typography>
                     <br/>
-                    <Typography variant="h5">Endereço: </Typography>
-                    <Typography variant="body1">CEP: 711000-000</Typography>
-                    <Typography variant="body1">Cidade: Brasilia</Typography>
-                    <Typography variant="body1">Bairro: Gama</Typography>
+                    <Typography variant="h6">Endereço: </Typography>
+                    <Typography variant="h6">CEP: 711000-000</Typography>
+                    <Typography variant="h6">Cidade: Brasilia</Typography>
+                    <Typography variant="h6">Bairro: Gama</Typography>
                 </CardContent>
             </Card>
         )
