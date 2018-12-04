@@ -44,7 +44,7 @@ const styles = theme => ({
     [theme.breakpoints.up('sm')]: {
       width: `calc(100% - ${drawerWidth}px)`,
     },
-    backgroundColor: '#6700EE',
+    backgroundColor: '#2B879E',
   },
   menuButton: {
     marginRight: 20,
@@ -55,7 +55,7 @@ const styles = theme => ({
   toolbar: theme.mixins.toolbar,
   drawerPaper: {
     width: drawerWidth,
-    background: '#212020',
+    background: '#004853',
   },
   content: {
     flexGrow: 1,
@@ -166,6 +166,20 @@ class ResponsiveDrawer extends React.Component {
             }
         }
     })
+    const botoes = createMuiTheme ({
+      overrides: {
+          MuiButton: {
+            raised: {
+              background: '#007E80',
+                color: '#E1E7E4',
+            },
+            raisedSecondary: {
+              background: '#F63700',
+              color: '#E1E7E4',
+            },
+          },
+      }
+  })
 
     var drawer;
 
@@ -253,7 +267,7 @@ class ResponsiveDrawer extends React.Component {
             </IconButton>
             <MuiThemeProvider theme={mui_theme}>
               <Grid container > {/* justify="space-between" */}
-                <Button className={classes.logo} color="inherit" component={Link} to="/">FGAqua</Button>
+                <Button className={classes.logo} color="inherit" component={Link} to="/">FGACQUA</Button>
 
                 <MenuFiltros />
                 <MenuBebedouros />
@@ -301,7 +315,9 @@ class ResponsiveDrawer extends React.Component {
         </nav>
         <main className={classes.content}>
           <div className={classes.toolbar} /> {/*N faz nada*/}
-          {this.props.children}
+          <MuiThemeProvider theme={botoes}>
+            {this.props.children}
+          </MuiThemeProvider>
         </main>
       </div>
     );

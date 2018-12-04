@@ -7,8 +7,8 @@
             "img": "ozonizador_0",
             "local": "FGA",
             "descricao": "Melhor bebedouro",
-            "tipo": "Novo",
-            "inclui": ["- 1 ozonizador"],
+            "anunciante": "Fulano Generico",
+            "classificação": "Novo",
             "quantidade": 1
         },
         {
@@ -18,8 +18,8 @@
             "img": "ozonizador_0",
             "local": "",
             "descricao": "",
-            "tipo": "Novo",
-            "inclui": "",
+            "anunciante": "Rodrigo Generico",
+            "classificação": "Novo",
             "quantidade": 1
         },
         {
@@ -29,8 +29,8 @@
             "img": "ozonizador_0",
             "local": "",
             "descricao": "",
-            "tipo": "Novo",
-            "inclui": "",
+            "anunciante": "Aquele la msm Generico",
+            "classificação": "Novo",
             "quantidade": 1
         },
         {
@@ -40,8 +40,8 @@
             "img": "ozonizador_0",
             "local": "",
             "descricao": "",
-            "tipo": "Novo",
-            "inclui": "",
+            "anunciante": "Joao Generico",
+            "classificação": "Novo",
             "quantidade": 1
         },
         {
@@ -51,8 +51,8 @@
             "img": "ozonizador_0",
             "local": "",
             "descricao": "",
-            "tipo": "Novo",
-            "inclui": "",
+            "anunciante": "El Generico",
+            "classificação": "Novo",
             "quantidade": 1
         },
         {
@@ -62,8 +62,8 @@
             "img": "ozonizador_0",
             "local": "",
             "descricao": "",
-            "tipo": "Novo",
-            "inclui": "",
+            "anunciante": "Outro Generico",
+            "classificação": "Novo",
             "quantidade": 1
         }
     ]

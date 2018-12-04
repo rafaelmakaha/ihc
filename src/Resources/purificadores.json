@@ -7,8 +7,8 @@
             "img": "purificador_0",
             "local": "FGA",
             "descricao": "Melhor bebedouro",
-            "tipo": "Novo",
-            "inclui": ["- 1 filtro"],
+            "anunciante": "puro ficador",
+            "classificação": "Novo",
             "quantidade": 1
         },
         {
@@ -18,8 +18,8 @@
             "img": "purificador_0",
             "local": "",
             "descricao": "",
-            "tipo": "Novo",
-            "inclui": "",
+            "anunciante": "filipe valita",
+            "classificação": "Novo",
             "quantidade": 1
         },
         {
@@ -29,8 +29,8 @@
             "img": "purificador_0",
             "local": "",
             "descricao": "",
-            "tipo": "Novo",
-            "inclui": "",
+            "anunciante": "polichopen",
+            "classificação": "Novo",
             "quantidade": 1
         },
         {
@@ -40,8 +40,8 @@
             "img": "purificador_0",
             "local": "",
             "descricao": "",
-            "tipo": "Novo",
-            "inclui": "",
+            "anunciante": "brastempo",
+            "classificação": "Novo",
             "quantidade": 1
         },
         {
@@ -51,8 +51,8 @@
             "img": "purificador_0",
             "local": "",
             "descricao": "",
-            "tipo": "Novo",
-            "inclui": "",
+            "anunciante": "mundo dos bebedouro",
+            "classificação": "Novo",
             "quantidade": 1
         },
         {
@@ -62,8 +62,8 @@
             "img": "purificador_0",
             "local": "",
             "descricao": "",
-            "tipo": "Novo",
-            "inclui": "",
+            "anunciante": "FGAstros",
+            "classificação": "Novo",
             "quantidade": 1
         }
     ]

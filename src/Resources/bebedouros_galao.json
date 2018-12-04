@@ -6,9 +6,9 @@
             "preco": "22,00",
             "img": "bebedouro_galao_0",
             "local": "FGA",
+            "anunciante": "Joao Generico",
             "descricao": "Melhor bebedouro",
-            "tipo": "Novo",
-            "inclui": ["- 1 bebedouro de galão", "- 1 galão d'agua"],
+            "classificação": "Novo",
             "quantidade": 1
         },
         {
@@ -17,8 +17,9 @@
             "preco": "21,00",
             "img": "bebedouro_galao_0",
             "local": "",
-            "descricao": "",
-            "tipo": "Novo",
+            "descricao": "descricao generica",
+            "anunciante": "Junio Generico",
+            "classificação": "Novo",
             "inclui": "",
             "quantidade": 1
         },
@@ -28,9 +29,9 @@
             "preco": "20,00",
             "img": "bebedouro_galao_0",
             "local": "",
-            "descricao": "",
-            "tipo": "Novo",
-            "inclui": "",
+            "descricao": "descricao generica",
+            "anunciante": "Maria Generica",
+            "classificação": "Novo",
             "quantidade": 1
         },
         {
@@ -39,9 +40,9 @@
             "preco": "19,00",
             "img": "bebedouro_galao_0",
             "local": "",
-            "descricao": "",
-            "tipo": "Novo",
-            "inclui": "",
+            "descricao": "descricao generica",
+            "anunciante": "Romulo Generico",
+            "classificação": "Novo",
             "quantidade": 1
         },
         {
@@ -50,9 +51,9 @@
             "preco": "18,00",
             "img": "bebedouro_galao_0",
             "local": "",
-            "descricao": "",
-            "tipo": "Novo",
-            "inclui": "",
+            "descricao": "descricao generica",
+            "anunciante": "Macahao Generico",
+            "classificação": "Novo",
             "quantidade": 1
         },
         {
@@ -61,9 +62,9 @@
             "preco": "17,00",
             "img": "bebedouro_galao_0",
             "local": "",
-            "descricao": "",
-            "tipo": "Novo",
-            "inclui": "",
+            "descricao": "descricao generica",
+            "anunciante": "Joao Generico",
+            "classificação": "Novo",
             "quantidade": 1
         }
     ]

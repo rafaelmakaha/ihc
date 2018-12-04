@@ -19,7 +19,6 @@ export default class CartProduct extends Component {
             open: false,
             json: this.props.json
         }
-
         this.openModal = this.openModal.bind(this);
         this.closeModal = this.closeModal.bind(this);
     }

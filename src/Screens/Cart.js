@@ -41,13 +41,7 @@ export default class Cart extends Component {
             });
 
         }
-
-        const mui_theme = createMuiTheme ({
-            palette: {
-                primary: green,
-            }
-        })
-
+        
         var carrinho;
         console.log(CartService.getValue());
         if (CartService.getValue() !== "0,00" ){
@@ -90,9 +84,7 @@ export default class Cart extends Component {
                                 <Button variant="contained" size="small" color="primary" component={Link} to='/'>Continuar comprando</Button>                                
                             </Grid>
                             <Grid item sm={3}>
-                                <MuiThemeProvider theme={mui_theme}>
-                                    <Button variant="contained" size="small" color="primary" component={Link} to='/payment'>Finalizar Compra</Button>
-                                </MuiThemeProvider>
+                                <Button variant="contained" size="small" color="secondary" component={Link} to='/payment'>Finalizar Compra</Button>
                             </Grid>
                         </Grid>
                     </Grid>
