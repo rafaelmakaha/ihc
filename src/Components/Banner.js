@@ -5,7 +5,6 @@ import {
     Card,
     CardMedia,
     CardActionArea,
-    Button,
 } from '@material-ui/core';
 
 export default class Banner extends Component {
