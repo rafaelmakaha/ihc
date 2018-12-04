@@ -35,6 +35,7 @@ export default class MyAnnounces extends Component {
       <div>
         <fieldset><legend>Informações do produto</legend>
           <p><FormLabel>Nome do produto: &nbsp; <Input type="text" size="40"/></FormLabel></p>
+          <p><FormLabel>Imagem: <button>Procurar arquivo</button></FormLabel></p>
           <p><FormLabel>Tipo do produto:
           <RadioGroup value={this.state.value}
             onChange={this.handleChange}>
@@ -58,7 +59,6 @@ export default class MyAnnounces extends Component {
           <textarea cols="60" rows="10"></textarea>
           <br/>
           <br/>
-          <p><FormLabel>Imagem: <button>Procurar arquivo</button></FormLabel></p>
           <Button variant="contained" color="primary" onClick={this.openModal}>Enviar</Button>
           <CustomizedModal open={this.state.open} onClose={this.closeModal}>
             <Typography variant="h4" >Anúncio publicado com sucesso.</Typography><br/>
